@@ -1,0 +1,10 @@
+{
+  "type": "number",
+  "decimals": 0,
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "title": {
+    "en": "Zone"
+  }
+}

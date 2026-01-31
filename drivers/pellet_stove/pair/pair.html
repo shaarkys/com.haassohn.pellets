@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Haas+Sohn stove</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 24px;
+      }
+      #status {
+        margin-top: 8px;
+        font-size: 13px;
+      }
+      .actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="homey-form" id="pair-form">
+      <fieldset class="homey-form-fieldset">
+        <legend class="homey-form-legend" id="legend-connection"></legend>
+        <div class="homey-form-group">
+          <label class="homey-form-label" for="address" id="label-address"></label>
+          <input class="homey-form-input" id="address" type="text" autocapitalize="off" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="homey-form-group">
+          <label class="homey-form-label" for="pin" id="label-pin"></label>
+          <input class="homey-form-input" id="pin" type="password" autocomplete="off">
+        </div>
+      </fieldset>
+
+      <fieldset class="homey-form-fieldset">
+        <legend class="homey-form-legend" id="legend-advanced"></legend>
+        <div class="homey-form-group">
+          <label class="homey-form-label" for="pollInterval" id="label-poll"></label>
+          <input class="homey-form-input" id="pollInterval" type="number" min="5" max="300" value="10">
+        </div>
+        <div class="homey-form-group">
+          <label class="homey-form-label" for="name" id="label-name"></label>
+          <input class="homey-form-input" id="name" type="text" autocapitalize="off" autocomplete="off" spellcheck="false">
+        </div>
+      </fieldset>
+
+      <div id="status"></div>
+
+      <div class="homey-form-group actions">
+        <button id="test" type="button" class="homey-button-secondary-shadow"></button>
+        <button id="add" type="button" class="homey-button-primary-full" disabled></button>
+      </div>
+    </form>
+
+    <script type="text/javascript">
+      const legendConnectionEl = document.getElementById('legend-connection');
+      const legendAdvancedEl = document.getElementById('legend-advanced');
+      const labelAddressEl = document.getElementById('label-address');
+      const labelPinEl = document.getElementById('label-pin');
+      const labelPollEl = document.getElementById('label-poll');
+      const labelNameEl = document.getElementById('label-name');
+      const addressInput = document.getElementById('address');
+      const pinInput = document.getElementById('pin');
+      const pollInput = document.getElementById('pollInterval');
+      const nameInput = document.getElementById('name');
+      const statusEl = document.getElementById('status');
+      const testButton = document.getElementById('test');
+      const addButton = document.getElementById('add');
+      const formEl = document.getElementById('pair-form');
+
+      function t(key) {
+        return Homey.__(key);
+      }
+
+      function setStatus(message, isError) {
+        statusEl.textContent = message;
+        statusEl.style.color = isError ? '#b00020' : '#2e7d32';
+      }
+
+      function collectData() {
+        return {
+          address: addressInput.value.trim(),
+          pin: pinInput.value.trim(),
+          pollInterval: Number(pollInput.value.trim()),
+          name: nameInput.value.trim(),
+        };
+      }
+
+      function validate(data) {
+        if (!data.address) return t('pair.validation.address_required');
+        if (!data.pin) return t('pair.validation.pin_required');
+        if (!Number.isFinite(data.pollInterval) || data.pollInterval < 5 || data.pollInterval > 300) {
+          return t('pair.validation.poll_range');
+        }
+        return '';
+      }
+
+      function disableAddOnInput() {
+        addButton.disabled = true;
+      }
+
+      const titleText = t('pair.title');
+      const subtitleText = t('pair.subtitle');
+      Homey.setTitle(titleText);
+      if (typeof Homey.setSubtitle === 'function') {
+        Homey.setSubtitle(subtitleText);
+      }
+
+      legendConnectionEl.textContent = t('pair.legend.connection');
+      legendAdvancedEl.textContent = t('pair.legend.advanced');
+      labelAddressEl.textContent = t('pair.address.label');
+      labelPinEl.textContent = t('pair.pin.label');
+      labelPollEl.textContent = t('pair.poll.label');
+      labelNameEl.textContent = t('pair.name.label');
+      addressInput.placeholder = t('pair.address.placeholder');
+      pinInput.placeholder = t('pair.pin.placeholder');
+      nameInput.placeholder = t('pair.name.placeholder');
+      testButton.textContent = t('pair.test');
+      addButton.textContent = t('pair.add');
+
+      formEl.addEventListener('submit', function (event) {
+        event.preventDefault();
+      });
+
+      addressInput.addEventListener('input', disableAddOnInput);
+      pinInput.addEventListener('input', disableAddOnInput);
+      pollInput.addEventListener('input', disableAddOnInput);
+      nameInput.addEventListener('input', disableAddOnInput);
+
+      async function testConnection() {
+        addButton.disabled = true;
+        const data = collectData();
+        const error = validate(data);
+        if (error) {
+          setStatus(error, true);
+          return;
+        }
+        setStatus(t('pair.status.testing'), false);
+        try {
+          const result = await Homey.emit('testConnection', data);
+          if (result && result.ok) {
+            setStatus(t('pair.status.success'), false);
+            addButton.disabled = false;
+          } else {
+            setStatus(result && result.error ? result.error : t('pair.status.failed'), true);
+          }
+        } catch (error) {
+          setStatus(String(error), true);
+        }
+      }
+
+      async function addDevice() {
+        const data = collectData();
+        const error = validate(data);
+        if (error) {
+          setStatus(error, true);
+          return;
+        }
+        setStatus(t('pair.status.adding'), false);
+        try {
+          const device = await Homey.emit('addDevice', data);
+          await Homey.createDevice(device);
+          await Homey.done();
+        } catch (error) {
+          setStatus(String(error), true);
+        }
+      }
+
+      testButton.addEventListener('click', testConnection);
+      addButton.addEventListener('click', addDevice);
+
+      Homey.ready();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "pair": {
+    "title": "Haas+Sohn stove",
+    "subtitle": "Connect to your stove over the local network.",
+    "legend": {
+      "connection": "Connection",
+      "advanced": "Advanced"
+    },
+    "address": {
+      "label": "Device address",
+      "placeholder": "192.168.1.120"
+    },
+    "pin": {
+      "label": "PIN",
+      "placeholder": "1234"
+    },
+    "poll": {
+      "label": "Polling interval (seconds)"
+    },
+    "name": {
+      "label": "Device name (optional)",
+      "placeholder": "Haas+Sohn stove"
+    },
+    "test": "Test connection",
+    "add": "Add device",
+    "status": {
+      "testing": "Testing connection...",
+      "adding": "Adding device...",
+      "success": "Connection successful.",
+      "failed": "Connection failed.",
+      "error": "Something went wrong. Please try again."
+    },
+    "validation": {
+      "address_required": "Address is required.",
+      "pin_required": "PIN is required.",
+      "poll_range": "Polling interval must be between 5 and 300 seconds."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "com.haassohn.pellets",
+  "version": "1.0.0",
+  "compatibility": ">=12.4.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Haas+Sohn Pellets"
+  },
+  "description": {
+    "en": "Control and monitor Haas+Sohn pellet stoves in Homey."
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "brandColor": "#C6282F",
+  "author": {
+    "name": "Bretislav Kubesa",
+    "email": "bretislav.kubesa@gmail.com"
+  }
+}

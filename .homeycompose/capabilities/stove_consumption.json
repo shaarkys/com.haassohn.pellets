@@ -1,0 +1,10 @@
+{
+  "title": {
+    "en": "Consumption"
+  },
+  "insights": true,
+  "setable": false,
+  "units": "kg",
+  "getable": true,
+  "type": "number"
+}

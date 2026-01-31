@@ -1,0 +1,25 @@
+{
+  "title": {
+    "en": "Set eco mode to {{mode}}"
+  },
+  "titleFormatted": {
+    "en": "Set eco mode to [[mode]]"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "title": {
+        "en": "Device"
+      },
+      "filter": "driver_id=pellet_stove"
+    },
+    {
+      "name": "mode",
+      "type": "checkbox",
+      "title": {
+        "en": "Mode"
+      }
+    }
+  ]
+}

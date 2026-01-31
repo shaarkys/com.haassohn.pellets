@@ -1,0 +1,10 @@
+{
+  "title": {
+    "en": "Operating hours"
+  },
+  "insights": true,
+  "setable": false,
+  "units": "h",
+  "getable": true,
+  "type": "number"
+}

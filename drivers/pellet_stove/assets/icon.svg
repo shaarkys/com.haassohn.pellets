@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="800px"
+   height="800px"
+   viewBox="0 0 24 24"
+   id="Layer_1"
+   data-name="Layer 1"
+   version="1.1"
+   sodipodi:docname="icon.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.46625"
+     inkscape:cx="399.65899"
+     inkscape:cy="400"
+     inkscape:window-width="3440"
+     inkscape:window-height="1369"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style>
+  </defs>
+  <rect
+     class="cls-1"
+     x="7.8425999"
+     y="5.3200002"
+     width="8.3104477"
+     height="17.18"
+     id="rect1"
+     style="stroke-width:0.9;stroke-dasharray:none" />
+  <path
+     class="cls-1"
+     d="m 14.496164,10.774936 c 0,0 -0.0017,1.605339 -0.0017,3.812776 v 4.02482 H 9.50556 v -3.996919 c -0.00966,-2.218325 -0.022184,-4.02482 -0.022184,-4.02482 h 5.442455"
+     id="path1"
+     style="stroke-width:0.900001;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+     sodipodi:nodetypes="cscccsc" />
+  <line
+     class="cls-1"
+     x1="7.0154734"
+     y1="5.3200002"
+     x2="16.984528"
+     y2="5.3200002"
+     id="line1"
+     style="stroke-width:0.9;stroke-dasharray:none" />
+  <rect
+     class="cls-1"
+     x="10.531616"
+     y="1.3158567"
+     width="3.0390689"
+     height="3.9427619"
+     id="rect2"
+     style="stroke-width:0.9;stroke-dasharray:none" />
+  <path
+     class="cls-1"
+     d="m 13.245044,17.242992 a 1.2450435,1.2949378 0 0 1 -2.490087,0 C 10.754957,16.523079 12,15.296058 12,15.296058 c 0,0 1.245044,1.227021 1.245044,1.946934 z"
+     id="path2"
+     style="stroke-width:0.6;stroke-dasharray:none" />
+  <line
+     class="cls-1"
+     x1="7.0154734"
+     y1="22.5"
+     x2="16.984528"
+     y2="22.5"
+     id="line2"
+     style="stroke-width:0.9;stroke-dasharray:none" />
+</svg>

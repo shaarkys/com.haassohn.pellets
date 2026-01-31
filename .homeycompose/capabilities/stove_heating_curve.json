@@ -1,0 +1,9 @@
+{
+  "title": {
+    "en": "Heating curve"
+  },
+  "insights": true,
+  "setable": false,
+  "getable": true,
+  "type": "number"
+}

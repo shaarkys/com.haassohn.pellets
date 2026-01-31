@@ -1,0 +1,9 @@
+{
+  "title": {
+    "en": "Error state"
+  },
+  "type": "boolean",
+  "getable": true,
+  "setable": false,
+  "insights": true
+}

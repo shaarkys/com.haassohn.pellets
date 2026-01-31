@@ -1,0 +1,10 @@
+{
+  "title": {
+    "en": "Maintenance in"
+  },
+  "insights": true,
+  "setable": false,
+  "units": "kg",
+  "getable": true,
+  "type": "number"
+}

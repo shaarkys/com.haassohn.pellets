@@ -1,0 +1,10 @@
+{
+  "title": {
+    "en": "Cleaning in"
+  },
+  "insights": true,
+  "setable": false,
+  "units": "min",
+  "getable": true,
+  "type": "number"
+}

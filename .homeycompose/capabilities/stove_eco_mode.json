@@ -1,0 +1,9 @@
+{
+  "title": {
+    "en": "Eco mode"
+  },
+  "insights": true,
+  "setable": true,
+  "getable": true,
+  "type": "boolean"
+}

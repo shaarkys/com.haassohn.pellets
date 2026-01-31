@@ -1,0 +1,25 @@
+{
+  "title": {
+    "en": "Set weekly program to {{enabled}}"
+  },
+  "titleFormatted": {
+    "en": "Set weekly program to [[enabled]]"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "title": {
+        "en": "Device"
+      },
+      "filter": "driver_id=pellet_stove"
+    },
+    {
+      "name": "enabled",
+      "type": "checkbox",
+      "title": {
+        "en": "Enabled"
+      }
+    }
+  ]
+}

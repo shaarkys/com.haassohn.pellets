@@ -1,0 +1,9 @@
+{
+  "title": {
+    "en": "Weekly program active"
+  },
+  "insights": true,
+  "setable": true,
+  "getable": true,
+  "type": "boolean"
+}

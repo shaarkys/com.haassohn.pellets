@@ -1,0 +1,198 @@
+{
+  "name": {
+    "en": "Pellet Stove"
+  },
+  "class": "heater",
+  "capabilities": [
+    "onoff",
+    "stove_mode",
+    "measure_temperature",
+    "target_temperature",
+    "stove_eco_mode",
+    "stove_cleaning_in",
+    "stove_maintenance_in",
+    "stove_consumption",
+    "stove_pellets",
+    "stove_error",
+    "stove_zone",
+    "stove_weekprogram_active",
+    "stove_heating_curve",
+    "stove_ignitions",
+    "stove_on_time",
+    "stove_error_state",
+    "meta_eco_editable"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 5,
+      "max": 35,
+      "step": 1
+    },
+    "measure_temperature": {
+      "decimals": 2
+    },
+    "onoff": {
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "On"
+      },
+      "insightsTitleFalse": {
+        "en": "Off"
+      }
+    },
+    "stove_eco_mode": {
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Eco on"
+      },
+      "insightsTitleFalse": {
+        "en": "Eco off"
+      }
+    },
+    "stove_weekprogram_active": {
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Weekly program on"
+      },
+      "insightsTitleFalse": {
+        "en": "Weekly program off"
+      }
+    },
+    "stove_error_state": {
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "In error"
+      },
+      "insightsTitleFalse": {
+        "en": "No error"
+      }
+    }
+  },
+  "pair": [
+    {
+      "id": "pair"
+    }
+  ],
+  "settings": [
+    {
+      "id": "address",
+      "type": "text",
+      "label": {
+        "en": "Device address"
+      },
+      "hint": {
+        "en": "IP address or hostname, e.g. 192.168.1.120"
+      },
+      "required": true
+    },
+    {
+      "id": "pin",
+      "type": "password",
+      "label": {
+        "en": "PIN"
+      },
+      "hint": {
+        "en": "PIN configured on the stove controller"
+      },
+      "required": true
+    },
+    {
+      "id": "pollInterval",
+      "type": "number",
+      "label": {
+        "en": "Polling interval (seconds)"
+      },
+      "value": 10,
+      "min": 5,
+      "max": 300
+    },
+    {
+      "id": "pellets_kg",
+      "type": "number",
+      "label": {
+        "en": "Pellets remaining (kg)"
+      },
+      "value": 15,
+      "min": 0,
+      "max": 999,
+      "step": 0.1
+    },
+    {
+      "id": "pellets_max_kg",
+      "type": "number",
+      "label": {
+        "en": "Pellets capacity (kg)"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 999,
+      "step": 0.1
+    },
+    {
+      "id": "pellets_auto_reset",
+      "type": "dropdown",
+      "label": {
+        "en": "Auto-reset pellets at 0 kg"
+      },
+      "value": "none",
+      "values": [
+        {
+          "id": "none",
+          "label": {
+            "en": "Do not reset"
+          }
+        },
+        {
+          "id": "reset15",
+          "label": {
+            "en": "Reset to 15 kg"
+          }
+        },
+        {
+          "id": "reset30",
+          "label": {
+            "en": "Reset to 30 kg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "meta_hw_version",
+      "type": "text",
+      "label": {
+        "en": "Hardware version"
+      },
+      "value": "",
+      "readonly": true
+    },
+    {
+      "id": "meta_sw_version",
+      "type": "text",
+      "label": {
+        "en": "Software version"
+      },
+      "value": "",
+      "readonly": true
+    },
+    {
+      "id": "meta_typ",
+      "type": "text",
+      "label": {
+        "en": "Device type"
+      },
+      "value": "",
+      "readonly": true
+    }
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  }
+}

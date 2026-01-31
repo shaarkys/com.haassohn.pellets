@@ -1,0 +1,25 @@
+{
+  "title": {
+    "en": "Set pellets to {{pellets_kg}} kg"
+  },
+  "titleFormatted": {
+    "en": "Set pellets to [[pellets_kg]] kg"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "title": {
+        "en": "Device"
+      },
+      "filter": "driver_id=pellet_stove"
+    },
+    {
+      "name": "pellets_kg",
+      "type": "number",
+      "title": {
+        "en": "Pellets (kg)"
+      }
+    }
+  ]
+}

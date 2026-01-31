@@ -1,0 +1,9 @@
+{
+  "title": {
+    "en": "Ignitions"
+  },
+  "insights": true,
+  "setable": false,
+  "getable": true,
+  "type": "number"
+}
