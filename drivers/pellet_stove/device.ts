@@ -21,7 +21,6 @@ const STATE_TO_CAPABILITY: Record<string, string> = {
   cleaning_in: 'measure_stove_cleaning_in',
   maintenance_in: 'measure_stove_maintenance_in',
   consumption: 'measure_stove_consumption',
-  pellets: 'stove_pellets_actual',
   eco_mode: 'stove_eco_mode',
   wprg: 'stove_weekprogram_active',
   ht_char: 'stove_heating_curve',
@@ -174,7 +173,6 @@ const CAPABILITY_TYPES: Record<string, CapabilityType> = {
   measure_stove_maintenance_in: 'number',
   measure_stove_consumption: 'number',
   measure_stove_pellets: 'number',
-  stove_pellets_actual: 'number',
   stove_heating_curve: 'number',
   stove_ignitions: 'number',
   stove_on_time: 'number',
@@ -302,6 +300,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     await this.ensureCapabilityAbsent('meta_hw_version');
     await this.ensureCapabilityAbsent('meta_sw_version');
     await this.ensureCapabilityAbsent('meta_typ');
+    await this.ensureCapabilityAbsent('stove_pellets_actual');
   }
 
   private async migrateCapabilityIds() {
