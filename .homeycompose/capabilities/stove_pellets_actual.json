@@ -1,9 +1,8 @@
 {
   "units": "kg",
-  "decimals": 0,
-  "step": 1,
-  "max": 999,
+  "decimals": 1,
   "min": 0,
+  "max": 999,
   "insights": true,
   "type": "number",
   "title": {
@@ -22,6 +21,6 @@
     "ar": "الكريات"
   },
   "getable": true,
-  "setable": true,
+  "setable": false,
   "icon": "/assets/icons/pellets.svg"
 }

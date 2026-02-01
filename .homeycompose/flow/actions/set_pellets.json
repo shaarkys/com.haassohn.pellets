@@ -1,16 +1,52 @@
 {
   "title": {
-    "en": "Set pellets to {{pellets_kg}} kg"
+    "en": "Set pellets to {{pellets_kg}} kg",
+    "nl": "Stel pellets in op {{pellets_kg}} kg",
+    "da": "Indstil piller til {{pellets_kg}} kg",
+    "de": "Pellets auf {{pellets_kg}} kg einstellen",
+    "es": "Establecer pellets a {{pellets_kg}} kg",
+    "fr": "Réglez les pellets sur {{pellets_kg}} kg",
+    "it": "Imposta i pellet a {{pellets_kg}} kg",
+    "no": "Sett pellets til {{pellets_kg}} kg",
+    "sv": "Ställ in pellets till {{pellets_kg}} kg",
+    "pl": "Ustaw pelety na {{pellets_kg}} kg",
+    "ru": "Установите количество пеллет на {{pellets_kg}} кг",
+    "ko": "펠릿을 {{pellets_kg}} kg로 설정하세요.",
+    "ar": "اضبط الكريات على {{pellets_kg}} كجم"
   },
   "titleFormatted": {
-    "en": "Set pellets to [[pellets_kg]] kg"
+    "en": "Set pellets to [[pellets_kg]] kg",
+    "nl": "Stel pellets in op [[pellets_kg]] kg",
+    "da": "Indstil piller til [[pellets_kg]] kg",
+    "de": "Stelle Pellets auf [[pellets_kg]] kg ein",
+    "es": "Establecer pellets a [[pellets_kg]] kg",
+    "fr": "Réglez les pellets sur [[pellets_kg]] kg",
+    "it": "Imposta i pellet a [[pellets_kg]] kg",
+    "no": "Sett pellets til [[pellets_kg]] kg",
+    "sv": "Ställ in pellets till [[pellets_kg]] kg",
+    "pl": "Ustaw pelety na [[pellets_kg]] kg",
+    "ru": "Установите количество пеллет на [[pellets_kg]] кг",
+    "ko": "펠릿을 [[pellets_kg]] kg로 설정하세요.",
+    "ar": "اضبط الكريات على [[pellets_kg]] كجم"
   },
   "args": [
     {
       "name": "device",
       "type": "device",
       "title": {
-        "en": "Device"
+        "en": "Device",
+        "nl": "Apparaat",
+        "da": "Enhed",
+        "de": "Gerät",
+        "es": "Dispositivo",
+        "fr": "Appareil",
+        "it": "Dispositivo",
+        "no": "Enhet",
+        "sv": "Enhet",
+        "pl": "Urządzenie",
+        "ru": "Устройство",
+        "ko": "장치",
+        "ar": "الجهاز"
       },
       "filter": "driver_id=pellet_stove"
     },
@@ -18,7 +54,19 @@
       "name": "pellets_kg",
       "type": "number",
       "title": {
-        "en": "Pellets (kg)"
+        "en": "Pellets (kg)",
+        "nl": "Pellets (kg)",
+        "da": "Piller (kg)",
+        "de": "Pellets (kg)",
+        "es": "Pellets (kg)",
+        "fr": "Pellets (kg)",
+        "it": "Pellet (kg)",
+        "no": "Pellets (kg)",
+        "sv": "Pellets (kg)",
+        "pl": "Pellet (kg)",
+        "ru": "Пеллеты (кг)",
+        "ko": "펠릿 (kg)",
+        "ar": "الكريات (كجم)"
       }
     }
   ]

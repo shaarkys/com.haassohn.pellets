@@ -1,13 +1,37 @@
 {
   "title": {
-    "en": "Eco mode changed"
+    "en": "Eco mode changed",
+    "nl": "Eco-modus gewijzigd",
+    "da": "Øko-tilstand ændret",
+    "de": "Eco-Modus geändert",
+    "es": "Modo eco cambiado",
+    "fr": "Mode éco modifié",
+    "it": "Modalità Eco modificata",
+    "no": "Øko-modus endret",
+    "sv": "Eco-läge ändrat",
+    "pl": "Tryb eko zmieniony",
+    "ru": "Режим эко изменён",
+    "ko": "에코 모드가 변경되었습니다.",
+    "ar": "تم تغيير وضع الاقتصاد"
   },
   "args": [
     {
       "name": "device",
       "type": "device",
       "title": {
-        "en": "Device"
+        "en": "Device",
+        "nl": "Apparaat",
+        "da": "Enhed",
+        "de": "Gerät",
+        "es": "Dispositivo",
+        "fr": "Appareil",
+        "it": "Dispositivo",
+        "no": "Enhet",
+        "sv": "Enhet",
+        "pl": "Urządzenie",
+        "ru": "Устройство",
+        "ko": "장치",
+        "ar": "الجهاز"
       },
       "filter": "driver_id=pellet_stove"
     }
@@ -17,7 +41,19 @@
       "name": "mode",
       "type": "boolean",
       "title": {
-        "en": "Mode"
+        "en": "Mode",
+        "nl": "Modus",
+        "da": "Tilstand",
+        "de": "Modus",
+        "es": "Modo",
+        "fr": "Mode",
+        "it": "Modalità",
+        "no": "Modus",
+        "sv": "Läge",
+        "pl": "Tryb",
+        "ru": "Режим",
+        "ko": "모드",
+        "ar": "الوضع"
       }
     }
   ]

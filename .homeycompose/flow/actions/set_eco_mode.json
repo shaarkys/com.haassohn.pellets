@@ -1,16 +1,52 @@
 {
   "title": {
-    "en": "Set eco mode to {{mode}}"
+    "en": "Set eco mode to {{mode}}",
+    "nl": "Stel eco-modus in op {{mode}}",
+    "da": "Indstil øko-tilstand til {{mode}}",
+    "de": "Stelle den Eco-Modus auf {{mode}} ein.",
+    "es": "Configurar el modo eco a {{mode}}",
+    "fr": "Réglez le mode éco sur {{mode}}",
+    "it": "Imposta la modalità eco su {{mode}}",
+    "no": "Sett økomodus til {{mode}}",
+    "sv": "Ställ in eko-läge till {{mode}}",
+    "pl": "Ustaw tryb eko na {{mode}}",
+    "ru": "Установить эко режим на {{mode}}",
+    "ko": "에코 모드를 {{mode}}로 설정하세요.",
+    "ar": "اضبط وضع الاقتصاد على {{mode}}"
   },
   "titleFormatted": {
-    "en": "Set eco mode to [[mode]]"
+    "en": "Set eco mode to [[mode]]",
+    "nl": "Stel de eco-modus in op [[mode]]",
+    "da": "Indstil øko-tilstand til [[mode]]",
+    "de": "Stelle den Eco-Modus auf [[mode]] ein.",
+    "es": "Establecer el modo eco en [[mode]]",
+    "fr": "Régler le mode éco sur [[mode]]",
+    "it": "Imposta la modalità eco su [[mode]]",
+    "no": "Sett økomodus til [[mode]]",
+    "sv": "Ställ in eco-läge till [[mode]]",
+    "pl": "Ustaw tryb eko na [[mode]]",
+    "ru": "Установите эко-режим на [[mode]]",
+    "ko": "에코 모드를 [[mode]]로 설정하세요.",
+    "ar": "اضبط وضع الاقتصاد على [[mode]]"
   },
   "args": [
     {
       "name": "device",
       "type": "device",
       "title": {
-        "en": "Device"
+        "en": "Device",
+        "nl": "Apparaat",
+        "da": "Enhed",
+        "de": "Gerät",
+        "es": "Dispositivo",
+        "fr": "Appareil",
+        "it": "Dispositivo",
+        "no": "Enhet",
+        "sv": "Enhet",
+        "pl": "Urządzenie",
+        "ru": "Устройство",
+        "ko": "장치",
+        "ar": "الجهاز"
       },
       "filter": "driver_id=pellet_stove"
     },
@@ -18,7 +54,19 @@
       "name": "mode",
       "type": "checkbox",
       "title": {
-        "en": "Mode"
+        "en": "Mode",
+        "nl": "Modus",
+        "da": "Tilstand",
+        "de": "Modus",
+        "es": "Modo",
+        "fr": "Mode",
+        "it": "Modalità",
+        "no": "Modus",
+        "sv": "Läge",
+        "pl": "Tryb",
+        "ru": "Режим",
+        "ko": "모드",
+        "ar": "الوضع"
       }
     }
   ]

@@ -1,0 +1,172 @@
+{
+  "pair": {
+    "title": "Haas+Sohn ovn",
+    "subtitle": "Koble til ovnen din over det lokale nettverket.",
+    "legend": {
+      "connection": "Tilkobling"
+    },
+    "address": {
+      "label": "Enhetsadresse",
+      "placeholder": "192.168.1.120"
+    },
+    "pin": {
+      "label": "PIN-kode",
+      "placeholder": "1234"
+    },
+    "poll": {
+      "label": "Pollingsintervall (sekunder)"
+    },
+    "name": {
+      "label": "Enhetsnavn (valgfritt)",
+      "placeholder": "Haas+Sohn ovn"
+    },
+    "device_name": "Haas+Sohn ovn (__address__)",
+    "test": "Test tilkobling",
+    "add": "Legg til enhet",
+    "status": {
+      "testing": "Tester tilkobling...",
+      "adding": "Legger til enhet...",
+      "success": "Tilkobling vellykket.",
+      "failed": "Tilkobling mislyktes.",
+      "error": "Noe gikk galt. Prøv igjen."
+    },
+    "validation": {
+      "address_required": "Adresse er påkrevd.",
+      "pin_required": "PIN-kode er påkrevd.",
+      "poll_range": "Pollingsintervall må være mellom 5 og 300 sekunder."
+    }
+  },
+  "errors": {
+    "1": {
+      "1": "STB aktivert på grunn av overoppheting",
+      "2": "Sprengt sikring (F1) i hovedenheten",
+      "3": "Kortslutning ved tenning"
+    },
+    "2": {
+      "1": "Brenner er skitten",
+      "2": "Pelletskammeret er tomt",
+      "3": "Feil ved tenning",
+      "4": "Brenner ikke riktig plassert",
+      "5": "Flammens temperatursensor feil",
+      "6": "Matetube / snegle er blokkert",
+      "7": "Sneglemotor feil",
+      "8": "Utelufttilførsel tilkoblet"
+    },
+    "3": {
+      "1": "Røykgassveier / skorstein er skitne",
+      "2": "Oppvarmingskurve satt for lavt",
+      "3": "Romtemperaturføler er på gulvet eller på veggen"
+    },
+    "5": {
+      "1": "Brenner er skitten",
+      "2": "Pelletskammeret er tomt",
+      "3": "Matetube / snegle er blokkert",
+      "4": "Rommet er for tett - nødvendig forbrenningsluft kan ikke komme inn i rommet",
+      "5": "Røykgasstemperatursensor feil",
+      "6": "Sneglemotor feil",
+      "7": "Pelletsens brennverdi er utilstrekkelig"
+    },
+    "6": {
+      "1": "Ildkassedøren er åpen under drift",
+      "2": "Dørkontaktsbryter er ikke i riktig posisjon",
+      "3": "Ødelagt elektrisk kabel til dørkontaktsbryter",
+      "4": "Løs kontakt på dørkontaktsbryter eller hovedenhet"
+    },
+    "7": {
+      "1": "Røykgasstemperatursensor skadet eller frakoblet"
+    },
+    "8": {
+      "1": "Røykgasstemperatursensor feil"
+    },
+    "9": {
+      "1": "Advarsel: Ildkassedøren er åpen under avslutning eller standby"
+    },
+    "11": {
+      "1": "Romtemperaturføler skadet eller frakoblet"
+    },
+    "12": {
+      "1": "Romtemperaturføler feil"
+    },
+    "13": {
+      "1": "Vanntemperaturføler for oppvarming mangler eller er koblet feil"
+    },
+    "14": {
+      "1": "Vanntemperatursensor kortslutning"
+    },
+    "15": {
+      "1": "Feil på avtrekksvifte",
+      "2": "Strømtilførselse til avtrekksvifte avbrutt"
+    },
+    "18": {
+      "1": "Strømbrudd"
+    },
+    "21": {
+      "1": "Brenner er skitten",
+      "2": "Pelletskammeret er tomt",
+      "3": "Matetube / snegle er blokkert",
+      "4": "Rommet er for tett - nødvendig forbrenningsluft kan ikke komme inn i rommet",
+      "5": "Røykgasstemperatursensor feil",
+      "6": "Sneglemotor feil",
+      "7": "Pelletsens brennverdi er utilstrekkelig"
+    },
+    "22": {
+      "1": "Skorsteinsdraget er for svakt",
+      "2": "Skorsteinsdraget er for sterkt",
+      "3": "Brenner er skitten",
+      "4": "Røykrør er for langt (horisontalt)",
+      "5": "Røykgasstemperatursensor feil"
+    },
+    "23": {
+      "1": "Flammens temperatursensor skadet eller frakoblet"
+    },
+    "24": {
+      "1": "Lavere temperatursensor skadet eller frakoblet"
+    },
+    "26": {
+      "1": "Pelletskammeret er tomt",
+      "2": "Brenner ikke riktig plassert",
+      "3": "Brenner er skitten",
+      "4": "Pelletsens brennverdi er utilstrekkelig",
+      "5": "Matetube / snegle er blokkert",
+      "6": "Rommet er for tett - nødvendig forbrenningsluft kan ikke komme inn i rommet",
+      "7": "Flammens temperatursensor feil",
+      "8": "Sneglemotor feil"
+    },
+    "27": {
+      "1": "Brenner er skitten",
+      "2": "Brenner ikke riktig plassert",
+      "3": "Dør tetter ikke"
+    },
+    "28": {
+      "1": "Brenner / forbrenningskammer er skitten",
+      "2": "Lavere temperatursensor feil"
+    },
+    "33": {
+      "1": "Ikke koblet til WLAN",
+      "2": "Feil WLAN PIN-kode",
+      "3": "Ingen IP-adresse mottatt"
+    },
+    "34": {
+      "1": "Ingen internettforbindelse tilgjengelig"
+    },
+    "40": {
+      "1": "Forbrenningskammeret ble ikke rengjort innen det nødvendige intervallet"
+    },
+    "41": {
+      "1": "Vedlikeholdsintervall overskredet (1000 kg)"
+    },
+    "43": {
+      "1": "Flammens temperatursensor feil"
+    },
+    "50": {
+      "1": "Sikkerhetsbatteri utladet"
+    },
+    "60": {
+      "1": "Fabrikkinstillinger ble lastet"
+    },
+    "1000": {
+      "1": "Enheten starter på nytt"
+    },
+    "unknown": "Ukjent feil"
+  }
+}

@@ -1,6 +1,18 @@
 {
   "title": {
-    "en": "Ash limit"
+    "en": "Ash limit",
+    "nl": "Aslimiet",
+    "da": "Askegrænse",
+    "de": "Aschegrenze",
+    "es": "Límite de cenizas",
+    "fr": "Limite de cendres",
+    "it": "Limite cenere",
+    "no": "Askegrense",
+    "sv": "Asklimit",
+    "pl": "Limit popiołu",
+    "ru": "Предел золы",
+    "ko": "회분 한계",
+    "ar": "حد الرماد"
   },
   "insights": true,
   "setable": false,

@@ -1,6 +1,18 @@
 {
   "title": {
-    "en": "Operating hours"
+    "en": "Operating hours",
+    "nl": "Bedrijfsuren",
+    "da": "Driftstimer",
+    "de": "Betriebsstunden",
+    "es": "Horas de funcionamiento",
+    "fr": "Heures de fonctionnement",
+    "it": "Orari di funzionamento",
+    "no": "Driftstimer",
+    "sv": "Drifttimmar",
+    "pl": "Godziny pracy",
+    "ru": "Часы работы",
+    "ko": "운영 시간",
+    "ar": "ساعات التشغيل"
   },
   "insights": true,
   "setable": false,

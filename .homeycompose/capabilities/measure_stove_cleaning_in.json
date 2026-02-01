@@ -1,6 +1,18 @@
 {
   "title": {
-    "en": "Cleaning in"
+    "en": "Cleaning in",
+    "nl": "Schoonmaken in",
+    "da": "Rengøring om",
+    "de": "Reinigung in",
+    "es": "Limpieza en",
+    "fr": "Nettoyage en cours",
+    "it": "Pulizia in corso",
+    "no": "Rengjøring om",
+    "sv": "Rengöring på",
+    "pl": "Czyszczenie za",
+    "ru": "Очистка включена",
+    "ko": "청소 중",
+    "ar": "التنظيف في"
   },
   "insights": true,
   "setable": false,

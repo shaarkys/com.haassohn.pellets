@@ -1,0 +1,172 @@
+{
+  "pair": {
+    "title": "Haas+Sohn kachel",
+    "subtitle": "Verbind met je kachel via het lokale netwerk.",
+    "legend": {
+      "connection": "Verbinding"
+    },
+    "address": {
+      "label": "Apparaatadres",
+      "placeholder": "192.168.1.120"
+    },
+    "pin": {
+      "label": "PIN",
+      "placeholder": "1234"
+    },
+    "poll": {
+      "label": "Polling interval (seconden)"
+    },
+    "name": {
+      "label": "Apparaatnaam (optioneel)",
+      "placeholder": "Haas+Sohn kachel"
+    },
+    "device_name": "Haas+Sohn kachel (__address__)",
+    "test": "Verbinding testen",
+    "add": "Apparaat toevoegen",
+    "status": {
+      "testing": "Verbinding testen...",
+      "adding": "Apparaat toevoegen...",
+      "success": "Verbinding succesvol.",
+      "failed": "Verbinding mislukt.",
+      "error": "Er is iets misgegaan. Probeer het opnieuw."
+    },
+    "validation": {
+      "address_required": "Adres is verplicht.",
+      "pin_required": "PIN is verplicht.",
+      "poll_range": "Polling interval moet tussen 5 en 300 seconden zijn."
+    }
+  },
+  "errors": {
+    "1": {
+      "1": "STB geactiveerd vanwege oververhitting",
+      "2": "Zekering (F1) op de hoofdunit beschadigd",
+      "3": "Kortsluiting bij ontsteking"
+    },
+    "2": {
+      "1": "Brander is vuil",
+      "2": "Pelletreservoir is leeg",
+      "3": "Ontstekingsfout",
+      "4": "Brander zit niet goed vast",
+      "5": "Vlamtemperatuursensor defect",
+      "6": "Valschacht / schroef geblokkeerd",
+      "7": "Augermotor defect",
+      "8": "Externe luchttoevoer van buiten aangesloten"
+    },
+    "3": {
+      "1": "Rookgaswegen / schoorsteen zijn vuil",
+      "2": "Opwarmcurve te laag ingesteld",
+      "3": "Kamertemperatuursensor bevindt zich op de grond of aan de muur"
+    },
+    "5": {
+      "1": "Brander is vuil",
+      "2": "Pelletreservoir is leeg",
+      "3": "Valschacht / schroef geblokkeerd",
+      "4": "Kamer is te luchtdicht - benodigde verbrandingslucht kan de kamer niet in",
+      "5": "Rookgastemperatuursensor defect",
+      "6": "Augermotor defect",
+      "7": "Pellet calorische waarde is onvoldoende"
+    },
+    "6": {
+      "1": "Vuurhaarddeur is open tijdens gebruik",
+      "2": "Deurcontactschakelaar staat niet in de juiste positie",
+      "3": "Kabelbreuk naar de deurcontactschakelaar",
+      "4": "Los contact op de deurcontactschakelaar of hoofdunit"
+    },
+    "7": {
+      "1": "Rookgastemperatuursensor beschadigd of losgekoppeld"
+    },
+    "8": {
+      "1": "Rookgastemperatuursensor defect"
+    },
+    "9": {
+      "1": "Waarschuwing: Vuurhaarddeur is open tijdens uitschakelen of standby"
+    },
+    "11": {
+      "1": "Kamertemperatuursensor beschadigd of losgekoppeld"
+    },
+    "12": {
+      "1": "Kamertemperatuursensor defect"
+    },
+    "13": {
+      "1": "Verwarmingswatertemperatuursensor defect of losgekoppeld"
+    },
+    "14": {
+      "1": "Kortsluiting in de watertemperatuursensor"
+    },
+    "15": {
+      "1": "Uitlaatventilatiefout",
+      "2": "Voeding uitlaatventilator onderbroken"
+    },
+    "18": {
+      "1": "Stroomuitval"
+    },
+    "21": {
+      "1": "Brander is vuil",
+      "2": "Pelletreservoir is leeg",
+      "3": "Valschacht / schroef geblokkeerd",
+      "4": "Kamer is te luchtdicht - benodigde verbrandingslucht kan de kamer niet in",
+      "5": "Rookgastemperatuursensor defect",
+      "6": "Augermotor defect",
+      "7": "Pellet calorische waarde is onvoldoende"
+    },
+    "22": {
+      "1": "Schoorsteentrek is te laag",
+      "2": "Schoorsteentrek is te hoog",
+      "3": "Brander is vuil",
+      "4": "Rookkanaal is te lang (horizontaal)",
+      "5": "Rookgastemperatuursensor defect"
+    },
+    "23": {
+      "1": "Vlamtemperatuursensor beschadigd of losgekoppeld"
+    },
+    "24": {
+      "1": "Lagere temperatuursensor beschadigd of losgekoppeld"
+    },
+    "26": {
+      "1": "Pelletreservoir is leeg",
+      "2": "Brander zit niet goed vast",
+      "3": "Brander is vuil",
+      "4": "Pellet calorische waarde is onvoldoende",
+      "5": "Valschacht / schroef geblokkeerd",
+      "6": "Kamer is te luchtdicht - benodigde verbrandingslucht kan de kamer niet in",
+      "7": "Vlamtemperatuursensor defect",
+      "8": "Augermotor defect"
+    },
+    "27": {
+      "1": "Brander is vuil",
+      "2": "Brander zit niet goed vast",
+      "3": "Deur sluit niet goed af"
+    },
+    "28": {
+      "1": "Brander / verbrandingskamer is vuil",
+      "2": "Lagere temperatuursensor defect"
+    },
+    "33": {
+      "1": "Niet verbonden met WLAN",
+      "2": "Onjuiste WLAN-PIN",
+      "3": "Geen IP-adres ontvangen"
+    },
+    "34": {
+      "1": "Geen internetverbinding beschikbaar"
+    },
+    "40": {
+      "1": "Verbrandingskamer niet binnen het vereiste interval gereinigd"
+    },
+    "41": {
+      "1": "Onderhoudsinterval overschreden (1000 kg)"
+    },
+    "43": {
+      "1": "Vlamtemperatuursensor defect"
+    },
+    "50": {
+      "1": "Back-up batterij ontladen"
+    },
+    "60": {
+      "1": "Fabrieksparameterfouten zijn geladen"
+    },
+    "1000": {
+      "1": "Apparaat herstarten"
+    },
+    "unknown": "Onbekende fout"
+  }
+}

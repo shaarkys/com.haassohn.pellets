@@ -3,8 +3,7 @@
     "title": "Haas+Sohn stove",
     "subtitle": "Connect to your stove over the local network.",
     "legend": {
-      "connection": "Connection",
-      "advanced": "Advanced"
+      "connection": "Connection"
     },
     "address": {
       "label": "Device address",
@@ -21,6 +20,7 @@
       "label": "Device name (optional)",
       "placeholder": "Haas+Sohn stove"
     },
+    "device_name": "Haas+Sohn stove (__address__)",
     "test": "Test connection",
     "add": "Add device",
     "status": {
@@ -34,6 +34,139 @@
       "address_required": "Address is required.",
       "pin_required": "PIN is required.",
       "poll_range": "Polling interval must be between 5 and 300 seconds."
+    }
+  },
+  "errors": {
+    "unknown": "Unknown error",
+    "1": {
+      "1": "STB activated due to overheating",
+      "2": "Damaged fuse (F1) on the main unit",
+      "3": "Ignition short circuit"
+    },
+    "2": {
+      "1": "Burner is dirty",
+      "2": "Pellet hopper is empty",
+      "3": "Ignition fault",
+      "4": "Burner not seated properly",
+      "5": "Flame temperature sensor faulty",
+      "6": "Drop tube / auger blocked",
+      "7": "Auger motor faulty",
+      "8": "External air supply from outside connected"
+    },
+    "3": {
+      "1": "Flue gas paths / chimney are dirty",
+      "2": "Heating curve set too low",
+      "3": "Room temperature sensor is on the floor or on the wall"
+    },
+    "5": {
+      "1": "Burner is dirty",
+      "2": "Pellet hopper is empty",
+      "3": "Drop tube / auger blocked",
+      "4": "Room is too airtight - required combustion air cannot enter the room",
+      "5": "Flue gas temperature sensor faulty",
+      "6": "Auger motor faulty",
+      "7": "Pellet calorific value is insufficient"
+    },
+    "6": {
+      "1": "Firebox door is open during operation",
+      "2": "Door contact switch is not in the correct position",
+      "3": "Broken electrical cable to the door contact switch",
+      "4": "Loose contact on the door contact switch or main unit"
+    },
+    "7": {
+      "1": "Flue gas temperature sensor damaged or disconnected"
+    },
+    "8": {
+      "1": "Flue gas temperature sensor faulty"
+    },
+    "9": {
+      "1": "Warning: Firebox door is open during shutdown or standby"
+    },
+    "11": {
+      "1": "Room temperature sensor damaged or disconnected"
+    },
+    "12": {
+      "1": "Room temperature sensor faulty"
+    },
+    "13": {
+      "1": "Heating water temperature sensor faulty or disconnected"
+    },
+    "14": {
+      "1": "Water temperature sensor short circuit"
+    },
+    "15": {
+      "1": "Exhaust fan fault",
+      "2": "Exhaust fan power supply interrupted"
+    },
+    "18": {
+      "1": "Power outage"
+    },
+    "21": {
+      "1": "Burner is dirty",
+      "2": "Pellet hopper is empty",
+      "3": "Drop tube / auger blocked",
+      "4": "Room is too airtight - required combustion air cannot enter the room",
+      "5": "Flue gas temperature sensor faulty",
+      "6": "Auger motor faulty",
+      "7": "Pellet calorific value is insufficient"
+    },
+    "22": {
+      "1": "Chimney draft is too low",
+      "2": "Chimney draft is too high",
+      "3": "Burner is dirty",
+      "4": "Flue duct is too long (horizontal)",
+      "5": "Flue gas temperature sensor faulty"
+    },
+    "23": {
+      "1": "Flame temperature sensor damaged or disconnected"
+    },
+    "24": {
+      "1": "Lower temperature sensor damaged or disconnected"
+    },
+    "26": {
+      "1": "Pellet hopper is empty",
+      "2": "Burner not seated properly",
+      "3": "Burner is dirty",
+      "4": "Pellet calorific value is insufficient",
+      "5": "Drop tube / auger blocked",
+      "6": "Room is too airtight - required combustion air cannot enter the room",
+      "7": "Flame temperature sensor faulty",
+      "8": "Auger motor faulty"
+    },
+    "27": {
+      "1": "Burner is dirty",
+      "2": "Burner not seated properly",
+      "3": "Door does not seal"
+    },
+    "28": {
+      "1": "Burner / combustion chamber is dirty",
+      "2": "Lower temperature sensor faulty"
+    },
+    "33": {
+      "1": "Not connected to WLAN",
+      "2": "Incorrect WLAN PIN",
+      "3": "No IP address received"
+    },
+    "34": {
+      "1": "No internet connection available"
+    },
+    "40": {
+      "1": "Combustion chamber was not cleaned within the required interval"
+    },
+    "41": {
+      "1": "Maintenance interval exceeded (1000 kg)"
+    },
+    "43": {
+      "1": "Flame temperature sensor faulty"
+    },
+    "50": {
+      "1": "Backup battery discharged"
+    },
+    "60": {
+      "1": "Factory parameter errors were loaded"
+    },
+    "1000": {
+      "1": "Device restart"
     }
   }
 }

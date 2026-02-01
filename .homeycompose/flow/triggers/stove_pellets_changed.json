@@ -1,13 +1,37 @@
 {
   "title": {
-    "en": "Pellets amount changed"
+    "en": "Pellets amount changed",
+    "nl": "Pellet hoeveelheid gewijzigd",
+    "da": "Pillemængde ændret",
+    "de": "Pelletmenge geändert",
+    "es": "Cantidad de pellets cambiada",
+    "fr": "Quantité de pellets modifiée",
+    "it": "Quantità di pellet modificata",
+    "no": "Pelletmengde endret",
+    "sv": "Pelletsmängden har ändrats",
+    "pl": "Ilość pelletu zmieniona",
+    "ru": "Количество пеллет изменено",
+    "ko": "펠릿 양이 변경되었습니다.",
+    "ar": "تم تغيير كمية الكريات"
   },
   "args": [
     {
       "name": "device",
       "type": "device",
       "title": {
-        "en": "Device"
+        "en": "Device",
+        "nl": "Apparaat",
+        "da": "Enhed",
+        "de": "Gerät",
+        "es": "Dispositivo",
+        "fr": "Appareil",
+        "it": "Dispositivo",
+        "no": "Enhet",
+        "sv": "Enhet",
+        "pl": "Urządzenie",
+        "ru": "Устройство",
+        "ko": "장치",
+        "ar": "الجهاز"
       },
       "filter": "driver_id=pellet_stove"
     }
@@ -17,7 +41,19 @@
       "name": "pellets_kg",
       "type": "number",
       "title": {
-        "en": "Pellets (kg)"
+        "en": "Pellets (kg)",
+        "nl": "Pellets (kg)",
+        "da": "Piller (kg)",
+        "de": "Pellets (kg)",
+        "es": "Pellets (kg)",
+        "fr": "Pellets (kg)",
+        "it": "Pellet (kg)",
+        "no": "Pellets (kg)",
+        "sv": "Pellets (kg)",
+        "pl": "Pellet (kg)",
+        "ru": "Пеллеты (кг)",
+        "ko": "펠릿 (kg)",
+        "ar": "الكريات (كجم)"
       }
     }
   ]

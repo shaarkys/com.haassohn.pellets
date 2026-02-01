@@ -1,16 +1,52 @@
 {
   "title": {
-    "en": "Set weekly program to {{enabled}}"
+    "en": "Set weekly program to {{enabled}}",
+    "nl": "Stel het weekprogramma in op {{enabled}}",
+    "da": "Indstil ugentligt program til {{enabled}}",
+    "de": "Wöchentliches Programm auf {{enabled}} setzen",
+    "es": "Establecer programa semanal a {{enabled}}",
+    "fr": "Définir le programme hebdomadaire sur {{enabled}}",
+    "it": "Imposta il programma settimanale su {{enabled}}",
+    "no": "Sett ukentlig program til {{enabled}}",
+    "sv": "Ställ in veckoprogrammet till {{enabled}}",
+    "pl": "Ustaw program tygodniowy na {{enabled}}",
+    "ru": "Установить недельную программу на {{enabled}}",
+    "ko": "주간 프로그램을 {{enabled}}으로 설정하세요.",
+    "ar": "اضبط البرنامج الأسبوعي على {{enabled}}"
   },
   "titleFormatted": {
-    "en": "Set weekly program to [[enabled]]"
+    "en": "Set weekly program to [[enabled]]",
+    "nl": "Stel wekelijks programma in op [[enabled]]",
+    "da": "Indstil ugentligt program til [[enabled]]",
+    "de": "Wöchentliches Programm auf [[enabled]] setzen",
+    "es": "Establecer programa semanal a [[enabled]]",
+    "fr": "Définir le programme hebdomadaire sur [[enabled]]",
+    "it": "Imposta il programma settimanale su [[enabled]]",
+    "no": "Sett ukentlig program til [[enabled]]",
+    "sv": "Ställ in veckoprogram till [[enabled]]",
+    "pl": "Ustaw program tygodniowy na [[enabled]]",
+    "ru": "Установить недельную программу на [[enabled]]",
+    "ko": "주간 프로그램을 [[enabled]]로 설정하세요.",
+    "ar": "اضبط البرنامج الأسبوعي على [[enabled]]"
   },
   "args": [
     {
       "name": "device",
       "type": "device",
       "title": {
-        "en": "Device"
+        "en": "Device",
+        "nl": "Apparaat",
+        "da": "Enhed",
+        "de": "Gerät",
+        "es": "Dispositivo",
+        "fr": "Appareil",
+        "it": "Dispositivo",
+        "no": "Enhet",
+        "sv": "Enhet",
+        "pl": "Urządzenie",
+        "ru": "Устройство",
+        "ko": "장치",
+        "ar": "الجهاز"
       },
       "filter": "driver_id=pellet_stove"
     },
@@ -18,7 +54,19 @@
       "name": "enabled",
       "type": "checkbox",
       "title": {
-        "en": "Enabled"
+        "en": "Enabled",
+        "nl": "Ingeschakeld",
+        "da": "Aktiveret",
+        "de": "Aktiviert",
+        "es": "Habilitado",
+        "fr": "Activé",
+        "it": "Abilitato",
+        "no": "Aktivert",
+        "sv": "Aktiverad",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "사용 설정됨",
+        "ar": "مُمكّن"
       }
     }
   ]

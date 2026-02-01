@@ -1,6 +1,18 @@
 {
   "title": {
-    "en": "Weekly program !"
+    "en": "Weekly program !",
+    "nl": "Wekelijks programma!",
+    "da": "Ugeprogram !",
+    "de": "Wochenprogramm !",
+    "es": "Programa semanal !",
+    "fr": "Programme hebdomadaire !",
+    "it": "Programma settimanale !",
+    "no": "Ukentlig program!",
+    "sv": "Veckoprogram!",
+    "pl": "Program tygodniowy!",
+    "ru": "Еженедельная программа!",
+    "ko": "주간 프로그램!",
+    "ar": "البرنامج الأسبوعي!"
   },
   "insights": true,
   "setable": true,

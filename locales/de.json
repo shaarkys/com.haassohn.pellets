@@ -1,0 +1,172 @@
+{
+  "pair": {
+    "title": "Haas+Sohn Ofen",
+    "subtitle": "Verbinde dich mit deinem Ofen über das lokale Netzwerk.",
+    "legend": {
+      "connection": "Verbindung"
+    },
+    "address": {
+      "label": "Geräteadresse",
+      "placeholder": "192.168.1.120"
+    },
+    "pin": {
+      "label": "PIN",
+      "placeholder": "1234"
+    },
+    "poll": {
+      "label": "Abfrageintervall (Sekunden)"
+    },
+    "name": {
+      "label": "Gerätename (optional)",
+      "placeholder": "Haas+Sohn Ofen"
+    },
+    "device_name": "Haas+Sohn Ofen (__address__)",
+    "test": "Verbindung testen",
+    "add": "Gerät hinzufügen",
+    "status": {
+      "testing": "Verbindung wird getestet...",
+      "adding": "Gerät wird hinzugefügt...",
+      "success": "Verbindung erfolgreich.",
+      "failed": "Verbindung fehlgeschlagen.",
+      "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+    },
+    "validation": {
+      "address_required": "Adresse ist erforderlich.",
+      "pin_required": "PIN ist erforderlich.",
+      "poll_range": "Das Abfrageintervall muss zwischen 5 und 300 Sekunden liegen."
+    }
+  },
+  "errors": {
+    "1": {
+      "1": "STB aktiviert wegen Überhitzung",
+      "2": "Sicherung (F1) an der Haupteinheit beschädigt",
+      "3": "Zündkurzschluss"
+    },
+    "2": {
+      "1": "Brenner ist verschmutzt",
+      "2": "Pelletbehälter ist leer",
+      "3": "Zündfehler",
+      "4": "Brenner nicht richtig eingesetzt",
+      "5": "Flammentemperatursensor defekt",
+      "6": "Fallrohr / Förderschnecke blockiert",
+      "7": "Förderschneckenmotor defekt",
+      "8": "Externe Luftzufuhr von außen angeschlossen"
+    },
+    "3": {
+      "1": "Abgaswege / Schornstein sind verschmutzt",
+      "2": "Heizkurve zu niedrig eingestellt",
+      "3": "Raumtemperatursensor ist auf dem Boden oder an der Wand"
+    },
+    "5": {
+      "1": "Brenner ist verschmutzt",
+      "2": "Pelletbehälter ist leer",
+      "3": "Fallrohr / Förderschnecke blockiert",
+      "4": "Raum ist zu luftdicht - benötigte Verbrennungsluft kann den Raum nicht betreten",
+      "5": "Abgastemperatursensor defekt",
+      "6": "Förderschneckenmotor defekt",
+      "7": "Pelletheizwert unzureichend"
+    },
+    "6": {
+      "1": "Brennraumtür ist während des Betriebs geöffnet",
+      "2": "Türkontaktschalter ist nicht in der richtigen Position",
+      "3": "Gebrochenes elektrisches Kabel zum Türkontaktschalter",
+      "4": "Lockerer Kontakt am Türkontaktschalter oder an der Haupteinheit"
+    },
+    "7": {
+      "1": "Abgastemperatursensor beschädigt oder getrennt"
+    },
+    "8": {
+      "1": "Abgastemperatursensor defekt"
+    },
+    "9": {
+      "1": "Warnung: Brennraumtür ist während des Herunterfahrens oder Standby geöffnet"
+    },
+    "11": {
+      "1": "Raumtemperatursensor beschädigt oder getrennt"
+    },
+    "12": {
+      "1": "Raumtemperatursensor defekt"
+    },
+    "13": {
+      "1": "Heizwassertemperatursensor defekt oder getrennt"
+    },
+    "14": {
+      "1": "Kurzschluss am Wassertemperatursensor"
+    },
+    "15": {
+      "1": "Fehler am Abluftventilator",
+      "2": "Stromversorgung des Abluftventilators unterbrochen"
+    },
+    "18": {
+      "1": "Stromausfall"
+    },
+    "21": {
+      "1": "Brenner ist verschmutzt",
+      "2": "Pelletbehälter ist leer",
+      "3": "Fallrohr / Förderschnecke blockiert",
+      "4": "Raum ist zu luftdicht - benötigte Verbrennungsluft kann den Raum nicht betreten",
+      "5": "Abgastemperatursensor defekt",
+      "6": "Förderschneckenmotor defekt",
+      "7": "Pelletheizwert unzureichend"
+    },
+    "22": {
+      "1": "Schornsteinzug ist zu gering",
+      "2": "Schornsteinzug ist zu hoch",
+      "3": "Brenner ist verschmutzt",
+      "4": "Abgasleitung ist zu lang (horizontal)",
+      "5": "Abgastemperatursensor defekt"
+    },
+    "23": {
+      "1": "Flammentemperatursensor beschädigt oder getrennt"
+    },
+    "24": {
+      "1": "Unterer Temperatursensor beschädigt oder getrennt"
+    },
+    "26": {
+      "1": "Pelletbehälter ist leer",
+      "2": "Brenner nicht richtig eingesetzt",
+      "3": "Brenner ist verschmutzt",
+      "4": "Pelletheizwert unzureichend",
+      "5": "Fallrohr / Förderschnecke blockiert",
+      "6": "Raum ist zu luftdicht - benötigte Verbrennungsluft kann den Raum nicht betreten",
+      "7": "Flammentemperatursensor defekt",
+      "8": "Förderschneckenmotor defekt"
+    },
+    "27": {
+      "1": "Brenner ist verschmutzt",
+      "2": "Brenner nicht richtig eingesetzt",
+      "3": "Tür dichtet nicht ab"
+    },
+    "28": {
+      "1": "Brenner / Brennkammer ist verschmutzt",
+      "2": "Unterer Temperatursensor defekt"
+    },
+    "33": {
+      "1": "Nicht mit WLAN verbunden",
+      "2": "Falscher WLAN-PIN",
+      "3": "Keine IP-Adresse erhalten"
+    },
+    "34": {
+      "1": "Keine Internetverbindung verfügbar"
+    },
+    "40": {
+      "1": "Brennkammer wurde nicht im erforderlichen Intervall gereinigt"
+    },
+    "41": {
+      "1": "Wartungsintervall überschritten (1000 kg)"
+    },
+    "43": {
+      "1": "Flammentemperatursensor defekt"
+    },
+    "50": {
+      "1": "Sicherheitsbatterie entladen"
+    },
+    "60": {
+      "1": "Fabrikparameterfehler wurden geladen"
+    },
+    "1000": {
+      "1": "Geräte-Neustart"
+    },
+    "unknown": "Unbekannter Fehler"
+  }
+}

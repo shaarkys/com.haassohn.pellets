@@ -1,6 +1,18 @@
 {
   "title": {
-    "en": "Eco mode"
+    "en": "Eco mode",
+    "nl": "Eco-modus",
+    "da": "Eco-tilstand",
+    "de": "Eco-Modus",
+    "es": "Modo eco",
+    "fr": "Mode éco",
+    "it": "Modalità Eco",
+    "no": "Øko-modus",
+    "sv": "Eco-läge",
+    "pl": "Tryb eco",
+    "ru": "Экономичный режим",
+    "ko": "에코 모드",
+    "ar": "وضع الاقتصاد"
   },
   "insights": true,
   "setable": true,

@@ -7,10 +7,34 @@
     "local"
   ],
   "name": {
-    "en": "Haas+Sohn Pellets"
+    "en": "Haas+Sohn Pellets",
+    "nl": "Haas+Sohn Pellets",
+    "de": "Haas+Sohn Pellets",
+    "fr": "Haas+Sohn Pellets",
+    "it": "Haas+Sohn Pellets",
+    "sv": "Haas+Sohn Pellets",
+    "no": "Haas+Sohn Pellets",
+    "es": "Haas+Sohn Pellets",
+    "da": "Haas+Sohn Pellets",
+    "ru": "Haas+Sohn Pellets",
+    "pl": "Haas+Sohn Pellets",
+    "ko": "Haas+Sohn Pellets",
+    "ar": "Haas+Sohn Pellets"
   },
   "description": {
-    "en": "Bring your Haas+Sohn pellet stove into Homey and to your home."
+    "en": "Control and monitor Haas+Sohn pellet stoves in Homey.",
+    "nl": "Bedien en monitor Haas+Sohn pelletkachels in Homey.",
+    "de": "Steuern und überwachen Sie Haas+Sohn Pelletöfen in Homey.",
+    "fr": "Contrôle et surveille les poêles à granulés Haas+Sohn dans Homey.",
+    "it": "Controlla e monitora stufe a pellet Haas+Sohn in Homey.",
+    "sv": "Styr och övervaka Haas+Sohn pelletskaminer i Homey.",
+    "no": "Kontroller og overvåk Haas+Sohn pelletovner i Homey.",
+    "es": "Controla y supervisa estufas de pellets Haas+Sohn en Homey.",
+    "da": "Styr og overvåg Haas+Sohn pilleovne i Homey.",
+    "ru": "Управляйте и контролируйте пеллетными печами Haas+Sohn в Homey.",
+    "pl": "Kontroluj i monitoruj piece na pellet Haas+Sohn za pomocą Homey.",
+    "ko": "Homey에서 Haas+Sohn 펠릿 스토브를 제어하고 모니터하세요.",
+    "ar": "التحكم في ومراقبة مواقد الحبيبات Haas+Sohn في Homey."
   },
   "category": [
     "appliances"
@@ -28,6 +52,90 @@
   },
   "tags": {
     "en": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ],
+    "nl": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ],
+    "de": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ],
+    "fr": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ],
+    "it": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ],
+    "sv": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ],
+    "no": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ],
+    "es": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ],
+    "da": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ],
+    "ru": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ],
+    "pl": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ],
+    "ko": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ],
+    "ar": [
       "pellet",
       "heating",
       "haassohn",

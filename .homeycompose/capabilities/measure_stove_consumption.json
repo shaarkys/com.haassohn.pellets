@@ -1,6 +1,18 @@
 {
   "title": {
-    "en": "Consumption"
+    "en": "Consumption",
+    "nl": "Verbruik",
+    "da": "Forbrug",
+    "de": "Verbrauch",
+    "es": "Consumo",
+    "fr": "Consommation",
+    "it": "Consumo",
+    "no": "Forbruk",
+    "sv": "Förbrukning",
+    "pl": "Zużycie",
+    "ru": "Потребление",
+    "ko": "소비량",
+    "ar": "الاستهلاك"
   },
   "insights": true,
   "setable": false,

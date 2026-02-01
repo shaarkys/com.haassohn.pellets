@@ -1,0 +1,172 @@
+{
+  "pair": {
+    "title": "Poêle Haas+Sohn",
+    "subtitle": "Connectez-vous à votre poêle via le réseau local.",
+    "legend": {
+      "connection": "Connexion"
+    },
+    "address": {
+      "label": "Adresse de l'appareil",
+      "placeholder": "192.168.1.120"
+    },
+    "pin": {
+      "label": "Code PIN",
+      "placeholder": "1234"
+    },
+    "poll": {
+      "label": "Intervalle de sondage (secondes)"
+    },
+    "name": {
+      "label": "Nom de l'appareil (facultatif)",
+      "placeholder": "Poêle Haas+Sohn"
+    },
+    "device_name": "Poêle Haas+Sohn (__address__)",
+    "test": "Tester la connexion",
+    "add": "Ajouter un appareil",
+    "status": {
+      "testing": "Connexion en cours de test...",
+      "adding": "Ajout de l'appareil...",
+      "success": "Connexion réussie.",
+      "failed": "Échec de la connexion.",
+      "error": "Un problème est survenu. Veuillez réessayer."
+    },
+    "validation": {
+      "address_required": "L'adresse est requise.",
+      "pin_required": "Le code PIN est requis.",
+      "poll_range": "L'intervalle de sondage doit être compris entre 5 et 300 secondes."
+    }
+  },
+  "errors": {
+    "1": {
+      "1": "STB activé en raison d'une surchauffe",
+      "2": "Fusible endommagé (F1) sur l'unité principale",
+      "3": "Court-circuit d'allumage"
+    },
+    "2": {
+      "1": "Le brûleur est sale",
+      "2": "La trémie à granulés est vide",
+      "3": "Défaut d'allumage",
+      "4": "Brûleur mal positionné",
+      "5": "Capteur de température de la flamme défectueux",
+      "6": "Tuyau de descente / vis sans fin bloqué",
+      "7": "Moteur de la vis sans fin défectueux",
+      "8": "Arrivée d'air extérieur raccordée"
+    },
+    "3": {
+      "1": "Conduits de fumée / cheminée encrassés",
+      "2": "Courbe de chauffe réglée trop basse",
+      "3": "Capteur de température de la pièce sur le sol ou le mur"
+    },
+    "5": {
+      "1": "Le brûleur est sale",
+      "2": "La trémie à granulés est vide",
+      "3": "Tuyau de descente / vis sans fin bloqué",
+      "4": "La pièce est trop étanche - l'air de combustion nécessaire ne peut pas entrer",
+      "5": "Capteur de température des fumées défectueux",
+      "6": "Moteur de la vis sans fin défectueux",
+      "7": "Pouvoir calorifique des granulés insuffisant"
+    },
+    "6": {
+      "1": "Porte du foyer ouverte pendant le fonctionnement",
+      "2": "Interrupteur de contact de porte mal positionné",
+      "3": "Câble électrique cassé allant à l'interrupteur de contact de porte",
+      "4": "Contact lâche sur l'interrupteur de contact de porte ou l'unité principale"
+    },
+    "7": {
+      "1": "Capteur de température des fumées endommagé ou déconnecté"
+    },
+    "8": {
+      "1": "Capteur de température des fumées défectueux"
+    },
+    "9": {
+      "1": "Avertissement : porte du foyer ouverte pendant l'arrêt ou en veille"
+    },
+    "11": {
+      "1": "Capteur de température de la pièce endommagé ou déconnecté"
+    },
+    "12": {
+      "1": "Capteur de température de la pièce défectueux"
+    },
+    "13": {
+      "1": "Capteur de température de l'eau de chauffage défectueux ou déconnecté"
+    },
+    "14": {
+      "1": "Court-circuit du capteur de température de l'eau"
+    },
+    "15": {
+      "1": "Défaut du ventilateur d'extraction",
+      "2": "Alimentation du ventilateur d'extraction interrompue"
+    },
+    "18": {
+      "1": "Panne de courant"
+    },
+    "21": {
+      "1": "Le brûleur est sale",
+      "2": "La trémie à granulés est vide",
+      "3": "Tuyau de descente / vis sans fin bloqué",
+      "4": "La pièce est trop étanche - l'air de combustion nécessaire ne peut pas entrer",
+      "5": "Capteur de température des fumées défectueux",
+      "6": "Moteur de la vis sans fin défectueux",
+      "7": "Pouvoir calorifique des granulés insuffisant"
+    },
+    "22": {
+      "1": "Tirage de la cheminée trop faible",
+      "2": "Tirage de la cheminée trop fort",
+      "3": "Le brûleur est sale",
+      "4": "Conduit de fumée trop long (horizontal)",
+      "5": "Capteur de température des fumées défectueux"
+    },
+    "23": {
+      "1": "Capteur de température de la flamme endommagé ou déconnecté"
+    },
+    "24": {
+      "1": "Capteur de température bas endommagé ou déconnecté"
+    },
+    "26": {
+      "1": "La trémie à granulés est vide",
+      "2": "Brûleur mal positionné",
+      "3": "Le brûleur est sale",
+      "4": "Pouvoir calorifique des granulés insuffisant",
+      "5": "Tuyau de descente / vis sans fin bloqué",
+      "6": "La pièce est trop étanche - l'air de combustion nécessaire ne peut pas entrer",
+      "7": "Capteur de température de la flamme défectueux",
+      "8": "Moteur de la vis sans fin défectueux"
+    },
+    "27": {
+      "1": "Le brûleur est sale",
+      "2": "Brûleur mal positionné",
+      "3": "La porte n'est pas étanche"
+    },
+    "28": {
+      "1": "Brûleur / chambre de combustion encrassé",
+      "2": "Capteur de température bas défectueux"
+    },
+    "33": {
+      "1": "Non connecté au WLAN",
+      "2": "Code PIN WLAN incorrect",
+      "3": "Aucune adresse IP reçue"
+    },
+    "34": {
+      "1": "Pas de connexion Internet disponible"
+    },
+    "40": {
+      "1": "La chambre de combustion n'a pas été nettoyée dans le délai requis"
+    },
+    "41": {
+      "1": "Intervalle de maintenance dépassé (1000 kg)"
+    },
+    "43": {
+      "1": "Capteur de température de la flamme défectueux"
+    },
+    "50": {
+      "1": "Batterie de secours déchargée"
+    },
+    "60": {
+      "1": "Erreurs de paramètres d'usine chargées"
+    },
+    "1000": {
+      "1": "Redémarrage de l'appareil"
+    },
+    "unknown": "Erreur inconnue"
+  }
+}

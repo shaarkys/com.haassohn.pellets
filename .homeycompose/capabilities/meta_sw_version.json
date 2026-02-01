@@ -3,6 +3,18 @@
   "getable": true,
   "setable": false,
   "title": {
-    "en": "Software version"
+    "en": "Software version",
+    "nl": "Softwareversie",
+    "da": "Softwareversion",
+    "de": "Softwareversion",
+    "es": "Versión del software",
+    "fr": "Version du logiciel",
+    "it": "Versione software",
+    "no": "Programvareversjon",
+    "sv": "Programvaruversion",
+    "pl": "Wersja oprogramowania",
+    "ru": "Версия программного обеспечения",
+    "ko": "소프트웨어 버전",
+    "ar": "إصدار البرنامج"
   }
 }

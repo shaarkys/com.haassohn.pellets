@@ -6,6 +6,18 @@
   "setable": false,
   "insights": true,
   "title": {
-    "en": "Zone"
+    "en": "Zone",
+    "nl": "Zone",
+    "da": "Zone",
+    "de": "Zone",
+    "es": "Zona",
+    "fr": "Zone",
+    "it": "Zona",
+    "no": "Sone",
+    "sv": "Zon",
+    "pl": "Strefa",
+    "ru": "Зона",
+    "ko": "존",
+    "ar": "منطقة"
   }
 }

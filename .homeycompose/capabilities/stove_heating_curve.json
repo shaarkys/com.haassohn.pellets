@@ -1,6 +1,18 @@
 {
   "title": {
-    "en": "Heating curve"
+    "en": "Heating curve",
+    "nl": "Verwarmingscurve",
+    "da": "Varmekurve",
+    "de": "Heizkurve",
+    "es": "Curva de calefacción",
+    "fr": "Courbe de chauffage",
+    "it": "Curva di riscaldamento",
+    "no": "Varmekurve",
+    "sv": "Värmekurva",
+    "pl": "Krzywa grzewcza",
+    "ru": "Кривая нагрева",
+    "ko": "난방 곡선",
+    "ar": "منحنى التسخين"
   },
   "preventInsights": true,
   "insights": true,

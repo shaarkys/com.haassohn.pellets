@@ -1,0 +1,172 @@
+{
+  "pair": {
+    "title": "Haas+Sohn komfur",
+    "subtitle": "Forbind til dit komfur over det lokale netværk.",
+    "legend": {
+      "connection": "Forbindelse"
+    },
+    "address": {
+      "label": "Enhedsadresse",
+      "placeholder": "192.168.1.120"
+    },
+    "pin": {
+      "label": "PIN",
+      "placeholder": "1234"
+    },
+    "poll": {
+      "label": "Polling interval (sekunder)"
+    },
+    "name": {
+      "label": "Enhedsnavn (valgfrit)",
+      "placeholder": "Haas+Sohn komfur"
+    },
+    "device_name": "Haas+Sohn komfur (__address__)",
+    "test": "Test forbindelsen",
+    "add": "Tilføj enhed",
+    "status": {
+      "testing": "Tester forbindelsen...",
+      "adding": "Tilføjer enhed...",
+      "success": "Forbindelsen var vellykket.",
+      "failed": "Forbindelsen mislykkedes.",
+      "error": "Noget gik galt. Prøv venligst igen."
+    },
+    "validation": {
+      "address_required": "Adresse er påkrævet.",
+      "pin_required": "PIN er påkrævet.",
+      "poll_range": "Polling intervallet skal være mellem 5 og 300 sekunder."
+    }
+  },
+  "errors": {
+    "1": {
+      "1": "STB aktiveret på grund af overophedning",
+      "2": "Beskadiget sikring (F1) på hovedenheden",
+      "3": "Tændingskortslutning"
+    },
+    "2": {
+      "1": "Brænderen er beskidt",
+      "2": "Pillebeholderen er tom",
+      "3": "Tændingsfejl",
+      "4": "Brænder ikke placeret korrekt",
+      "5": "Flammentemperatursensor defekt",
+      "6": "Faldtæt / snegl blokeret",
+      "7": "Sneglemotor defekt",
+      "8": "Ekstern luftforsyning fra udenfor tilsluttet"
+    },
+    "3": {
+      "1": "Røggaskanaler / skorsten er beskidte",
+      "2": "Opvarmningskurve indstillet for lav",
+      "3": "Rumtemperatursensor er på gulvet eller på væggen"
+    },
+    "5": {
+      "1": "Brænderen er beskidt",
+      "2": "Pillebeholderen er tom",
+      "3": "Faldtæt / snegl blokeret",
+      "4": "Rummet er for lufttæt – nødvendig forbrændingsluft kan ikke komme ind i rummet",
+      "5": "Røggastemperatursensor defekt",
+      "6": "Sneglemotor defekt",
+      "7": "Pillens energiværdi er utilstrækkelig"
+    },
+    "6": {
+      "1": "Ildstedsdør er åben under drift",
+      "2": "Dørkontaktafbrud er ikke i den korrekte position",
+      "3": "Brudt elektrisk kabel til dørkontaktafbrud",
+      "4": "Løs kontakt på dørkontaktafbrud eller hovedenhed"
+    },
+    "7": {
+      "1": "Røggastemperatursensor beskadiget eller afbrudt"
+    },
+    "8": {
+      "1": "Røggastemperatursensor defekt"
+    },
+    "9": {
+      "1": "Advarsel: Ildstedsdør er åben under nedlukning eller standby"
+    },
+    "11": {
+      "1": "Rumtemperatursensor beskadiget eller afbrudt"
+    },
+    "12": {
+      "1": "Rumtemperatursensor defekt"
+    },
+    "13": {
+      "1": "Opvarmningsvandtemperatursensor defekt eller afbrudt"
+    },
+    "14": {
+      "1": "Vandtemperatursensor kortslutning"
+    },
+    "15": {
+      "1": "Udstødningsventilator fejl",
+      "2": "Udstødningsventilatorens strømforsyning afbrudt"
+    },
+    "18": {
+      "1": "Strømafbrydelse"
+    },
+    "21": {
+      "1": "Brænderen er beskidt",
+      "2": "Pillebeholderen er tom",
+      "3": "Faldtæt / snegl blokeret",
+      "4": "Rummet er for lufttæt – nødvendig forbrændingsluft kan ikke komme ind i rummet",
+      "5": "Røggastemperatursensor defekt",
+      "6": "Sneglemotor defekt",
+      "7": "Pillens energiværdi er utilstrækkelig"
+    },
+    "22": {
+      "1": "Skorstenstræk er for lavt",
+      "2": "Skorstenstræk er for højt",
+      "3": "Brænderen er beskidt",
+      "4": "Røgrørsledning er for lang (vandret)",
+      "5": "Røggastemperatursensor defekt"
+    },
+    "23": {
+      "1": "Flammentemperatursensor beskadiget eller afbrudt"
+    },
+    "24": {
+      "1": "Nedre temperatursensor beskadiget eller afbrudt"
+    },
+    "26": {
+      "1": "Pillebeholderen er tom",
+      "2": "Brænder ikke placeret korrekt",
+      "3": "Brænderen er beskidt",
+      "4": "Pillens energiværdi er utilstrækkelig",
+      "5": "Faldtæt / snegl blokeret",
+      "6": "Rummet er for lufttæt – nødvendig forbrændingsluft kan ikke komme ind i rummet",
+      "7": "Flammentemperatursensor defekt",
+      "8": "Sneglemotor defekt"
+    },
+    "27": {
+      "1": "Brænderen er beskidt",
+      "2": "Brænder ikke placeret korrekt",
+      "3": "Dør ikke tætsluttende"
+    },
+    "28": {
+      "1": "Brænder / forbrændingskammeret er beskidt",
+      "2": "Nedre temperatursensor defekt"
+    },
+    "33": {
+      "1": "Ikke tilsluttet til WLAN",
+      "2": "Forkert WLAN PIN",
+      "3": "Ingen IP-adresse modtaget"
+    },
+    "34": {
+      "1": "Ingen internetforbindelse tilgængelig"
+    },
+    "40": {
+      "1": "Forbrændingskammeret blev ikke rengjort inden for det krævede interval"
+    },
+    "41": {
+      "1": "Vedligeholdelsesinterval overskredet (1000 kg)"
+    },
+    "43": {
+      "1": "Flammentemperatursensor defekt"
+    },
+    "50": {
+      "1": "Backup-batteri afladet"
+    },
+    "60": {
+      "1": "Fabrikparameterfejl blev indlæst"
+    },
+    "1000": {
+      "1": "Enhedsgenstart"
+    },
+    "unknown": "Ukendt fejl"
+  }
+}

@@ -1,6 +1,18 @@
 {
   "title": {
-    "en": "Eco mode editable"
+    "en": "Eco mode editable",
+    "nl": "Eco-modus bewerkbaar",
+    "da": "Øko-tilstand redigerbar",
+    "de": "Eco-Modus bearbeitbar",
+    "es": "Modo eco editable",
+    "fr": "Mode éco modifiable",
+    "it": "Modalità Eco modificabile",
+    "no": "Øko-modus redigerbar",
+    "sv": "Ekonomiläge redigerbart",
+    "pl": "Tryb eko edytowalny",
+    "ru": "Редактируемый эко-режим",
+    "ko": "에코 모드 편집 가능",
+    "ar": "وضع الاقتصاد قابل للتعديل"
   },
   "insights": false,
   "setable": false,

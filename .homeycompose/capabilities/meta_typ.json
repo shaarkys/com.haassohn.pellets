@@ -3,6 +3,18 @@
   "getable": true,
   "setable": false,
   "title": {
-    "en": "Device type"
+    "en": "Device type",
+    "nl": "Apparaattype",
+    "da": "Enhedstype",
+    "de": "Gerätetyp",
+    "es": "Tipo de dispositivo",
+    "fr": "Type d'appareil",
+    "it": "Tipo di dispositivo",
+    "no": "Enhetstype",
+    "sv": "Enhetstyp",
+    "pl": "Typ urządzenia",
+    "ru": "Тип устройства",
+    "ko": "장치 유형",
+    "ar": "نوع الجهاز"
   }
 }

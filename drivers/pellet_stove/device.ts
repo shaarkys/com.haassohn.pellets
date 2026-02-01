@@ -21,6 +21,7 @@ const STATE_TO_CAPABILITY: Record<string, string> = {
   cleaning_in: 'measure_stove_cleaning_in',
   maintenance_in: 'measure_stove_maintenance_in',
   consumption: 'measure_stove_consumption',
+  pellets: 'stove_pellets_actual',
   eco_mode: 'stove_eco_mode',
   wprg: 'stove_weekprogram_active',
   ht_char: 'stove_heating_curve',
@@ -31,134 +32,134 @@ const STATE_TO_CAPABILITY: Record<string, string> = {
 
 const ERROR_CODE_MAP: Record<number, string[]> = {
   1: [
-    'STB activated due to overheating',
-    'Damaged fuse (F1) on the main unit',
-    'Ignition short circuit',
+    'errors.1.1',
+    'errors.1.2',
+    'errors.1.3',
   ],
   2: [
-    'Burner is dirty',
-    'Pellet hopper is empty',
-    'Ignition fault',
-    'Burner not seated properly',
-    'Flame temperature sensor faulty',
-    'Drop tube / auger blocked',
-    'Auger motor faulty',
-    'External air supply from outside connected',
+    'errors.2.1',
+    'errors.2.2',
+    'errors.2.3',
+    'errors.2.4',
+    'errors.2.5',
+    'errors.2.6',
+    'errors.2.7',
+    'errors.2.8',
   ],
   3: [
-    'Flue gas paths / chimney are dirty',
-    'Heating curve set too low',
-    'Room temperature sensor is on the floor or on the wall',
+    'errors.3.1',
+    'errors.3.2',
+    'errors.3.3',
   ],
   5: [
-    'Burner is dirty',
-    'Pellet hopper is empty',
-    'Drop tube / auger blocked',
-    'Room is too airtight - required combustion air cannot enter the room',
-    'Flue gas temperature sensor faulty',
-    'Auger motor faulty',
-    'Pellet calorific value is insufficient',
+    'errors.5.1',
+    'errors.5.2',
+    'errors.5.3',
+    'errors.5.4',
+    'errors.5.5',
+    'errors.5.6',
+    'errors.5.7',
   ],
   6: [
-    'Firebox door is open during operation',
-    'Door contact switch is not in the correct position',
-    'Broken electrical cable to the door contact switch',
-    'Loose contact on the door contact switch or main unit',
+    'errors.6.1',
+    'errors.6.2',
+    'errors.6.3',
+    'errors.6.4',
   ],
   7: [
-    'Flue gas temperature sensor damaged or disconnected',
+    'errors.7.1',
   ],
   8: [
-    'Flue gas temperature sensor faulty',
+    'errors.8.1',
   ],
   9: [
-    'Warning: Firebox door is open during shutdown or standby',
+    'errors.9.1',
   ],
   11: [
-    'Room temperature sensor damaged or disconnected',
+    'errors.11.1',
   ],
   12: [
-    'Room temperature sensor faulty',
+    'errors.12.1',
   ],
   13: [
-    'Heating water temperature sensor faulty or disconnected',
+    'errors.13.1',
   ],
   14: [
-    'Water temperature sensor short circuit',
+    'errors.14.1',
   ],
   15: [
-    'Exhaust fan fault',
-    'Exhaust fan power supply interrupted',
+    'errors.15.1',
+    'errors.15.2',
   ],
   18: [
-    'Power outage',
+    'errors.18.1',
   ],
   21: [
-    'Burner is dirty',
-    'Pellet hopper is empty',
-    'Drop tube / auger blocked',
-    'Room is too airtight - required combustion air cannot enter the room',
-    'Flue gas temperature sensor faulty',
-    'Auger motor faulty',
-    'Pellet calorific value is insufficient',
+    'errors.21.1',
+    'errors.21.2',
+    'errors.21.3',
+    'errors.21.4',
+    'errors.21.5',
+    'errors.21.6',
+    'errors.21.7',
   ],
   22: [
-    'Chimney draft is too low',
-    'Chimney draft is too high',
-    'Burner is dirty',
-    'Flue duct is too long (horizontal)',
-    'Flue gas temperature sensor faulty',
+    'errors.22.1',
+    'errors.22.2',
+    'errors.22.3',
+    'errors.22.4',
+    'errors.22.5',
   ],
   23: [
-    'Flame temperature sensor damaged or disconnected',
+    'errors.23.1',
   ],
   24: [
-    'Lower temperature sensor damaged or disconnected',
+    'errors.24.1',
   ],
   26: [
-    'Pellet hopper is empty',
-    'Burner not seated properly',
-    'Burner is dirty',
-    'Pellet calorific value is insufficient',
-    'Drop tube / auger blocked',
-    'Room is too airtight - required combustion air cannot enter the room',
-    'Flame temperature sensor faulty',
-    'Auger motor faulty',
+    'errors.26.1',
+    'errors.26.2',
+    'errors.26.3',
+    'errors.26.4',
+    'errors.26.5',
+    'errors.26.6',
+    'errors.26.7',
+    'errors.26.8',
   ],
   27: [
-    'Burner is dirty',
-    'Burner not seated properly',
-    'Door does not seal',
+    'errors.27.1',
+    'errors.27.2',
+    'errors.27.3',
   ],
   28: [
-    'Burner / combustion chamber is dirty',
-    'Lower temperature sensor faulty',
+    'errors.28.1',
+    'errors.28.2',
   ],
   33: [
-    'Not connected to WLAN',
-    'Incorrect WLAN PIN',
-    'No IP address received',
+    'errors.33.1',
+    'errors.33.2',
+    'errors.33.3',
   ],
   34: [
-    'No internet connection available',
+    'errors.34.1',
   ],
   40: [
-    'Combustion chamber was not cleaned within the required interval',
+    'errors.40.1',
   ],
   41: [
-    'Maintenance interval exceeded (1000 kg)',
+    'errors.41.1',
   ],
   43: [
-    'Flame temperature sensor faulty',
+    'errors.43.1',
   ],
   50: [
-    'Backup battery discharged',
+    'errors.50.1',
   ],
   60: [
-    'Factory parameter errors were loaded',
+    'errors.60.1',
   ],
   1000: [
-    'Device restart',
+    'errors.1000.1',
   ],
 };
 
@@ -173,6 +174,7 @@ const CAPABILITY_TYPES: Record<string, CapabilityType> = {
   measure_stove_maintenance_in: 'number',
   measure_stove_consumption: 'number',
   measure_stove_pellets: 'number',
+  stove_pellets_actual: 'number',
   stove_heating_curve: 'number',
   stove_ignitions: 'number',
   stove_on_time: 'number',
@@ -300,7 +302,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     await this.ensureCapabilityAbsent('meta_hw_version');
     await this.ensureCapabilityAbsent('meta_sw_version');
     await this.ensureCapabilityAbsent('meta_typ');
-    await this.ensureCapabilityAbsent('stove_pellets_actual');
+    await this.ensureCapabilityPresent('stove_pellets_actual');
   }
 
   private async migrateCapabilityIds() {
@@ -392,6 +394,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
 
     if (this.pelletsRemainingKg !== null) {
       void this.setCapabilityValueIfChanged('measure_stove_pellets', this.pelletsRemainingKg);
+      void this.setCapabilityValueIfChanged('stove_pellets_actual', this.pelletsRemainingKg);
     }
   }
 
@@ -432,6 +435,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
       await this.setStoreValue('pelletsLastConsumptionKg', consumptionKg);
       if (this.pelletsRemainingKg !== null) {
         await this.setCapabilityValueIfChanged('measure_stove_pellets', this.pelletsRemainingKg);
+        await this.setCapabilityValueIfChanged('stove_pellets_actual', this.pelletsRemainingKg);
       }
       return;
     }
@@ -478,6 +482,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     this.pelletsRemainingKg = normalized;
     await this.setStoreValue('pelletsRemainingKg', normalized);
     await this.setCapabilityValueIfChanged('measure_stove_pellets', normalized);
+    await this.setCapabilityValueIfChanged('stove_pellets_actual', normalized);
     if (updateSetting) {
       await this.updatePelletsSetting(normalized);
     }
@@ -641,7 +646,10 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     }
 
     const errorCode = formatErrorCode(errorNumber);
-    const errorMessage = formatErrorMessage(errorCode, ERROR_CODE_MAP[errorNumber]);
+    const errorCauses = (ERROR_CODE_MAP[errorNumber] ?? [])
+      .map((key) => this.homey.__(key))
+      .filter((cause) => typeof cause === 'string' && cause.trim().length > 0);
+    const errorMessage = formatErrorMessage(errorCode, errorCauses, this.homey.__('errors.unknown'));
 
     await this.setCapabilityValueIfChanged('stove_error_state', true);
 
@@ -920,9 +928,9 @@ function formatErrorCode(errorNumber: number): string {
   return `F${String(errorNumber).padStart(3, '0')}`;
 }
 
-function formatErrorMessage(errorCode: string, causes?: string[]): string {
+function formatErrorMessage(errorCode: string, causes: string[], unknownMessage: string): string {
   if (!causes || causes.length === 0) {
-    return `${errorCode}: Unknown error`;
+    return `${errorCode}: ${unknownMessage}`;
   }
   return `${errorCode}: ${causes.join(' / ')}`;
 }

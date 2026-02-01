@@ -1,0 +1,172 @@
+{
+  "pair": {
+    "title": "Stufa Haas+Sohn",
+    "subtitle": "Connettiti alla tua stufa tramite la rete locale.",
+    "legend": {
+      "connection": "Connessione"
+    },
+    "address": {
+      "label": "Indirizzo dispositivo",
+      "placeholder": "192.168.1.120"
+    },
+    "pin": {
+      "label": "PIN",
+      "placeholder": "1234"
+    },
+    "poll": {
+      "label": "Intervallo di polling (secondi)"
+    },
+    "name": {
+      "label": "Nome dispositivo (opzionale)",
+      "placeholder": "Stufa Haas+Sohn"
+    },
+    "device_name": "Stufa Haas+Sohn (__address__)",
+    "test": "Test connessione",
+    "add": "Aggiungi dispositivo",
+    "status": {
+      "testing": "Test connessione in corso...",
+      "adding": "Aggiunta del dispositivo in corso...",
+      "success": "Connessione riuscita.",
+      "failed": "Connessione fallita.",
+      "error": "Qualcosa è andato storto. Per favore riprova."
+    },
+    "validation": {
+      "address_required": "Indirizzo richiesto.",
+      "pin_required": "PIN richiesto.",
+      "poll_range": "L'intervallo di polling deve essere tra 5 e 300 secondi."
+    }
+  },
+  "errors": {
+    "1": {
+      "1": "STB attivato a causa di surriscaldamento",
+      "2": "Fusibile danneggiato (F1) sull'unità principale",
+      "3": "Corto circuito di accensione"
+    },
+    "2": {
+      "1": "Bruciatore sporco",
+      "2": "Serbatoio pellet vuoto",
+      "3": "Guasto accensione",
+      "4": "Bruciatore non posizionato correttamente",
+      "5": "Sensore temperatura fiamma difettoso",
+      "6": "Tubo di caduta / coclea bloccata",
+      "7": "Motore coclea difettoso",
+      "8": "Aspirazione aria esterna collegata"
+    },
+    "3": {
+      "1": "Percorsi fumi / camino sporchi",
+      "2": "Curva di riscaldamento impostata troppo bassa",
+      "3": "Sensore temperatura ambiente a terra o a parete"
+    },
+    "5": {
+      "1": "Bruciatore sporco",
+      "2": "Serbatoio pellet vuoto",
+      "3": "Tubo di caduta / coclea bloccata",
+      "4": "Stanza troppo ermetica - l'aria di combustione necessaria non può entrare nella stanza",
+      "5": "Sensore temperatura fumi difettoso",
+      "6": "Motore coclea difettoso",
+      "7": "Valore calorifico pellet insufficiente"
+    },
+    "6": {
+      "1": "Porta del focolare aperta durante il funzionamento",
+      "2": "Interruttore contatto porta non in posizione corretta",
+      "3": "Cavo elettrico rotto al contatto porta",
+      "4": "Contatto allentato sull'interruttore porta o unità principale"
+    },
+    "7": {
+      "1": "Sensore temperatura fumi danneggiato o sconnesso"
+    },
+    "8": {
+      "1": "Sensore temperatura fumi difettoso"
+    },
+    "9": {
+      "1": "Avviso: Porta del focolare aperta durante spegnimento o standby"
+    },
+    "11": {
+      "1": "Sensore temperatura ambiente danneggiato o sconnesso"
+    },
+    "12": {
+      "1": "Sensore temperatura ambiente difettoso"
+    },
+    "13": {
+      "1": "Sensore temperatura acqua riscaldamento difettoso o sconnesso"
+    },
+    "14": {
+      "1": "Corto circuito sensore temperatura acqua"
+    },
+    "15": {
+      "1": "Guasto ventilatore fumi",
+      "2": "Alimentazione ventilatore fumi interrotta"
+    },
+    "18": {
+      "1": "Interruzione di corrente"
+    },
+    "21": {
+      "1": "Bruciatore sporco",
+      "2": "Serbatoio pellet vuoto",
+      "3": "Tubo di caduta / coclea bloccata",
+      "4": "Stanza troppo ermetica - l'aria di combustione necessaria non può entrare nella stanza",
+      "5": "Sensore temperatura fumi difettoso",
+      "6": "Motore coclea difettoso",
+      "7": "Valore calorifico pellet insufficiente"
+    },
+    "22": {
+      "1": "Tiraggio camino troppo basso",
+      "2": "Tiraggio camino troppo alto",
+      "3": "Bruciatore sporco",
+      "4": "Condotto fumi troppo lungo (orizzontale)",
+      "5": "Sensore temperatura fumi difettoso"
+    },
+    "23": {
+      "1": "Sensore temperatura fiamma danneggiato o sconnesso"
+    },
+    "24": {
+      "1": "Sensore temperatura inferiore danneggiato o sconnesso"
+    },
+    "26": {
+      "1": "Serbatoio pellet vuoto",
+      "2": "Bruciatore non posizionato correttamente",
+      "3": "Bruciatore sporco",
+      "4": "Valore calorifico pellet insufficiente",
+      "5": "Tubo di caduta / coclea bloccata",
+      "6": "Stanza troppo ermetica - l'aria di combustione necessaria non può entrare nella stanza",
+      "7": "Sensore temperatura fiamma difettoso",
+      "8": "Motore coclea difettoso"
+    },
+    "27": {
+      "1": "Bruciatore sporco",
+      "2": "Bruciatore non posizionato correttamente",
+      "3": "Porta non sigilla"
+    },
+    "28": {
+      "1": "Bruciatore / camera di combustione sporca",
+      "2": "Sensore temperatura inferiore difettoso"
+    },
+    "33": {
+      "1": "Non connesso al WLAN",
+      "2": "PIN WLAN errato",
+      "3": "Nessun indirizzo IP ricevuto"
+    },
+    "34": {
+      "1": "Nessuna connessione internet disponibile"
+    },
+    "40": {
+      "1": "Camera di combustione non pulita entro l'intervallo richiesto"
+    },
+    "41": {
+      "1": "Intervallo di manutenzione superato (1000 kg)"
+    },
+    "43": {
+      "1": "Sensore temperatura fiamma difettoso"
+    },
+    "50": {
+      "1": "Batteria di riserva scarica"
+    },
+    "60": {
+      "1": "Caricati errori nei parametri di fabbrica"
+    },
+    "1000": {
+      "1": "Riavvio dispositivo"
+    },
+    "unknown": "Errore sconosciuto"
+  }
+}

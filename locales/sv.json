@@ -1,0 +1,172 @@
+{
+  "pair": {
+    "title": "Haas+Sohn spis",
+    "subtitle": "Anslut till din spis över det lokala nätverket.",
+    "legend": {
+      "connection": "Anslutning"
+    },
+    "address": {
+      "label": "Enhetsadress",
+      "placeholder": "192.168.1.120"
+    },
+    "pin": {
+      "label": "PIN",
+      "placeholder": "1234"
+    },
+    "poll": {
+      "label": "Pollingintervall (sekunder)"
+    },
+    "name": {
+      "label": "Enhetsnamn (valfritt)",
+      "placeholder": "Haas+Sohn spis"
+    },
+    "device_name": "Haas+Sohn spis (__address__)",
+    "test": "Testa anslutning",
+    "add": "Lägg till enhet",
+    "status": {
+      "testing": "Testar anslutning...",
+      "adding": "Lägger till enhet...",
+      "success": "Anslutningen lyckades.",
+      "failed": "Anslutningen misslyckades.",
+      "error": "Något gick fel. Försök igen."
+    },
+    "validation": {
+      "address_required": "Adress är obligatorisk.",
+      "pin_required": "PIN är obligatorisk.",
+      "poll_range": "Pollingintervall måste vara mellan 5 och 300 sekunder."
+    }
+  },
+  "errors": {
+    "1": {
+      "1": "STB aktiverad på grund av överhettning",
+      "2": "Skadad säkring (F1) på huvudenheten",
+      "3": "Tändningskortslutning"
+    },
+    "2": {
+      "1": "Brännaren är smutsig",
+      "2": "Pelletbehållaren är tom",
+      "3": "Tändningsfel",
+      "4": "Brännaren sitter inte ordentligt",
+      "5": "Flamsensortemperatur är felaktig",
+      "6": "Fallrör/skruv blockerad",
+      "7": "Skruvmotor felaktig",
+      "8": "Extern lufttillförsel från utsidan ansluten"
+    },
+    "3": {
+      "1": "Rökgaskanaler/skorsten är smutsiga",
+      "2": "Värmekurva inställd för lågt",
+      "3": "Rumstemperaturgivare ligger på golvet eller på väggen"
+    },
+    "5": {
+      "1": "Brännaren är smutsig",
+      "2": "Pelletbehållaren är tom",
+      "3": "Fallrör/skruv blockerad",
+      "4": "Rummet är för lufttätt - nödvändig förbränningsluft kan inte komma in i rummet",
+      "5": "Flödesgassensortemperatur är felaktig",
+      "6": "Skruvmotor felaktig",
+      "7": "Pelletens kalorivärde är otillräckligt"
+    },
+    "6": {
+      "1": "Förbränningskammarens dörr är öppen under drift",
+      "2": "Dörrkontaktströmbrytaren är inte i rätt position",
+      "3": "Trasig elkabel till dörrkontaktströmbrytaren",
+      "4": "Dålig kontakt på dörrkontaktströmbrytaren eller huvudenheten"
+    },
+    "7": {
+      "1": "Flödesgassensortemperatur är skadad eller frånkopplad"
+    },
+    "8": {
+      "1": "Flödesgassensortemperatur är felaktig"
+    },
+    "9": {
+      "1": "Varning: Förbränningskammarens dörr är öppen under avstängning eller standby"
+    },
+    "11": {
+      "1": "Rumstemperaturgivare är skadad eller frånkopplad"
+    },
+    "12": {
+      "1": "Rumstemperaturgivare felaktig"
+    },
+    "13": {
+      "1": "Värmvatten sensortemperatur är felaktig eller frånkopplad"
+    },
+    "14": {
+      "1": "Vattentemperatur sensorkortslutning"
+    },
+    "15": {
+      "1": "Avgasfläkt fel",
+      "2": "Matning till avgasfläkt avbruten"
+    },
+    "18": {
+      "1": "Strömavbrott"
+    },
+    "21": {
+      "1": "Brännaren är smutsig",
+      "2": "Pelletbehållaren är tom",
+      "3": "Fallrör/skruv blockerad",
+      "4": "Rummet är för lufttätt - nödvändig förbränningsluft kan inte komma in i rummet",
+      "5": "Flödesgassensortemperatur är felaktig",
+      "6": "Skruvmotor felaktig",
+      "7": "Pelletens kalorivärde är otillräckligt"
+    },
+    "22": {
+      "1": "Skorstensdrag är för lågt",
+      "2": "Skorstensdrag är för högt",
+      "3": "Brännaren är smutsig",
+      "4": "Rökgasledning är för lång (horisontell)",
+      "5": "Flödesgassensortemperatur är felaktig"
+    },
+    "23": {
+      "1": "Flamsensortemperatur är skadad eller frånkopplad"
+    },
+    "24": {
+      "1": "Lägsta sensortemperatur är skadad eller frånkopplad"
+    },
+    "26": {
+      "1": "Pelletbehållaren är tom",
+      "2": "Brännaren sitter inte ordentligt",
+      "3": "Brännaren är smutsig",
+      "4": "Pelletens kalorivärde är otillräckligt",
+      "5": "Fallrör/skruv blockerad",
+      "6": "Rummet är för lufttätt - nödvändig förbränningsluft kan inte komma in i rummet",
+      "7": "Flamsensortemperatur är felaktig",
+      "8": "Skruvmotor felaktig"
+    },
+    "27": {
+      "1": "Brännaren är smutsig",
+      "2": "Brännaren sitter inte ordentligt",
+      "3": "Dörren tätar inte"
+    },
+    "28": {
+      "1": "Brännare / förbränningskammare är smutsig",
+      "2": "Lägre sensortemperatur är felaktig"
+    },
+    "33": {
+      "1": "Inte ansluten till WLAN",
+      "2": "Felaktig WLAN-PIN",
+      "3": "Ingen IP-adress mottagen"
+    },
+    "34": {
+      "1": "Ingen internetuppkoppling tillgänglig"
+    },
+    "40": {
+      "1": "Förbränningskammaren rengjordes inte inom det nödvändiga intervallet"
+    },
+    "41": {
+      "1": "Underhållsintervallet har överskridits (1000 kg)"
+    },
+    "43": {
+      "1": "Flamsensortemperatur är felaktig"
+    },
+    "50": {
+      "1": "Backup-batteri urladdat"
+    },
+    "60": {
+      "1": "Fabriksparametrar laddades"
+    },
+    "1000": {
+      "1": "Enhetsomstart"
+    },
+    "unknown": "Okänt fel"
+  }
+}

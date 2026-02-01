@@ -1,0 +1,172 @@
+{
+  "pair": {
+    "title": "Piec Haas+Sohn",
+    "subtitle": "Połącz się z piecem przez lokalną sieć.",
+    "legend": {
+      "connection": "Połączenie"
+    },
+    "address": {
+      "label": "Adres urządzenia",
+      "placeholder": "192.168.1.120"
+    },
+    "pin": {
+      "label": "PIN",
+      "placeholder": "1234"
+    },
+    "poll": {
+      "label": "Częstotliwość odpytywania (sekundy)"
+    },
+    "name": {
+      "label": "Nazwa urządzenia (opcjonalnie)",
+      "placeholder": "Piec Haas+Sohn"
+    },
+    "device_name": "Piec Haas+Sohn (__address__)",
+    "test": "Testuj połączenie",
+    "add": "Dodaj urządzenie",
+    "status": {
+      "testing": "Testowanie połączenia...",
+      "adding": "Dodawanie urządzenia...",
+      "success": "Połączenie udane.",
+      "failed": "Połączenie nie powiodło się.",
+      "error": "Coś poszło nie tak. Spróbuj ponownie."
+    },
+    "validation": {
+      "address_required": "Adres jest wymagany.",
+      "pin_required": "PIN jest wymagany.",
+      "poll_range": "Częstotliwość odpytywania musi mieścić się w zakresie od 5 do 300 sekund."
+    }
+  },
+  "errors": {
+    "1": {
+      "1": "Aktywacja STB z powodu przegrzania",
+      "2": "Uszkodzenie bezpiecznika (F1) w jednostce głównej",
+      "3": "Zwarcie zapłonu"
+    },
+    "2": {
+      "1": "Palnik jest brudny",
+      "2": "Zasobnik na pelety jest pusty",
+      "3": "Błąd zapłonu",
+      "4": "Palnik nie jest prawidłowo osadzony",
+      "5": "Uszkodzony czujnik temperatury płomienia",
+      "6": "Zablokowana rura zrzutowa / podajnik ślimakowy",
+      "7": "Uszkodzony silnik podajnika",
+      "8": "Podłączony zewnętrzny dopływ powietrza z zewnątrz"
+    },
+    "3": {
+      "1": "Zanieczyszczony przewód spalinowy / komin",
+      "2": "Krzywa grzewcza ustawiona zbyt nisko",
+      "3": "Czujnik temperatury pomieszczenia znajduje się na podłodze lub ścianie"
+    },
+    "5": {
+      "1": "Palnik jest brudny",
+      "2": "Zasobnik na pelety jest pusty",
+      "3": "Zablokowana rura zrzutowa / podajnik ślimakowy",
+      "4": "Pomieszczenie jest zbyt szczelne - wymagane powietrze do spalania nie może się dostać do pomieszczenia",
+      "5": "Uszkodzony czujnik temperatury spalin",
+      "6": "Uszkodzony silnik podajnika",
+      "7": "Nieodpowiednia wartość opałowa peletu"
+    },
+    "6": {
+      "1": "Drzwi komory ogniowej otwarte podczas pracy",
+      "2": "Wyłącznik kontaktowy drzwi nie jest w prawidłowej pozycji",
+      "3": "Uszkodzony przewód elektryczny do wyłącznika kontaktowego drzwi",
+      "4": "Luźny kontakt na wyłączniku kontaktowym drzwi lub w jednostce głównej"
+    },
+    "7": {
+      "1": "Uszkodzony lub odłączony czujnik temperatury spalin"
+    },
+    "8": {
+      "1": "Uszkodzony czujnik temperatury spalin"
+    },
+    "9": {
+      "1": "Ostrzeżenie: Drzwi komory ogniowej otwarte w trakcie wyłączania lub w trybie gotowości"
+    },
+    "11": {
+      "1": "Uszkodzony lub odłączony czujnik temperatury pomieszczenia"
+    },
+    "12": {
+      "1": "Uszkodzony czujnik temperatury pomieszczenia"
+    },
+    "13": {
+      "1": "Uszkodzony lub odłączony czujnik temperatury wody grzewczej"
+    },
+    "14": {
+      "1": "Zwarcie czujnika temperatury wody"
+    },
+    "15": {
+      "1": "Błąd wentylatora spalin",
+      "2": "Przerwana dostawa energii do wentylatora spalin"
+    },
+    "18": {
+      "1": "Przerwa w dostawie prądu"
+    },
+    "21": {
+      "1": "Palnik jest brudny",
+      "2": "Zasobnik na pelety jest pusty",
+      "3": "Zablokowana rura zrzutowa / podajnik ślimakowy",
+      "4": "Pomieszczenie jest zbyt szczelne - wymagane powietrze do spalania nie może się dostać do pomieszczenia",
+      "5": "Uszkodzony czujnik temperatury spalin",
+      "6": "Uszkodzony silnik podajnika",
+      "7": "Nieodpowiednia wartość opałowa peletu"
+    },
+    "22": {
+      "1": "Zbyt niski ciąg kominowy",
+      "2": "Zbyt wysoki ciąg kominowy",
+      "3": "Palnik jest brudny",
+      "4": "Zbyt długi przewód spalinowy (poziomy)",
+      "5": "Uszkodzony czujnik temperatury spalin"
+    },
+    "23": {
+      "1": "Uszkodzony lub odłączony czujnik temperatury płomienia"
+    },
+    "24": {
+      "1": "Uszkodzony lub odłączony dolny czujnik temperatury"
+    },
+    "26": {
+      "1": "Zasobnik na pelety jest pusty",
+      "2": "Palnik nie jest prawidłowo osadzony",
+      "3": "Palnik jest brudny",
+      "4": "Nieodpowiednia wartość opałowa peletu",
+      "5": "Zablokowana rura zrzutowa / podajnik ślimakowy",
+      "6": "Pomieszczenie jest zbyt szczelne - wymagane powietrze do spalania nie może się dostać do pomieszczenia",
+      "7": "Uszkodzony czujnik temperatury płomienia",
+      "8": "Uszkodzony silnik podajnika"
+    },
+    "27": {
+      "1": "Palnik jest brudny",
+      "2": "Palnik nie jest prawidłowo osadzony",
+      "3": "Drzwi nie są szczelne"
+    },
+    "28": {
+      "1": "Brudny palnik / komora spalania",
+      "2": "Uszkodzony dolny czujnik temperatury"
+    },
+    "33": {
+      "1": "Nie podłączono do WLAN",
+      "2": "Nieprawidłowy PIN WLAN",
+      "3": "Nie otrzymano adresu IP"
+    },
+    "34": {
+      "1": "Brak dostępnego połączenia z internetem"
+    },
+    "40": {
+      "1": "Komora spalania nie została wyczyszczona w wymaganym okresie"
+    },
+    "41": {
+      "1": "Przekroczony interwał konserwacji (1000 kg)"
+    },
+    "43": {
+      "1": "Uszkodzony czujnik temperatury płomienia"
+    },
+    "50": {
+      "1": "Rozładowana bateria zapasowa"
+    },
+    "60": {
+      "1": "Załadowano błędy parametrów fabrycznych"
+    },
+    "1000": {
+      "1": "Restart urządzenia"
+    },
+    "unknown": "Nieznany błąd"
+  }
+}

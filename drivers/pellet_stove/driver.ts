@@ -19,7 +19,7 @@ module.exports = class PelletStoveDriver extends Homey.Driver {
       const pin = (data.pin ?? '').trim();
 
       if (!address) {
-        return { ok: false, error: 'Address is required' };
+        return { ok: false, error: this.homey.__('pair.validation.address_required') };
       }
 
       try {
@@ -27,7 +27,8 @@ module.exports = class PelletStoveDriver extends Homey.Driver {
         const status = await api.getStatus();
         return { ok: true, status };
       } catch (error) {
-        return { ok: false, error: String(error) };
+        const message = error instanceof Error ? error.message : String(error);
+        return { ok: false, error: message || this.homey.__('pair.status.failed') };
       }
     });
 
@@ -39,11 +40,11 @@ module.exports = class PelletStoveDriver extends Homey.Driver {
       const port = Number.isFinite(Number(data.port)) ? Number(data.port) : undefined;
 
       if (!address) {
-        throw new Error('Address is required');
+        throw new Error(this.homey.__('pair.validation.address_required'));
       }
 
       return {
-        name: data.name?.trim() || `Haas+Sohn stove (${address})`,
+        name: data.name?.trim() || this.homey.__('pair.device_name', { address }),
         data: {
           id: address,
         },

@@ -1,13 +1,37 @@
 {
   "title": {
-    "en": "Weekly program changed"
+    "en": "Weekly program changed",
+    "nl": "Wekelijks programma gewijzigd",
+    "da": "Ugeprogram ændret",
+    "de": "Wochenprogramm geändert",
+    "es": "Programa semanal cambiado",
+    "fr": "Programme hebdomadaire modifié",
+    "it": "Programma settimanale modificato",
+    "no": "Ukentlig program endret",
+    "sv": "Veckoprogrammet har ändrats",
+    "pl": "Tygodniowy program zmieniony",
+    "ru": "Еженедельная программа изменена",
+    "ko": "주간 프로그램이 변경되었습니다.",
+    "ar": "تم تغيير البرنامج الأسبوعي"
   },
   "args": [
     {
       "name": "device",
       "type": "device",
       "title": {
-        "en": "Device"
+        "en": "Device",
+        "nl": "Apparaat",
+        "da": "Enhed",
+        "de": "Gerät",
+        "es": "Dispositivo",
+        "fr": "Appareil",
+        "it": "Dispositivo",
+        "no": "Enhet",
+        "sv": "Enhet",
+        "pl": "Urządzenie",
+        "ru": "Устройство",
+        "ko": "장치",
+        "ar": "الجهاز"
       },
       "filter": "driver_id=pellet_stove"
     }
@@ -17,7 +41,19 @@
       "name": "enabled",
       "type": "boolean",
       "title": {
-        "en": "Enabled"
+        "en": "Enabled",
+        "nl": "Ingeschakeld",
+        "da": "Aktiveret",
+        "de": "Aktiviert",
+        "es": "Habilitado",
+        "fr": "Activé",
+        "it": "Abilitato",
+        "no": "Aktivert",
+        "sv": "Aktiverad",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "사용 설정됨",
+        "ar": "مُمكّن"
       }
     }
   ]

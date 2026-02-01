@@ -14,8 +14,12 @@
       }
       .actions {
         display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .actions-test {
+        display: flex;
+        justify-content: center;
       }
     </style>
   </head>
@@ -34,7 +38,6 @@
       </fieldset>
 
       <fieldset class="homey-form-fieldset">
-        <legend class="homey-form-legend" id="legend-advanced"></legend>
         <div class="homey-form-group">
           <label class="homey-form-label" for="pollInterval" id="label-poll"></label>
           <input class="homey-form-input" id="pollInterval" type="number" min="5" max="300" value="10">
@@ -48,14 +51,15 @@
       <div id="status"></div>
 
       <div class="homey-form-group actions">
-        <button id="test" type="button" class="homey-button-secondary-shadow"></button>
-        <button id="add" type="button" class="homey-button-primary-full" disabled></button>
+        <div class="actions-test">
+          <button id="test" type="button" class="homey-button-secondary-shadow"></button>
+        </div>
+        <button id="add" type="button" class="homey-button-primary-full is-disabled" disabled="disabled"></button>
       </div>
     </form>
 
     <script type="text/javascript">
       const legendConnectionEl = document.getElementById('legend-connection');
-      const legendAdvancedEl = document.getElementById('legend-advanced');
       const labelAddressEl = document.getElementById('label-address');
       const labelPinEl = document.getElementById('label-pin');
       const labelPollEl = document.getElementById('label-poll');
@@ -68,6 +72,7 @@
       const testButton = document.getElementById('test');
       const addButton = document.getElementById('add');
       const formEl = document.getElementById('pair-form');
+      let testPassed = false;
 
       function t(key) {
         return Homey.__(key);
@@ -97,7 +102,16 @@
       }
 
       function disableAddOnInput() {
+        testPassed = false;
         addButton.disabled = true;
+        addButton.classList.add('is-disabled');
+        addButton.setAttribute('disabled', 'disabled');
+      }
+
+      function enableAdd() {
+        addButton.disabled = false;
+        addButton.classList.remove('is-disabled');
+        addButton.removeAttribute('disabled');
       }
 
       const titleText = t('pair.title');
@@ -108,7 +122,6 @@
       }
 
       legendConnectionEl.textContent = t('pair.legend.connection');
-      legendAdvancedEl.textContent = t('pair.legend.advanced');
       labelAddressEl.textContent = t('pair.address.label');
       labelPinEl.textContent = t('pair.pin.label');
       labelPollEl.textContent = t('pair.poll.label');
@@ -129,7 +142,8 @@
       nameInput.addEventListener('input', disableAddOnInput);
 
       async function testConnection() {
-        addButton.disabled = true;
+        testPassed = false;
+        disableAddOnInput();
         const data = collectData();
         const error = validate(data);
         if (error) {
@@ -141,7 +155,8 @@
           const result = await Homey.emit('testConnection', data);
           if (result && result.ok) {
             setStatus(t('pair.status.success'), false);
-            addButton.disabled = false;
+            testPassed = true;
+            enableAdd();
           } else {
             setStatus(result && result.error ? result.error : t('pair.status.failed'), true);
           }
@@ -151,6 +166,10 @@
       }
 
       async function addDevice() {
+        if (!testPassed) {
+          addButton.disabled = true;
+          return;
+        }
         const data = collectData();
         const error = validate(data);
         if (error) {

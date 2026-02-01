@@ -1,13 +1,37 @@
 {
   "title": {
-    "en": "Stove error detected"
+    "en": "Stove error detected",
+    "nl": "Kachelstoring gedetecteerd",
+    "da": "Fejl på ovnen registreret",
+    "de": "Ofenfehler erkannt",
+    "es": "Error de estufa detectado",
+    "fr": "Erreur de poêle détectée",
+    "it": "Errore stufa rilevato",
+    "no": "Feil på ovnen oppdaget",
+    "sv": "Fel på kaminen upptäckt",
+    "pl": "Wykryto błąd pieca",
+    "ru": "Обнаружена ошибка печи",
+    "ko": "스토브 오류 감지됨",
+    "ar": "تم اكتشاف خطأ في المدفأة"
   },
   "args": [
     {
       "name": "device",
       "type": "device",
       "title": {
-        "en": "Device"
+        "en": "Device",
+        "nl": "Apparaat",
+        "da": "Enhed",
+        "de": "Gerät",
+        "es": "Dispositivo",
+        "fr": "Appareil",
+        "it": "Dispositivo",
+        "no": "Enhet",
+        "sv": "Enhet",
+        "pl": "Urządzenie",
+        "ru": "Устройство",
+        "ko": "장치",
+        "ar": "الجهاز"
       },
       "filter": "driver_id=pellet_stove"
     }
@@ -17,14 +41,38 @@
       "name": "error_code",
       "type": "string",
       "title": {
-        "en": "Error code"
+        "en": "Error code",
+        "nl": "Foutcode",
+        "da": "Fejlkode",
+        "de": "Fehlercode",
+        "es": "Código de error",
+        "fr": "Code d'erreur",
+        "it": "Codice di errore",
+        "no": "Feilkode",
+        "sv": "Felmeddelandekod",
+        "pl": "Kod błędu",
+        "ru": "Код ошибки",
+        "ko": "오류 코드",
+        "ar": "رمز الخطأ"
       }
     },
     {
       "name": "error_message",
       "type": "string",
       "title": {
-        "en": "Error message"
+        "en": "Error message",
+        "nl": "Foutmelding",
+        "da": "Fejlmeddelelse",
+        "de": "Fehlermeldung",
+        "es": "Mensaje de error",
+        "fr": "Message d'erreur",
+        "it": "Messaggio di errore",
+        "no": "Feilmelding",
+        "sv": "Felmeddelande",
+        "pl": "Komunikat o błędzie",
+        "ru": "Сообщение об ошибке",
+        "ko": "오류 메시지",
+        "ar": "رسالة خطأ"
       }
     }
   ]

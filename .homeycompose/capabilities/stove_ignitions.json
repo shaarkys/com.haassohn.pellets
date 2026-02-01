@@ -1,6 +1,18 @@
 {
   "title": {
-    "en": "Ignitions"
+    "en": "Ignitions",
+    "nl": "Ontstekingen",
+    "da": "Tændinger",
+    "de": "Zündungen",
+    "es": "Encendidos",
+    "fr": "Allumages",
+    "it": "Accensioni",
+    "no": "Tenninger",
+    "sv": "Tändningar",
+    "pl": "Zapłony",
+    "ru": "Воспламенения",
+    "ko": "점화",
+    "ar": "الإشعالات"
   },
   "insights": true,
   "setable": false,

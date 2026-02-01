@@ -3,7 +3,19 @@
   "getable": true,
   "setable": false,
   "title": {
-    "en": "Mode"
+    "en": "Mode",
+    "nl": "Modus",
+    "da": "Tilstand",
+    "de": "Modus",
+    "es": "Modo",
+    "fr": "Mode",
+    "it": "Modalità",
+    "no": "Modus",
+    "sv": "Läge",
+    "pl": "Tryb",
+    "ru": "Режим",
+    "ko": "모드",
+    "ar": "الوضع"
   },
   "icon": "/assets/icons/fireplace.svg"
 }

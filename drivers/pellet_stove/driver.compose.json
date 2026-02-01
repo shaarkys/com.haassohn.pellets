@@ -1,6 +1,18 @@
 {
   "name": {
-    "en": "Pellet Stove"
+    "en": "Pellet Stove",
+    "nl": "Pelletkachel",
+    "da": "Pilleovn",
+    "de": "Pelletofen",
+    "es": "Estufa de pellets",
+    "fr": "Poêle à granulés",
+    "it": "Stufa a pellet",
+    "no": "Pelletovn",
+    "sv": "Pelletskamin",
+    "pl": "Piec na pellet",
+    "ru": "Пеллетная печь",
+    "ko": "펠릿 스토브",
+    "ar": "موقد الحبيبات"
   },
   "class": "heater",
   "capabilities": [
@@ -13,6 +25,7 @@
     "measure_stove_maintenance_in",
     "measure_stove_consumption",
     "measure_stove_pellets",
+    "stove_pellets_actual",
     "stove_zone",
     "stove_weekprogram_active",
     "stove_heating_curve",
@@ -39,37 +52,133 @@
     "onoff": {
       "insights": true,
       "insightsTitleTrue": {
-        "en": "On"
+        "en": "On",
+        "nl": "Aan",
+        "da": "Tændt",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Activé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "켜짐",
+        "ar": "تشغيل"
       },
       "insightsTitleFalse": {
-        "en": "Off"
+        "en": "Off",
+        "nl": "Uit",
+        "da": "Slukket",
+        "de": "Aus",
+        "es": "Apagado",
+        "fr": "Éteint",
+        "it": "Spento",
+        "no": "Av",
+        "sv": "Av",
+        "pl": "Wyłączone",
+        "ru": "Выкл.",
+        "ko": "꺼짐",
+        "ar": "إيقاف"
       }
     },
     "stove_eco_mode": {
       "insights": true,
       "insightsTitleTrue": {
-        "en": "Eco on"
+        "en": "Eco on",
+        "nl": "Eco aan",
+        "da": "Eco til",
+        "de": "Eco an",
+        "es": "Eco encendido",
+        "fr": "Éco activé",
+        "it": "Eco acceso",
+        "no": "Eco på",
+        "sv": "Eco på",
+        "pl": "Eco włączony",
+        "ru": "Экономичный режим включен",
+        "ko": "에코 켜기",
+        "ar": "تشغيل الوضع الاقتصادي"
       },
       "insightsTitleFalse": {
-        "en": "Eco off"
+        "en": "Eco off",
+        "nl": "Eco uit",
+        "da": "Eco fra",
+        "de": "Eco aus",
+        "es": "Eco apagado",
+        "fr": "Éco désactivé",
+        "it": "Eco disattivato",
+        "no": "Eco av",
+        "sv": "Eco av",
+        "pl": "Eco wyłączone",
+        "ru": "Эко выключен",
+        "ko": "에코 끄기",
+        "ar": "إيقاف الوضع الاقتصادي"
       }
     },
     "stove_weekprogram_active": {
       "insights": true,
       "insightsTitleTrue": {
-        "en": "Weekly program on"
+        "en": "Weekly program on",
+        "nl": "Wekelijks programma aan",
+        "da": "Ugeprogram på",
+        "de": "Wochenprogramm ein",
+        "es": "Programa semanal en",
+        "fr": "Programme hebdomadaire activé",
+        "it": "Programma settimanale attivato",
+        "no": "Ukentlig program på",
+        "sv": "Veckoprogram på",
+        "pl": "Program tygodniowy włączony",
+        "ru": "Еженедельная программа включена",
+        "ko": "주간 프로그램 켜기",
+        "ar": "البرنامج الأسبوعي قيد التشغيل"
       },
       "insightsTitleFalse": {
-        "en": "Weekly program off"
+        "en": "Weekly program off",
+        "nl": "Wekelijks programma uitgeschakeld",
+        "da": "Ugentligt program slukket",
+        "de": "Wochenprogramm aus",
+        "es": "Programa semanal desactivado",
+        "fr": "Programme hebdomadaire désactivé",
+        "it": "Programma settimanale disattivato",
+        "no": "Ukentlig program av",
+        "sv": "Veckoprogram avstängt",
+        "pl": "Program tygodniowy wyłączony",
+        "ru": "Еженедельная программа выключена",
+        "ko": "주간 프로그램 끄기",
+        "ar": "إيقاف البرنامج الأسبوعي"
       }
     },
     "stove_error_state": {
       "insights": true,
       "insightsTitleTrue": {
-        "en": "In error"
+        "en": "In error",
+        "nl": "In fout",
+        "da": "I fejl",
+        "de": "Fehlerhaft",
+        "es": "En error",
+        "fr": "En erreur",
+        "it": "Errore",
+        "no": "I feil",
+        "sv": "Felaktigt",
+        "pl": "W błędzie",
+        "ru": "Ошибка",
+        "ko": "오류 발생 시",
+        "ar": "في خطأ"
       },
       "insightsTitleFalse": {
-        "en": "No error"
+        "en": "No error",
+        "nl": "Geen fout",
+        "da": "Ingen fejl",
+        "de": "Kein Fehler",
+        "es": "Sin error",
+        "fr": "Aucune erreur",
+        "it": "Nessun errore",
+        "no": "Ingen feil",
+        "sv": "Inget fel",
+        "pl": "Brak błędu",
+        "ru": "Ошибок нет",
+        "ko": "오류 없음",
+        "ar": "لا يوجد خطأ"
       }
     }
   },
@@ -83,10 +192,34 @@
       "id": "address",
       "type": "text",
       "label": {
-        "en": "Device address"
+        "en": "Device address",
+        "nl": "Apparaatadres",
+        "da": "Enhedsadresse",
+        "de": "Geräteadresse",
+        "es": "Dirección del dispositivo",
+        "fr": "Adresse de l'appareil",
+        "it": "Indirizzo del dispositivo",
+        "no": "Enhetsadresse",
+        "sv": "Enhetsadress",
+        "pl": "Adres urządzenia",
+        "ru": "Адрес устройства",
+        "ko": "기기 주소",
+        "ar": "عنوان الجهاز"
       },
       "hint": {
-        "en": "IP address or hostname, e.g. 192.168.1.120"
+        "en": "IP address or hostname, e.g. 192.168.1.120",
+        "nl": "IP-adres of hostnaam, bijvoorbeeld 192.168.1.120",
+        "da": "IP-adresse eller værtsnavn, f.eks. 192.168.1.120",
+        "de": "IP-Adresse oder Hostname, z.B. 192.168.1.120",
+        "es": "Dirección IP o nombre de host, por ejemplo, 192.168.1.120",
+        "fr": "Adresse IP ou nom d'hôte, par exemple 192.168.1.120",
+        "it": "Indirizzo IP o nome host, ad es. 192.168.1.120",
+        "no": "IP-adresse eller vertsnavn, f.eks. 192.168.1.120",
+        "sv": "IP-adress eller värdnamn, t.ex. 192.168.1.120",
+        "pl": "Adres IP lub nazwa hosta, np. 192.168.1.120",
+        "ru": "IP-адрес или имя хоста, например, 192.168.1.120",
+        "ko": "IP 주소 또는 호스트 이름, 예: 192.168.1.120",
+        "ar": "عنوان IP أو اسم المضيف، مثل 192.168.1.120"
       },
       "required": true
     },
@@ -94,10 +227,34 @@
       "id": "pin",
       "type": "password",
       "label": {
-        "en": "PIN"
+        "en": "PIN",
+        "nl": "PIN-code",
+        "da": "PIN-kode",
+        "de": "PIN",
+        "es": "PIN",
+        "fr": "PIN",
+        "it": "PIN",
+        "no": "PIN-kode",
+        "sv": "PIN-kod",
+        "pl": "PIN",
+        "ru": "ПИН",
+        "ko": "PIN (개인 식별 번호)",
+        "ar": "الرمز السري (PIN)"
       },
       "hint": {
-        "en": "PIN configured on the stove controller"
+        "en": "PIN configured on the stove controller",
+        "nl": "PIN geconfigureerd op de kachelcontroller",
+        "da": "PIN konfigureret på ovnens controller",
+        "de": "PIN auf dem Ofensteuergerät konfiguriert",
+        "es": "PIN configurado en el controlador de la estufa",
+        "fr": "PIN configuré sur le contrôleur du poêle",
+        "it": "PIN configurato sul controller della stufa",
+        "no": "PIN konfigurert på ovnskontrolleren",
+        "sv": "PIN konfigurerad på spisens kontrollenhet",
+        "pl": "PIN skonfigurowany na kontrolerze pieca",
+        "ru": "PIN настроен на контроллере печи",
+        "ko": "스토브 컨트롤러에 PIN이 설정되었습니다.",
+        "ar": "تم تكوين رمز PIN على وحدة تحكم الموقد"
       },
       "required": true
     },
@@ -105,7 +262,19 @@
       "id": "pollInterval",
       "type": "number",
       "label": {
-        "en": "Polling interval (seconds)"
+        "en": "Polling interval (seconds)",
+        "nl": "Polling-interval (seconden)",
+        "da": "Polling-interval (sekunder)",
+        "de": "Abfrageintervall (Sekunden)",
+        "es": "Intervalo de sondeo (segundos)",
+        "fr": "Intervalle de sondage (secondes)",
+        "it": "Intervallo di polling (secondi)",
+        "no": "Spørringsintervall (sekunder)",
+        "sv": "Pollningsintervall (sekunder)",
+        "pl": "Interwał odpytywania (sekundy)",
+        "ru": "Интервал опроса (в секундах)",
+        "ko": "폴링 간격 (초)",
+        "ar": "فترة الاستطلاع (بالثواني)"
       },
       "value": 10,
       "min": 5,
@@ -115,7 +284,19 @@
       "id": "pellets_kg",
       "type": "number",
       "label": {
-        "en": "Pellets remaining (kg)"
+        "en": "Pellets remaining (kg)",
+        "nl": "Resterende pellets (kg)",
+        "da": "Resterende piller (kg)",
+        "de": "Verbleibende Pellets (kg)",
+        "es": "Pellets restantes (kg)",
+        "fr": "Pellets restants (kg)",
+        "it": "Pellet rimanenti (kg)",
+        "no": "Gjenværende pellets (kg)",
+        "sv": "Återstående pellets (kg)",
+        "pl": "Pozostałe pelety (kg)",
+        "ru": "Остаток пеллет (кг)",
+        "ko": "남은 펠릿 (kg)",
+        "ar": "الكمية المتبقية من الكريات (كجم)"
       },
       "value": 15,
       "min": 0,
@@ -126,7 +307,19 @@
       "id": "pellets_max_kg",
       "type": "number",
       "label": {
-        "en": "Pellets capacity (kg)"
+        "en": "Pellets capacity (kg)",
+        "nl": "Pelletscapaciteit (kg)",
+        "da": "Pillekapacitet (kg)",
+        "de": "Pelletkapazität (kg)",
+        "es": "Capacidad de pellets (kg)",
+        "fr": "Capacité des pellets (kg)",
+        "it": "Capacità pellet (kg)",
+        "no": "Pelletkapasitet (kg)",
+        "sv": "Pelletskapacitet (kg)",
+        "pl": "Pojemność pelletów (kg)",
+        "ru": "Емкость для пеллет (кг)",
+        "ko": "펠릿 용량 (kg)",
+        "ar": "سعة الحبيبات (كجم)"
       },
       "value": 30,
       "min": 0,
@@ -137,26 +330,74 @@
       "id": "pellets_auto_reset",
       "type": "dropdown",
       "label": {
-        "en": "Auto-reset pellets at 0 kg"
+        "en": "Auto-reset pellets at 0 kg",
+        "nl": "Automatisch resetten van pellets op 0 kg",
+        "da": "Auto-nulstil pellets ved 0 kg",
+        "de": "Automatisches Zurücksetzen der Pellets auf 0 kg",
+        "es": "Restablecer automáticamente los pellets a 0 kg",
+        "fr": "Réinitialiser automatiquement les pellets à 0 kg",
+        "it": "Reimposta automaticamente i pellet a 0 kg",
+        "no": "Auto-nullstill pellets til 0 kg",
+        "sv": "Återställ pellets automatiskt vid 0 kg",
+        "pl": "Automatyczne resetowanie pelletu przy 0 kg",
+        "ru": "Автоматический сброс пеллет при 0 кг",
+        "ko": "0kg에서 펠릿 자동 재설정",
+        "ar": "إعادة ضبط تلقائي للوقود عند 0 كجم"
       },
       "value": "none",
       "values": [
         {
           "id": "none",
           "label": {
-            "en": "Do not reset"
+            "en": "Do not reset",
+            "nl": "Niet resetten",
+            "da": "Må ikke nulstilles",
+            "de": "Nicht zurücksetzen",
+            "es": "No restablecer",
+            "fr": "Ne pas réinitialiser",
+            "it": "Non reimpostare",
+            "no": "Ikke tilbakestill",
+            "sv": "Återställ inte",
+            "pl": "Nie resetuj",
+            "ru": "Не сбрасывайте настройки",
+            "ko": "재설정하지 마세요",
+            "ar": "لا تقم بإعادة التعيين"
           }
         },
         {
           "id": "reset15",
           "label": {
-            "en": "Reset to 15 kg"
+            "en": "Reset to 15 kg",
+            "nl": "Reset naar 15 kg",
+            "da": "Nulstil til 15 kg",
+            "de": "Zurücksetzen auf 15 kg",
+            "es": "Restablecer a 15 kg",
+            "fr": "Réinitialiser à 15 kg",
+            "it": "Reimposta a 15 kg",
+            "no": "Tilbakestill til 15 kg",
+            "sv": "Återställ till 15 kg",
+            "pl": "Zresetuj do 15 kg",
+            "ru": "Сбросить на 15 кг",
+            "ko": "15kg로 재설정",
+            "ar": "إعادة التعيين إلى 15 كجم"
           }
         },
         {
           "id": "reset30",
           "label": {
-            "en": "Reset to 30 kg"
+            "en": "Reset to 30 kg",
+            "nl": "Reset naar 30 kg",
+            "da": "Nulstil til 30 kg",
+            "de": "Zurücksetzen auf 30 kg",
+            "es": "Restablecer a 30 kg",
+            "fr": "Réinitialiser à 30 kg",
+            "it": "Reimposta a 30 kg",
+            "no": "Tilbakestill til 30 kg",
+            "sv": "Återställ till 30 kg",
+            "pl": "Zresetuj do 30 kg",
+            "ru": "Сбросить на 30 кг",
+            "ko": "30kg로 재설정",
+            "ar": "إعادة التعيين إلى 30 كجم"
           }
         }
       ]
@@ -165,7 +406,19 @@
       "id": "meta_hw_version",
       "type": "text",
       "label": {
-        "en": "Hardware version"
+        "en": "Hardware version",
+        "nl": "Hardwareversie",
+        "da": "Hardwareversion",
+        "de": "Hardware-Version",
+        "es": "Versión de hardware",
+        "fr": "Version matérielle",
+        "it": "Versione hardware",
+        "no": "Maskinvareversjon",
+        "sv": "Hårdvaruversion",
+        "pl": "Wersja sprzętu",
+        "ru": "Версия оборудования",
+        "ko": "하드웨어 버전",
+        "ar": "إصدار الجهاز"
       },
       "value": "",
       "readonly": true
@@ -174,7 +427,19 @@
       "id": "meta_sw_version",
       "type": "text",
       "label": {
-        "en": "Software version"
+        "en": "Software version",
+        "nl": "Softwareversie",
+        "da": "Softwareversion",
+        "de": "Softwareversion",
+        "es": "Versión del software",
+        "fr": "Version du logiciel",
+        "it": "Versione del software",
+        "no": "Programvareversjon",
+        "sv": "Programvaruversion",
+        "pl": "Wersja oprogramowania",
+        "ru": "Версия программного обеспечения",
+        "ko": "소프트웨어 버전",
+        "ar": "إصدار البرنامج"
       },
       "value": "",
       "readonly": true
@@ -183,7 +448,19 @@
       "id": "meta_typ",
       "type": "text",
       "label": {
-        "en": "Device type"
+        "en": "Device type",
+        "nl": "Apparaattype",
+        "da": "Enhedstype",
+        "de": "Gerätetyp",
+        "es": "Tipo de dispositivo",
+        "fr": "Type d'appareil",
+        "it": "Tipo di dispositivo",
+        "no": "Enhetstype",
+        "sv": "Enhetstyp",
+        "pl": "Typ urządzenia",
+        "ru": "Тип устройства",
+        "ko": "장치 유형",
+        "ar": "نوع الجهاز"
       },
       "value": "",
       "readonly": true

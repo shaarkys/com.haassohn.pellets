@@ -1,6 +1,18 @@
 {
   "title": {
-    "en": "Error state"
+    "en": "Error state",
+    "nl": "Foutstatus",
+    "da": "Fejltilstand",
+    "de": "Fehlerzustand",
+    "es": "Estado de error",
+    "fr": "État d'erreur",
+    "it": "Stato di errore",
+    "no": "Feiltilstand",
+    "sv": "Felaktigt tillstånd",
+    "pl": "Stan błędu",
+    "ru": "Состояние ошибки",
+    "ko": "오류 상태",
+    "ar": "حالة خطأ"
   },
   "type": "boolean",
   "getable": true,

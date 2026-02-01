@@ -1,0 +1,172 @@
+{
+  "pair": {
+    "title": "Haas+Sohn estufa",
+    "subtitle": "Conéctate a tu estufa a través de la red local.",
+    "legend": {
+      "connection": "Conexión"
+    },
+    "address": {
+      "label": "Dirección del dispositivo",
+      "placeholder": "192.168.1.120"
+    },
+    "pin": {
+      "label": "PIN",
+      "placeholder": "1234"
+    },
+    "poll": {
+      "label": "Intervalo de sondeo (segundos)"
+    },
+    "name": {
+      "label": "Nombre del dispositivo (opcional)",
+      "placeholder": "Haas+Sohn estufa"
+    },
+    "device_name": "Haas+Sohn estufa (__address__)",
+    "test": "Probar conexión",
+    "add": "Añadir dispositivo",
+    "status": {
+      "testing": "Probando conexión...",
+      "adding": "Añadiendo dispositivo...",
+      "success": "Conexión exitosa.",
+      "failed": "Conexión fallida.",
+      "error": "Algo salió mal. Por favor, inténtalo de nuevo."
+    },
+    "validation": {
+      "address_required": "La dirección es requerida.",
+      "pin_required": "El PIN es requerido.",
+      "poll_range": "El intervalo de sondeo debe estar entre 5 y 300 segundos."
+    }
+  },
+  "errors": {
+    "1": {
+      "1": "STB activado por sobrecalentamiento",
+      "2": "Fusible (F1) dañado en la unidad principal",
+      "3": "Cortocircuito de encendido"
+    },
+    "2": {
+      "1": "Quemador sucio",
+      "2": "Tolva de pellets vacía",
+      "3": "Falla en el encendido",
+      "4": "Quemador no está debidamente asentado",
+      "5": "Sensor de temperatura de la llama defectuoso",
+      "6": "Tubo de caída / sinfín bloqueados",
+      "7": "Motor del sinfín defectuoso",
+      "8": "Suministro de aire exterior conectado"
+    },
+    "3": {
+      "1": "Caminos de gas de combustión / chimenea están sucios",
+      "2": "Curva de calefacción ajustada demasiado baja",
+      "3": "El sensor de temperatura ambiente está en el suelo o en la pared"
+    },
+    "5": {
+      "1": "Quemador sucio",
+      "2": "Tolva de pellets vacía",
+      "3": "Tubo de caída / sinfín bloqueados",
+      "4": "La habitación es demasiado hermética - el aire de combustión necesario no puede entrar",
+      "5": "Sensor de temperatura de gas de combustión defectuoso",
+      "6": "Motor del sinfín defectuoso",
+      "7": "El valor calorífico del pellet es insuficiente"
+    },
+    "6": {
+      "1": "La puerta del hogar está abierta durante la operación",
+      "2": "El interruptor de contacto de la puerta no está en la posición correcta",
+      "3": "Cable eléctrico roto al interruptor de contacto de la puerta",
+      "4": "Contacto suelto en el interruptor de contacto de la puerta o unidad principal"
+    },
+    "7": {
+      "1": "Sensor de temperatura de gas de combustión dañado o desconectado"
+    },
+    "8": {
+      "1": "Sensor de temperatura de gas de combustión defectuoso"
+    },
+    "9": {
+      "1": "Advertencia: La puerta del hogar está abierta durante el apagado o en espera"
+    },
+    "11": {
+      "1": "Sensor de temperatura ambiente dañado o desconectado"
+    },
+    "12": {
+      "1": "Sensor de temperatura ambiente defectuoso"
+    },
+    "13": {
+      "1": "Sensor de temperatura del agua de calefacción defectuoso o desconectado"
+    },
+    "14": {
+      "1": "Cortocircuito del sensor de temperatura del agua"
+    },
+    "15": {
+      "1": "Fallo del ventilador de escape",
+      "2": "Suministro de energía del ventilador de escape interrumpido"
+    },
+    "18": {
+      "1": "Corte de energía"
+    },
+    "21": {
+      "1": "Quemador sucio",
+      "2": "Tolva de pellets vacía",
+      "3": "Tubo de caída / sinfín bloqueados",
+      "4": "La habitación es demasiado hermética - el aire de combustión necesario no puede entrar",
+      "5": "Sensor de temperatura de gas de combustión defectuoso",
+      "6": "Motor del sinfín defectuoso",
+      "7": "El valor calorífico del pellet es insuficiente"
+    },
+    "22": {
+      "1": "El tiro de la chimenea es demasiado bajo",
+      "2": "El tiro de la chimenea es demasiado alto",
+      "3": "Quemador sucio",
+      "4": "Conducto de humos es demasiado largo (horizontal)",
+      "5": "Sensor de temperatura de gas de combustión defectuoso"
+    },
+    "23": {
+      "1": "Sensor de temperatura de la llama dañado o desconectado"
+    },
+    "24": {
+      "1": "Sensor de temperatura inferior dañado o desconectado"
+    },
+    "26": {
+      "1": "Tolva de pellets vacía",
+      "2": "Quemador no está debidamente asentado",
+      "3": "Quemador sucio",
+      "4": "El valor calorífico del pellet es insuficiente",
+      "5": "Tubo de caída / sinfín bloqueados",
+      "6": "La habitación es demasiado hermética - el aire de combustión necesario no puede entrar",
+      "7": "Sensor de temperatura de la llama defectuoso",
+      "8": "Motor del sinfín defectuoso"
+    },
+    "27": {
+      "1": "Quemador sucio",
+      "2": "Quemador no está debidamente asentado",
+      "3": "La puerta no sella"
+    },
+    "28": {
+      "1": "Quemador / cámara de combustión está sucia",
+      "2": "Sensor de temperatura inferior defectuoso"
+    },
+    "33": {
+      "1": "No conectado a WLAN",
+      "2": "PIN de WLAN incorrecto",
+      "3": "No se recibió dirección IP"
+    },
+    "34": {
+      "1": "No hay conexión a internet disponible"
+    },
+    "40": {
+      "1": "La cámara de combustión no se limpió dentro del intervalo requerido"
+    },
+    "41": {
+      "1": "Intervalo de mantenimiento excedido (1000 kg)"
+    },
+    "43": {
+      "1": "Sensor de temperatura de la llama defectuoso"
+    },
+    "50": {
+      "1": "Batería de respaldo descargada"
+    },
+    "60": {
+      "1": "Se cargaron errores de parámetros de fábrica"
+    },
+    "1000": {
+      "1": "Reinicio del dispositivo"
+    },
+    "unknown": "Error desconocido"
+  }
+}
