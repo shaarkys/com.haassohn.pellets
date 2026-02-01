@@ -1,0 +1,31 @@
+{
+  "title": {
+    "en": "Stove error detected"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "title": {
+        "en": "Device"
+      },
+      "filter": "driver_id=pellet_stove"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "error_code",
+      "type": "string",
+      "title": {
+        "en": "Error code"
+      }
+    },
+    {
+      "name": "error_message",
+      "type": "string",
+      "title": {
+        "en": "Error message"
+      }
+    }
+  ]
+}

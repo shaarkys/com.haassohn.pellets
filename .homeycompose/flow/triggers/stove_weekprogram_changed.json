@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Weekly program changed"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "title": {
+        "en": "Device"
+      },
+      "filter": "driver_id=pellet_stove"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "enabled",
+      "type": "boolean",
+      "title": {
+        "en": "Enabled"
+      }
+    }
+  ]
+}

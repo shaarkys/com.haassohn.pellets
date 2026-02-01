@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Pellets amount changed"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "title": {
+        "en": "Device"
+      },
+      "filter": "driver_id=pellet_stove"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "pellets_kg",
+      "type": "number",
+      "title": {
+        "en": "Pellets (kg)"
+      }
+    }
+  ]
+}

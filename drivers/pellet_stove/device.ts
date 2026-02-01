@@ -18,9 +18,9 @@ const STATE_TO_CAPABILITY: Record<string, string> = {
   is_temp: 'measure_temperature',
   mode: 'stove_mode',
   zone: 'stove_zone',
-  cleaning_in: 'stove_cleaning_in',
-  maintenance_in: 'stove_maintenance_in',
-  consumption: 'stove_consumption',
+  cleaning_in: 'measure_stove_cleaning_in',
+  maintenance_in: 'measure_stove_maintenance_in',
+  consumption: 'measure_stove_consumption',
   pellets: 'stove_pellets_actual',
   eco_mode: 'stove_eco_mode',
   wprg: 'stove_weekprogram_active',
@@ -170,10 +170,10 @@ const CAPABILITY_TYPES: Record<string, CapabilityType> = {
   stove_eco_mode: 'boolean',
   stove_weekprogram_active: 'boolean',
   meta_eco_editable: 'boolean',
-  stove_cleaning_in: 'number',
-  stove_maintenance_in: 'number',
-  stove_consumption: 'number',
-  stove_pellets: 'number',
+  measure_stove_cleaning_in: 'number',
+  measure_stove_maintenance_in: 'number',
+  measure_stove_consumption: 'number',
+  measure_stove_pellets: 'number',
   stove_pellets_actual: 'number',
   stove_heating_curve: 'number',
   stove_ignitions: 'number',
@@ -181,6 +181,13 @@ const CAPABILITY_TYPES: Record<string, CapabilityType> = {
   stove_mode: 'string',
   stove_zone: 'number',
   stove_error_state: 'boolean',
+};
+
+const CAPABILITY_RENAMES: Record<string, string> = {
+  stove_pellets: 'measure_stove_pellets',
+  stove_cleaning_in: 'measure_stove_cleaning_in',
+  stove_consumption: 'measure_stove_consumption',
+  stove_maintenance_in: 'measure_stove_maintenance_in',
 };
 
 module.exports = class PelletStoveDevice extends Homey.Device {
@@ -202,8 +209,8 @@ module.exports = class PelletStoveDevice extends Homey.Device {
   async onInit() {
     this.log('Pellet stove device initialized');
     this.applySettings(this.getSettings());
-    this.initializePelletsState();
     await this.syncCapabilities();
+    this.initializePelletsState();
     this.registerCapabilityListeners();
     this.startPolling();
   }
@@ -283,17 +290,47 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     if (this.hasCapability('stove_weekprogram_active')) {
       this.registerCapabilityListener('stove_weekprogram_active', async (value) => this.handleWeekProgram(value));
     }
-    if (this.hasCapability('stove_pellets')) {
-      this.registerCapabilityListener('stove_pellets', async (value) => this.handlePelletsOverride(value));
+    if (this.hasCapability('measure_stove_pellets')) {
+      this.registerCapabilityListener('measure_stove_pellets', async (value) => this.handlePelletsOverride(value));
     }
   }
 
   private async syncCapabilities() {
+    await this.migrateCapabilityIds();
     await this.ensureCapabilityPresent('stove_error_state');
     await this.ensureCapabilityAbsent('meta_raw');
     await this.ensureCapabilityAbsent('meta_hw_version');
     await this.ensureCapabilityAbsent('meta_sw_version');
     await this.ensureCapabilityAbsent('meta_typ');
+  }
+
+  private async migrateCapabilityIds() {
+    for (const [oldId, newId] of Object.entries(CAPABILITY_RENAMES)) {
+      if (!this.hasCapability(oldId)) {
+        continue;
+      }
+      if (!this.hasCapability(newId)) {
+        try {
+          await this.addCapability(newId);
+        } catch (error) {
+          this.error(`Failed to add capability ${newId}`, error);
+          continue;
+        }
+      }
+      const currentValue = this.getCapabilityValue(oldId);
+      if (currentValue !== null && currentValue !== undefined) {
+        try {
+          await this.setCapabilityValue(newId, currentValue);
+        } catch (error) {
+          this.error(`Failed to migrate value from ${oldId} to ${newId}`, error);
+        }
+      }
+      try {
+        await this.removeCapability(oldId);
+      } catch (error) {
+        this.error(`Failed to remove capability ${oldId}`, error);
+      }
+    }
   }
 
   private async ensureCapabilityPresent(capabilityId: string) {
@@ -355,7 +392,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     }
 
     if (this.pelletsRemainingKg !== null) {
-      void this.setCapabilityValueIfChanged('stove_pellets', this.pelletsRemainingKg);
+      void this.setCapabilityValueIfChanged('measure_stove_pellets', this.pelletsRemainingKg);
     }
   }
 
@@ -395,7 +432,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
       this.lastConsumptionKg = consumptionKg;
       await this.setStoreValue('pelletsLastConsumptionKg', consumptionKg);
       if (this.pelletsRemainingKg !== null) {
-        await this.setCapabilityValueIfChanged('stove_pellets', this.pelletsRemainingKg);
+        await this.setCapabilityValueIfChanged('measure_stove_pellets', this.pelletsRemainingKg);
       }
       return;
     }
@@ -441,7 +478,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
 
     this.pelletsRemainingKg = normalized;
     await this.setStoreValue('pelletsRemainingKg', normalized);
-    await this.setCapabilityValueIfChanged('stove_pellets', normalized);
+    await this.setCapabilityValueIfChanged('measure_stove_pellets', normalized);
     if (updateSetting) {
       await this.updatePelletsSetting(normalized);
     }
@@ -457,11 +494,11 @@ module.exports = class PelletStoveDevice extends Homey.Device {
   }
 
   private async updatePelletsCapabilityMax() {
-    if (!this.hasCapability('stove_pellets')) {
+    if (!this.hasCapability('measure_stove_pellets')) {
       return;
     }
     try {
-      await this.setCapabilityOptions('stove_pellets', { max: this.pelletsMaxKg });
+      await this.setCapabilityOptions('measure_stove_pellets', { max: this.pelletsMaxKg });
     } catch (error) {
       this.error('Failed to update pellets capability max', error);
     }
@@ -547,7 +584,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
       const minutes = coerceNumber(flat.cleaning_in);
       if (typeof minutes === 'number') {
         const hours = minutes / 60;
-        await this.setCapabilityValueIfChanged('stove_cleaning_in', roundTo(hours, 1));
+        await this.setCapabilityValueIfChanged('measure_stove_cleaning_in', roundTo(hours, 1));
       }
     }
 
@@ -556,7 +593,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
       if (typeof maintenanceKg === 'number') {
         const percent = 100 - (maintenanceKg / 1000) * 100;
         const clamped = Math.min(100, Math.max(0, percent));
-        await this.setCapabilityValueIfChanged('stove_maintenance_in', roundTo(clamped, 1));
+        await this.setCapabilityValueIfChanged('measure_stove_maintenance_in', roundTo(clamped, 1));
       }
     }
 
@@ -610,6 +647,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     await this.setCapabilityValueIfChanged('stove_error_state', true);
 
     if (this.lastErrorCode !== errorCode) {
+      await this.triggerErrorFlow(errorCode, errorMessage);
       await this.setWarning(errorMessage);
       await this.createErrorNotification(errorMessage);
       this.lastErrorCode = errorCode;
@@ -633,18 +671,86 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     }
   }
 
-  private async setCapabilityValueIfChanged(capabilityId: string, value: unknown) {
+  private async triggerErrorFlow(errorCode: string, errorMessage: string) {
+    try {
+      const card = this.homey.flow.getDeviceTriggerCard('stove_error');
+      await card.trigger(this, {
+        error_code: errorCode,
+        error_message: errorMessage,
+      });
+    } catch (error) {
+      this.error('Failed to trigger error flow', error);
+    }
+  }
+
+  private async setCapabilityValueIfChanged(capabilityId: string, value: unknown): Promise<boolean> {
     if (!this.hasCapability(capabilityId)) {
-      return;
+      return false;
     }
     const currentValue = this.getCapabilityValue(capabilityId);
     if (Object.is(currentValue, value)) {
-      return;
+      return false;
     }
     try {
       await this.setCapabilityValue(capabilityId, value);
+      await this.triggerCapabilityFlow(capabilityId, value);
+      return true;
     } catch (error) {
       this.error(`Failed to update capability ${capabilityId}`, error);
+    }
+    return false;
+  }
+
+  private async triggerCapabilityFlow(capabilityId: string, value: unknown) {
+    if (capabilityId === 'stove_weekprogram_active') {
+      const enabled = coerceBoolean(value);
+      if (typeof enabled !== 'boolean') {
+        return;
+      }
+      await this.triggerWeekProgramFlow(enabled);
+      return;
+    }
+    if (capabilityId === 'stove_eco_mode') {
+      const mode = coerceBoolean(value);
+      if (typeof mode !== 'boolean') {
+        return;
+      }
+      await this.triggerEcoModeFlow(mode);
+      return;
+    }
+    if (capabilityId === 'measure_stove_pellets') {
+      const pelletsKg = coerceNumber(value);
+      if (typeof pelletsKg !== 'number') {
+        return;
+      }
+      await this.triggerPelletsFlow(pelletsKg);
+    }
+  }
+
+  private async triggerWeekProgramFlow(enabled: boolean) {
+    try {
+      const card = this.homey.flow.getDeviceTriggerCard('stove_weekprogram_changed');
+      await card.trigger(this, { enabled });
+    } catch (error) {
+      this.error('Failed to trigger week program flow', error);
+    }
+  }
+
+  private async triggerEcoModeFlow(mode: boolean) {
+    try {
+      const card = this.homey.flow.getDeviceTriggerCard('stove_eco_mode_changed');
+      await card.trigger(this, { mode });
+    } catch (error) {
+      this.error('Failed to trigger eco mode flow', error);
+    }
+  }
+
+  private async triggerPelletsFlow(pelletsKg: number) {
+    try {
+      const card = this.homey.flow.getDeviceTriggerCard('stove_pellets_changed');
+      await card.trigger(this, { pellets_kg: pelletsKg });
+    } catch (error) {
+      this.error('Failed to trigger pellets flow', error);
     }
   }
 

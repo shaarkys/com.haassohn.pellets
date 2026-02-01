@@ -10,7 +10,7 @@
     "en": "Haas+Sohn Pellets"
   },
   "description": {
-    "en": "Control and monitor Haas+Sohn pellet stoves in Homey."
+    "en": "Bring your Haas+Sohn pellet stove into Homey and to your home."
   },
   "category": [
     "appliances"
@@ -25,5 +25,29 @@
   "author": {
     "name": "Bretislav Kubesa",
     "email": "bretislav.kubesa@gmail.com"
+  },
+  "tags": {
+    "en": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ]
+  },
+  "source": "https://github.com/shaarkys/com.haassohn.pellets",
+  "support": "https://github.com/shaarkys/com.haassohn.pellets/issues",
+  "bugs": {
+    "url": "https://github.com/shaarkys/com.haassohn.pellets/issues"
+  },
+  "contributors": {
+    "developers": []
+  },
+   "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "bkubesa"
+      }
+    }
   }
 }

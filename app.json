@@ -11,7 +11,7 @@
     "en": "Haas+Sohn Pellets"
   },
   "description": {
-    "en": "Control and monitor Haas+Sohn pellet stoves in Homey."
+    "en": "Bring your Haas+Sohn pellet stove into Homey and to your home."
   },
   "category": [
     "appliances"
@@ -27,7 +27,140 @@
     "name": "Bretislav Kubesa",
     "email": "bretislav.kubesa@gmail.com"
   },
+  "tags": {
+    "en": [
+      "pellet",
+      "heating",
+      "haassohn",
+      "haas-sohn",
+      "rukov"
+    ]
+  },
+  "source": "https://github.com/shaarkys/com.haassohn.pellets",
+  "support": "https://github.com/shaarkys/com.haassohn.pellets/issues",
+  "bugs": {
+    "url": "https://github.com/shaarkys/com.haassohn.pellets/issues"
+  },
+  "contributors": {
+    "developers": []
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "bkubesa"
+      }
+    }
+  },
   "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Eco mode changed"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "title": {
+              "en": "Device"
+            },
+            "filter": "driver_id=pellet_stove"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "mode",
+            "type": "boolean",
+            "title": {
+              "en": "Mode"
+            }
+          }
+        ],
+        "id": "stove_eco_mode_changed"
+      },
+      {
+        "title": {
+          "en": "Stove error detected"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "title": {
+              "en": "Device"
+            },
+            "filter": "driver_id=pellet_stove"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "error_code",
+            "type": "string",
+            "title": {
+              "en": "Error code"
+            }
+          },
+          {
+            "name": "error_message",
+            "type": "string",
+            "title": {
+              "en": "Error message"
+            }
+          }
+        ],
+        "id": "stove_error"
+      },
+      {
+        "title": {
+          "en": "Pellets amount changed"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "title": {
+              "en": "Device"
+            },
+            "filter": "driver_id=pellet_stove"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "pellets_kg",
+            "type": "number",
+            "title": {
+              "en": "Pellets (kg)"
+            }
+          }
+        ],
+        "id": "stove_pellets_changed"
+      },
+      {
+        "title": {
+          "en": "Weekly program changed"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "title": {
+              "en": "Device"
+            },
+            "filter": "driver_id=pellet_stove"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "enabled",
+            "type": "boolean",
+            "title": {
+              "en": "Enabled"
+            }
+          }
+        ],
+        "id": "stove_weekprogram_changed"
+      }
+    ],
     "actions": [
       {
         "title": {
@@ -121,10 +254,10 @@
         "measure_temperature",
         "target_temperature",
         "stove_eco_mode",
-        "stove_cleaning_in",
-        "stove_maintenance_in",
-        "stove_consumption",
-        "stove_pellets",
+        "measure_stove_cleaning_in",
+        "measure_stove_maintenance_in",
+        "measure_stove_consumption",
+        "measure_stove_pellets",
         "stove_pellets_actual",
         "stove_zone",
         "stove_weekprogram_active",
@@ -311,6 +444,58 @@
     }
   ],
   "capabilities": {
+    "measure_stove_cleaning_in": {
+      "title": {
+        "en": "Cleaning in"
+      },
+      "insights": true,
+      "setable": false,
+      "units": "h",
+      "decimals": 1,
+      "getable": true,
+      "type": "number",
+      "icon": "/assets/icons/cleaning.svg"
+    },
+    "measure_stove_consumption": {
+      "title": {
+        "en": "Consumption"
+      },
+      "insights": true,
+      "setable": false,
+      "units": "kg",
+      "getable": true,
+      "type": "number",
+      "icon": "/assets/icons/consumption.svg"
+    },
+    "measure_stove_maintenance_in": {
+      "title": {
+        "en": "Ash limit"
+      },
+      "insights": true,
+      "setable": false,
+      "units": "%",
+      "decimals": 1,
+      "min": 0,
+      "max": 100,
+      "getable": true,
+      "type": "number",
+      "icon": "/assets/icons/maintenance.svg"
+    },
+    "measure_stove_pellets": {
+      "units": "kg",
+      "decimals": 0,
+      "step": 1,
+      "max": 999,
+      "min": 0,
+      "insights": true,
+      "type": "number",
+      "title": {
+        "en": "Pellets"
+      },
+      "getable": true,
+      "setable": true,
+      "icon": "/assets/icons/pellets.svg"
+    },
     "meta_eco_editable": {
       "title": {
         "en": "Eco mode editable"
@@ -336,29 +521,6 @@
       "title": {
         "en": "Device type"
       }
-    },
-    "stove_cleaning_in": {
-      "title": {
-        "en": "Cleaning in"
-      },
-      "insights": true,
-      "setable": false,
-      "units": "h",
-      "decimals": 1,
-      "getable": true,
-      "type": "number",
-      "icon": "/assets/icons/cleaning.svg"
-    },
-    "stove_consumption": {
-      "title": {
-        "en": "Consumption"
-      },
-      "insights": true,
-      "setable": false,
-      "units": "kg",
-      "getable": true,
-      "type": "number",
-      "icon": "/assets/icons/consumption.svg"
     },
     "stove_eco_mode": {
       "title": {
@@ -400,20 +562,6 @@
       "type": "number",
       "icon": "/assets/icons/ignitions.svg"
     },
-    "stove_maintenance_in": {
-      "title": {
-        "en": "Ash limit"
-      },
-      "insights": true,
-      "setable": false,
-      "units": "%",
-      "decimals": 1,
-      "min": 0,
-      "max": 100,
-      "getable": true,
-      "type": "number",
-      "icon": "/assets/icons/maintenance.svg"
-    },
     "stove_mode": {
       "type": "string",
       "getable": true,
@@ -433,21 +581,6 @@
       "getable": true,
       "type": "number",
       "icon": "/assets/icons/operation_hours.svg"
-    },
-    "stove_pellets": {
-      "units": "kg",
-      "decimals": 0,
-      "step": 1,
-      "max": 999,
-      "min": 0,
-      "insights": true,
-      "type": "number",
-      "title": {
-        "en": "Pellets"
-      },
-      "getable": true,
-      "setable": true,
-      "icon": "/assets/icons/pellets.svg"
     },
     "stove_pellets_actual": {
       "units": "kg",
