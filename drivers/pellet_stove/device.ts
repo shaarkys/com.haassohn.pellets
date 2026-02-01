@@ -766,12 +766,31 @@ module.exports = class PelletStoveDevice extends Homey.Device {
       await this.triggerEcoModeFlow(mode);
       return;
     }
-    if (capabilityId === 'measure_stove_pellets') {
+    if (capabilityId === 'stove_pellets_actual' || capabilityId === 'measure_stove_pellets') {
+      if (capabilityId === 'measure_stove_pellets' && this.hasCapability('stove_pellets_actual')) {
+        return;
+      }
       const pelletsKg = coerceNumber(value);
       if (typeof pelletsKg !== 'number') {
         return;
       }
       await this.triggerPelletsFlow(pelletsKg);
+      return;
+    }
+    if (capabilityId === 'measure_stove_cleaning_in') {
+      const cleaningHours = coerceNumber(value);
+      if (typeof cleaningHours !== 'number') {
+        return;
+      }
+      await this.triggerCleaningFlow(cleaningHours);
+      return;
+    }
+    if (capabilityId === 'measure_stove_maintenance_in') {
+      const ashLimit = coerceNumber(value);
+      if (typeof ashLimit !== 'number') {
+        return;
+      }
+      await this.triggerAshLimitFlow(ashLimit);
     }
   }
 
@@ -799,6 +818,24 @@ module.exports = class PelletStoveDevice extends Homey.Device {
       await card.trigger(this, { pellets_kg: pelletsKg });
     } catch (error) {
       this.error('Failed to trigger pellets flow', error);
+    }
+  }
+
+  private async triggerCleaningFlow(cleaningHours: number) {
+    try {
+      const card = this.homey.flow.getDeviceTriggerCard('stove_cleaning_changed');
+      await card.trigger(this, { cleaning_hours: cleaningHours });
+    } catch (error) {
+      this.error('Failed to trigger cleaning flow', error);
+    }
+  }
+
+  private async triggerAshLimitFlow(ashLimitPercent: number) {
+    try {
+      const card = this.homey.flow.getDeviceTriggerCard('stove_ash_limit_changed');
+      await card.trigger(this, { ash_limit_percent: ashLimitPercent });
+    } catch (error) {
+      this.error('Failed to trigger ash limit flow', error);
     }
   }
 

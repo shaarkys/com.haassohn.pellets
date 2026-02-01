@@ -1,0 +1,60 @@
+{
+  "title": {
+    "en": "Cleaning changed",
+    "nl": "Schoonmaken gewijzigd",
+    "da": "Rengøring ændret",
+    "de": "Reinigung geändert",
+    "es": "Limpieza cambiada",
+    "fr": "Nettoyage modifié",
+    "it": "Pulizia modificata",
+    "no": "Rengjøring endret",
+    "sv": "Rengöring har ändrats",
+    "pl": "Czyszczenie zmienione",
+    "ru": "Очистка изменена",
+    "ko": "청소가 변경되었습니다.",
+    "ar": "تم تغيير التنظيف"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "title": {
+        "en": "Device",
+        "nl": "Apparaat",
+        "da": "Enhed",
+        "de": "Gerät",
+        "es": "Dispositivo",
+        "fr": "Appareil",
+        "it": "Dispositivo",
+        "no": "Enhet",
+        "sv": "Enhet",
+        "pl": "Urządzenie",
+        "ru": "Устройство",
+        "ko": "장치",
+        "ar": "الجهاز"
+      },
+      "filter": "driver_id=pellet_stove"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "cleaning_hours",
+      "type": "number",
+      "title": {
+        "en": "Cleaning in (h)",
+        "nl": "Schoonmaken in (h)",
+        "da": "Rengøring om (h)",
+        "de": "Reinigung in (h)",
+        "es": "Limpieza en (h)",
+        "fr": "Nettoyage en cours (h)",
+        "it": "Pulizia in corso (h)",
+        "no": "Rengjøring om (h)",
+        "sv": "Rengöring på (h)",
+        "pl": "Czyszczenie za (h)",
+        "ru": "Очистка включена (h)",
+        "ko": "청소 중 (h)",
+        "ar": "التنظيف في (h)"
+      }
+    }
+  ]
+}

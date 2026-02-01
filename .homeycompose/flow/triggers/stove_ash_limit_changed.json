@@ -1,0 +1,60 @@
+{
+  "title": {
+    "en": "Ash limit changed",
+    "nl": "Aslimiet gewijzigd",
+    "da": "Askegrænse ændret",
+    "de": "Aschegrenze geändert",
+    "es": "Límite de cenizas cambiado",
+    "fr": "Limite de cendres modifiée",
+    "it": "Limite cenere modificato",
+    "no": "Askegrense endret",
+    "sv": "Asklimit har ändrats",
+    "pl": "Limit popiołu zmieniony",
+    "ru": "Предел золы изменен",
+    "ko": "회분 한계가 변경되었습니다.",
+    "ar": "تم تغيير حد الرماد"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "title": {
+        "en": "Device",
+        "nl": "Apparaat",
+        "da": "Enhed",
+        "de": "Gerät",
+        "es": "Dispositivo",
+        "fr": "Appareil",
+        "it": "Dispositivo",
+        "no": "Enhet",
+        "sv": "Enhet",
+        "pl": "Urządzenie",
+        "ru": "Устройство",
+        "ko": "장치",
+        "ar": "الجهاز"
+      },
+      "filter": "driver_id=pellet_stove"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "ash_limit_percent",
+      "type": "number",
+      "title": {
+        "en": "Ash limit (%)",
+        "nl": "Aslimiet (%)",
+        "da": "Askegrænse (%)",
+        "de": "Aschegrenze (%)",
+        "es": "Límite de cenizas (%)",
+        "fr": "Limite de cendres (%)",
+        "it": "Limite cenere (%)",
+        "no": "Askegrense (%)",
+        "sv": "Asklimit (%)",
+        "pl": "Limit popiołu (%)",
+        "ru": "Предел золы (%)",
+        "ko": "회분 한계 (%)",
+        "ar": "حد الرماد (%)"
+      }
+    }
+  ]
+}
