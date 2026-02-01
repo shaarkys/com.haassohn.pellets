@@ -13,7 +13,7 @@
     "stove_maintenance_in",
     "stove_consumption",
     "stove_pellets",
-    "stove_error",
+    "stove_pellets_actual",
     "stove_zone",
     "stove_weekprogram_active",
     "stove_heating_curve",

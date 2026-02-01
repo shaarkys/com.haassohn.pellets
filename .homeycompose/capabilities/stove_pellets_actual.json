@@ -1,0 +1,13 @@
+{
+  "units": "kg",
+  "decimals": 1,
+  "min": 0,
+  "max": 999,
+  "insights": true,
+  "type": "number",
+  "title": {
+    "en": "Pellets (reported)"
+  },
+  "getable": true,
+  "setable": false
+}

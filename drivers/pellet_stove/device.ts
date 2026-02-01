@@ -21,6 +21,7 @@ const STATE_TO_CAPABILITY: Record<string, string> = {
   cleaning_in: 'stove_cleaning_in',
   maintenance_in: 'stove_maintenance_in',
   consumption: 'stove_consumption',
+  pellets: 'stove_pellets_actual',
   eco_mode: 'stove_eco_mode',
   wprg: 'stove_weekprogram_active',
   ht_char: 'stove_heating_curve',
@@ -173,12 +174,12 @@ const CAPABILITY_TYPES: Record<string, CapabilityType> = {
   stove_maintenance_in: 'number',
   stove_consumption: 'number',
   stove_pellets: 'number',
+  stove_pellets_actual: 'number',
   stove_heating_curve: 'number',
   stove_ignitions: 'number',
   stove_on_time: 'number',
   stove_mode: 'string',
   stove_zone: 'number',
-  stove_error: 'string',
   stove_error_state: 'boolean',
 };
 
@@ -541,6 +542,24 @@ module.exports = class PelletStoveDevice extends Homey.Device {
 
     await this.applyErrorState(flat);
     await this.updateMetaSettings(flat);
+
+    if ('cleaning_in' in flat) {
+      const minutes = coerceNumber(flat.cleaning_in);
+      if (typeof minutes === 'number') {
+        const hours = minutes / 60;
+        await this.setCapabilityValueIfChanged('stove_cleaning_in', roundTo(hours, 1));
+      }
+    }
+
+    if ('maintenance_in' in flat) {
+      const maintenanceKg = coerceNumber(flat.maintenance_in);
+      if (typeof maintenanceKg === 'number') {
+        const percent = 100 - (maintenanceKg / 1000) * 100;
+        const clamped = Math.min(100, Math.max(0, percent));
+        await this.setCapabilityValueIfChanged('stove_maintenance_in', roundTo(clamped, 1));
+      }
+    }
+
     const consumption = coerceNumber(flat['consumption']);
     if (typeof consumption === 'number') {
       await this.updatePelletsFromConsumption(consumption);
@@ -548,6 +567,9 @@ module.exports = class PelletStoveDevice extends Homey.Device {
 
     for (const [stateKey, capabilityId] of Object.entries(STATE_TO_CAPABILITY)) {
       if (!(stateKey in flat)) {
+        continue;
+      }
+      if (stateKey === 'cleaning_in' || stateKey === 'maintenance_in') {
         continue;
       }
       const value = coerceValue(capabilityId, flat[stateKey]);
@@ -566,7 +588,6 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     }
     if (!errorNumber || errorNumber === 0) {
       this.pelletsHoldAutoReset = false;
-      await this.setCapabilityValueIfChanged('stove_error', 'No error');
       await this.setCapabilityValueIfChanged('stove_error_state', false);
       if (this.lastErrorCode) {
         await this.unsetWarning();
@@ -586,7 +607,6 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     const errorCode = formatErrorCode(errorNumber);
     const errorMessage = formatErrorMessage(errorCode, ERROR_CODE_MAP[errorNumber]);
 
-    await this.setCapabilityValueIfChanged('stove_error', errorCode);
     await this.setCapabilityValueIfChanged('stove_error_state', true);
 
     if (this.lastErrorCode !== errorCode) {
@@ -800,6 +820,11 @@ function formatErrorMessage(errorCode: string, causes?: string[]): string {
     return `${errorCode}: Unknown error`;
   }
   return `${errorCode}: ${causes.join(' / ')}`;
+}
+
+function roundTo(value: number, decimals: number): number {
+  const factor = 10 ** decimals;
+  return Math.round(value * factor) / factor;
 }
 
 function parsePelletsAutoResetMode(value: unknown): PelletsAutoResetMode {

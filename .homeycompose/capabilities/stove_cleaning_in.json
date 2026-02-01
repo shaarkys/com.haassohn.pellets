@@ -4,7 +4,8 @@
   },
   "insights": true,
   "setable": false,
-  "units": "min",
+  "units": "h",
+  "decimals": 1,
   "getable": true,
   "type": "number"
 }

@@ -1,10 +1,13 @@
 {
   "title": {
-    "en": "Maintenance in"
+    "en": "Ash limit"
   },
   "insights": true,
   "setable": false,
-  "units": "kg",
+  "units": "%",
+  "decimals": 1,
+  "min": 0,
+  "max": 100,
   "getable": true,
   "type": "number"
 }

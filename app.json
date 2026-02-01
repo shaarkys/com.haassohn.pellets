@@ -33,6 +33,9 @@
         "title": {
           "en": "Set eco mode to {{mode}}"
         },
+        "titleFormatted": {
+          "en": "Set eco mode to [[mode]]"
+        },
         "args": [
           {
             "name": "device",
@@ -44,24 +47,10 @@
           },
           {
             "name": "mode",
-            "type": "dropdown",
+            "type": "checkbox",
             "title": {
               "en": "Mode"
-            },
-            "values": [
-              {
-                "id": "off",
-                "label": {
-                  "en": "Off"
-                }
-              },
-              {
-                "id": "on",
-                "label": {
-                  "en": "On"
-                }
-              }
-            ]
+            }
           }
         ],
         "id": "set_eco_mode"
@@ -69,6 +58,9 @@
       {
         "title": {
           "en": "Set pellets to {{pellets_kg}} kg"
+        },
+        "titleFormatted": {
+          "en": "Set pellets to [[pellets_kg]] kg"
         },
         "args": [
           {
@@ -92,6 +84,9 @@
       {
         "title": {
           "en": "Set weekly program to {{enabled}}"
+        },
+        "titleFormatted": {
+          "en": "Set weekly program to [[enabled]]"
         },
         "args": [
           {
@@ -130,7 +125,7 @@
         "stove_maintenance_in",
         "stove_consumption",
         "stove_pellets",
-        "stove_error",
+        "stove_pellets_actual",
         "stove_zone",
         "stove_weekprogram_active",
         "stove_heating_curve",
@@ -347,7 +342,8 @@
       },
       "insights": true,
       "setable": false,
-      "units": "min",
+      "units": "h",
+      "decimals": 1,
       "getable": true,
       "type": "number"
     },
@@ -369,36 +365,6 @@
       "setable": true,
       "getable": true,
       "type": "boolean"
-    },
-    "stove_eco_mode_enum": {
-      "title": {
-        "en": "Eco mode (control)"
-      },
-      "type": "enum",
-      "getable": true,
-      "setable": true,
-      "values": [
-        {
-          "id": "off",
-          "title": {
-            "en": "Off"
-          }
-        },
-        {
-          "id": "on",
-          "title": {
-            "en": "On"
-          }
-        }
-      ]
-    },
-    "stove_error": {
-      "type": "string",
-      "getable": true,
-      "setable": false,
-      "title": {
-        "en": "Error"
-      }
     },
     "stove_error_state": {
       "title": {
@@ -429,11 +395,14 @@
     },
     "stove_maintenance_in": {
       "title": {
-        "en": "Maintenance in"
+        "en": "Ash limit"
       },
       "insights": true,
       "setable": false,
-      "units": "kg",
+      "units": "%",
+      "decimals": 1,
+      "min": 0,
+      "max": 100,
       "getable": true,
       "type": "number"
     },
@@ -468,6 +437,19 @@
       },
       "getable": true,
       "setable": true
+    },
+    "stove_pellets_actual": {
+      "units": "kg",
+      "decimals": 1,
+      "min": 0,
+      "max": 999,
+      "insights": true,
+      "type": "number",
+      "title": {
+        "en": "Pellets (reported)"
+      },
+      "getable": true,
+      "setable": false
     },
     "stove_weekprogram_active": {
       "title": {
