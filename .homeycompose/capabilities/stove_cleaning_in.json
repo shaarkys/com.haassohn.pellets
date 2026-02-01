@@ -7,5 +7,6 @@
   "units": "h",
   "decimals": 1,
   "getable": true,
-  "type": "number"
+  "type": "number",
+  "icon": "/assets/icons/cleaning.svg"
 }

@@ -318,7 +318,8 @@
       "insights": false,
       "setable": false,
       "getable": true,
-      "type": "boolean"
+      "type": "boolean",
+      "icon": "/assets/icons/eco.svg"
     },
     "meta_sw_version": {
       "type": "string",
@@ -345,7 +346,8 @@
       "units": "h",
       "decimals": 1,
       "getable": true,
-      "type": "number"
+      "type": "number",
+      "icon": "/assets/icons/cleaning.svg"
     },
     "stove_consumption": {
       "title": {
@@ -355,7 +357,8 @@
       "setable": false,
       "units": "kg",
       "getable": true,
-      "type": "number"
+      "type": "number",
+      "icon": "/assets/icons/consumption.svg"
     },
     "stove_eco_mode": {
       "title": {
@@ -364,7 +367,8 @@
       "insights": true,
       "setable": true,
       "getable": true,
-      "type": "boolean"
+      "type": "boolean",
+      "icon": "/assets/icons/eco.svg"
     },
     "stove_error_state": {
       "title": {
@@ -373,7 +377,8 @@
       "type": "boolean",
       "getable": true,
       "setable": false,
-      "insights": true
+      "insights": true,
+      "icon": "/assets/icons/error.svg"
     },
     "stove_heating_curve": {
       "title": {
@@ -382,7 +387,8 @@
       "insights": true,
       "setable": false,
       "getable": true,
-      "type": "number"
+      "type": "number",
+      "icon": "/assets/icons/heating_curve.svg"
     },
     "stove_ignitions": {
       "title": {
@@ -391,7 +397,8 @@
       "insights": true,
       "setable": false,
       "getable": true,
-      "type": "number"
+      "type": "number",
+      "icon": "/assets/icons/ignitions.svg"
     },
     "stove_maintenance_in": {
       "title": {
@@ -404,7 +411,8 @@
       "min": 0,
       "max": 100,
       "getable": true,
-      "type": "number"
+      "type": "number",
+      "icon": "/assets/icons/maintenance.svg"
     },
     "stove_mode": {
       "type": "string",
@@ -412,7 +420,8 @@
       "setable": false,
       "title": {
         "en": "Mode"
-      }
+      },
+      "icon": "/assets/icons/fireplace.svg"
     },
     "stove_on_time": {
       "title": {
@@ -422,7 +431,8 @@
       "setable": false,
       "units": "h",
       "getable": true,
-      "type": "number"
+      "type": "number",
+      "icon": "/assets/icons/operation_hours.svg"
     },
     "stove_pellets": {
       "units": "kg",
@@ -436,7 +446,8 @@
         "en": "Pellets"
       },
       "getable": true,
-      "setable": true
+      "setable": true,
+      "icon": "/assets/icons/pellets.svg"
     },
     "stove_pellets_actual": {
       "units": "kg",
@@ -446,22 +457,25 @@
       "insights": true,
       "type": "number",
       "title": {
-        "en": "Pellets (reported)"
+        "en": "Pellets"
       },
       "getable": true,
-      "setable": false
+      "setable": false,
+      "icon": "/assets/icons/pellets.svg"
     },
     "stove_weekprogram_active": {
       "title": {
-        "en": "Weekly program active"
+        "en": "Weekly program !"
       },
       "insights": true,
       "setable": true,
       "getable": true,
-      "type": "boolean"
+      "type": "boolean",
+      "icon": "/assets/icons/weekly.svg"
     },
     "stove_zone": {
       "type": "number",
+      "icon": "/assets/icons/zone.svg",
       "decimals": 0,
       "getable": true,
       "setable": false,

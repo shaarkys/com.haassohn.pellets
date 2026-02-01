@@ -6,8 +6,9 @@
   "insights": true,
   "type": "number",
   "title": {
-    "en": "Pellets (reported)"
+    "en": "Pellets"
   },
   "getable": true,
-  "setable": false
+  "setable": false,
+  "icon": "/assets/icons/pellets.svg"
 }

@@ -1,5 +1,6 @@
 {
   "type": "number",
+  "icon": "/assets/icons/zone.svg",
   "decimals": 0,
   "getable": true,
   "setable": false,

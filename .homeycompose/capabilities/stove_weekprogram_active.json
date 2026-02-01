@@ -1,9 +1,10 @@
 {
   "title": {
-    "en": "Weekly program active"
+    "en": "Weekly program !"
   },
   "insights": true,
   "setable": true,
   "getable": true,
-  "type": "boolean"
+  "type": "boolean",
+  "icon": "/assets/icons/weekly.svg"
 }

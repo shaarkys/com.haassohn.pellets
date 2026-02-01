@@ -6,5 +6,6 @@
   "setable": false,
   "units": "kg",
   "getable": true,
-  "type": "number"
+  "type": "number",
+  "icon": "/assets/icons/consumption.svg"
 }

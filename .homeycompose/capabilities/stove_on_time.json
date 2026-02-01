@@ -6,5 +6,6 @@
   "setable": false,
   "units": "h",
   "getable": true,
-  "type": "number"
+  "type": "number",
+  "icon": "/assets/icons/operation_hours.svg"
 }

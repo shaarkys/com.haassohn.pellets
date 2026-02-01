@@ -4,5 +4,6 @@
   "setable": false,
   "title": {
     "en": "Mode"
-  }
+  },
+  "icon": "/assets/icons/fireplace.svg"
 }
