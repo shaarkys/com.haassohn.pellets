@@ -4,5 +4,8 @@
   },
   "1.0.1": {
     "en": "Internationalisation, pairing improvements, improve logging"
+  },
+  "1.0.2": {
+    "en": "Added triggers for Ash limit and Cleaning changed"
   }
 }
