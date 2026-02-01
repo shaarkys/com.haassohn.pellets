@@ -181,6 +181,7 @@ const CAPABILITY_TYPES: Record<string, CapabilityType> = {
   stove_mode: 'string',
   stove_zone: 'number',
   stove_error_state: 'boolean',
+  stove_error_code: 'string',
 };
 
 const CAPABILITY_RENAMES: Record<string, string> = {
@@ -301,6 +302,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
   private async syncCapabilities() {
     await this.migrateCapabilityIds();
     await this.ensureCapabilityPresent('stove_error_state');
+    await this.ensureCapabilityPresent('stove_error_code');
     await this.ensureCapabilityAbsent('meta_raw');
     await this.ensureCapabilityAbsent('meta_hw_version');
     await this.ensureCapabilityAbsent('meta_sw_version');
@@ -660,6 +662,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     if (!errorNumber || errorNumber === 0) {
       this.pelletsHoldAutoReset = false;
       await this.setCapabilityValueIfChanged('stove_error_state', false);
+      await this.setCapabilityValueIfChanged('stove_error_code', '');
       if (this.lastErrorCode) {
         await this.unsetWarning();
         this.lastErrorCode = null;
@@ -676,6 +679,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     }
 
     const errorCode = formatErrorCode(errorNumber);
+    await this.setCapabilityValueIfChanged('stove_error_code', errorCode);
     const errorCauses = (ERROR_CODE_MAP[errorNumber] ?? [])
       .map((key) => this.homey.__(key))
       .filter((cause) => typeof cause === 'string' && cause.trim().length > 0);

@@ -32,6 +32,7 @@
     "stove_ignitions",
     "stove_on_time",
     "stove_error_state",
+    "stove_error_code",
     "meta_eco_editable"
   ],
   "platforms": [
