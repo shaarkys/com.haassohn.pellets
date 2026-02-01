@@ -1,6 +1,6 @@
 {
   "id": "com.haassohn.pellets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": ">=12.4.0",
   "sdk": 3,
   "platforms": [
@@ -151,7 +151,7 @@
   "contributors": {
     "developers": []
   },
-   "contributing": {
+  "contributing": {
     "donate": {
       "paypal": {
         "username": "bkubesa"
