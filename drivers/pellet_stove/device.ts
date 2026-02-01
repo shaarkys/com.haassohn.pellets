@@ -205,6 +205,9 @@ module.exports = class PelletStoveDevice extends Homey.Device {
   private pelletsMaxKg = DEFAULT_MAX_PELLETS_KG;
   private pelletsHoldAutoReset = false;
   private suppressSettingsUpdate = false;
+  private lastNonce: string | null = null;
+  private lastCommandPayload: Record<string, unknown> | null = null;
+  private lastCommandAt: number | null = null;
 
   async onInit() {
     this.log('Pellet stove device initialized');
@@ -370,6 +373,8 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     } else {
       this.api.setConfig(address, pin);
     }
+
+    this.logComms('Configuration applied', { address, pollInterval: this.pollInterval });
   }
 
   private initializePelletsState() {
@@ -417,6 +422,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     }
 
     if (Object.keys(updates).length > 0) {
+      this.logComms('Device metadata updated', updates);
       await this.updateSettingsSafely(updates);
     }
   }
@@ -544,7 +550,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     }, delayMs);
   }
 
-  private async pollStatus() {
+  private async pollStatus(context: { reason?: 'poll' | 'command' | 'manual' } = {}) {
     if (!this.api) {
       return;
     }
@@ -552,6 +558,8 @@ module.exports = class PelletStoveDevice extends Homey.Device {
       return;
     }
     this.pollInFlight = true;
+    const reason = context.reason ?? 'poll';
+    const previousErrorCount = this.errorCount;
 
     try {
       const address = this.api.getAddress().trim();
@@ -559,11 +567,29 @@ module.exports = class PelletStoveDevice extends Homey.Device {
         await this.setUnavailable('Missing device address');
         return;
       }
+      if (reason !== 'poll') {
+        this.logComms(`Polling status (${reason})`, { address });
+      }
 
       const status = await this.api.getStatus();
-      await this.applyStatus(status);
+      const nonce = this.api.getNonce();
+      if (nonce && nonce !== this.lastNonce) {
+        this.logComms(this.lastNonce ? 'Session nonce refreshed' : 'Session nonce initialized');
+        this.lastNonce = nonce;
+      }
+
+      const flat = await this.applyStatus(status);
+      if (reason !== 'poll') {
+        this.logStatusSummary(flat, reason);
+      }
       this.errorCount = 0;
       await this.setAvailable();
+      if (previousErrorCount > 0) {
+        this.logComms('Polling recovered', { attempts: previousErrorCount });
+      }
+      if (reason === 'command') {
+        this.logCommandEcho(flat);
+      }
     } catch (error) {
       this.errorCount += 1;
       this.error(`Polling failed (${this.errorCount})`, error);
@@ -574,10 +600,13 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     }
   }
 
-  private async applyStatus(status: HaasSohnStatus) {
+  private async applyStatus(status: HaasSohnStatus): Promise<Record<string, unknown>> {
     const flat = flattenStatus(status);
     const ecoEditable = coerceBoolean(flat['meta.eco_editable']);
     if (typeof ecoEditable === 'boolean') {
+      if (this.ecoEditable !== ecoEditable) {
+        this.logComms('Eco mode editable changed', { ecoEditable });
+      }
       this.ecoEditable = ecoEditable;
     }
 
@@ -620,6 +649,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
       await this.setCapabilityValueIfChanged(capabilityId, value);
     }
 
+    return flat;
   }
 
   private async applyErrorState(flat: Record<string, unknown>) {
@@ -701,6 +731,13 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     try {
       await this.setCapabilityValue(capabilityId, value);
       await this.triggerCapabilityFlow(capabilityId, value);
+      if (shouldLogCapabilityChange(capabilityId)) {
+        this.logComms('Capability changed', {
+          capabilityId,
+          from: currentValue,
+          to: value,
+        });
+      }
       return true;
     } catch (error) {
       this.error(`Failed to update capability ${capabilityId}`, error);
@@ -804,11 +841,110 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     if (!this.api) {
       throw new Error('Device not configured');
     }
+    this.lastCommandPayload = { ...payload };
+    this.lastCommandAt = Date.now();
+    this.logComms('Sending command', { payload: this.lastCommandPayload });
     this.stopPolling();
     await this.api.postStatus(payload);
-    await this.pollStatus();
+    this.logComms('Command posted');
+    await this.pollStatus({ reason: 'command' });
+  }
+
+  private logComms(message: string, details?: Record<string, unknown>) {
+    const suffix = details && Object.keys(details).length > 0 ? ` ${stringifyLogDetails(details)}` : '';
+    this.log(`[Comms] ${message}${suffix}`);
+  }
+
+  private logStatusSummary(flat: Record<string, unknown>, reason: string) {
+    const summary: Record<string, unknown> = {};
+    for (const key of STATUS_SUMMARY_KEYS) {
+      if (key in flat) {
+        summary[key] = flat[key];
+      }
+    }
+    if (Object.keys(summary).length === 0) {
+      return;
+    }
+    this.logComms(`Status summary (${reason})`, summary);
+  }
+
+  private logCommandEcho(flat: Record<string, unknown>) {
+    if (!this.lastCommandPayload || !this.lastCommandAt) {
+      return;
+    }
+    const ageMs = Date.now() - this.lastCommandAt;
+    if (ageMs > 30000) {
+      this.lastCommandPayload = null;
+      this.lastCommandAt = null;
+      return;
+    }
+
+    const confirmed: Record<string, unknown> = {};
+    const mismatched: Record<string, { expected: unknown; actual: unknown }> = {};
+
+    for (const [key, expected] of Object.entries(this.lastCommandPayload)) {
+      if (!(key in flat)) {
+        mismatched[key] = { expected, actual: undefined };
+        continue;
+      }
+      const actual = flat[key];
+      if (areValuesEquivalent(expected, actual)) {
+        confirmed[key] = actual;
+      } else {
+        mismatched[key] = { expected, actual };
+      }
+    }
+
+    if (Object.keys(confirmed).length > 0) {
+      this.logComms('Command read-back confirmed', confirmed);
+    }
+    if (Object.keys(mismatched).length > 0) {
+      this.logComms('Command read-back mismatch', mismatched);
+    }
+
+    this.lastCommandPayload = null;
+    this.lastCommandAt = null;
   }
 };
+
+const STATUS_SUMMARY_KEYS = [
+  'mode',
+  'is_temp',
+  'sp_temp',
+  'eco_mode',
+  'wprg',
+  'error',
+  'error.nr',
+  'err.nr',
+  'err',
+];
+
+function shouldLogCapabilityChange(capabilityId: string): boolean {
+  return Object.prototype.hasOwnProperty.call(CAPABILITY_TYPES, capabilityId);
+}
+
+function stringifyLogDetails(details: Record<string, unknown>): string {
+  try {
+    return JSON.stringify(details);
+  } catch (error) {
+    return '[unserializable]';
+  }
+}
+
+function areValuesEquivalent(expected: unknown, actual: unknown): boolean {
+  if (typeof expected === 'boolean') {
+    const coerced = coerceBoolean(actual);
+    return typeof coerced === 'boolean' && coerced === expected;
+  }
+  if (typeof expected === 'number') {
+    const coerced = coerceNumber(actual);
+    return typeof coerced === 'number' && Math.abs(coerced - expected) < 0.001;
+  }
+  if (typeof expected === 'string') {
+    return String(actual) === expected;
+  }
+  return Object.is(expected, actual);
+}
 
 function flattenStatus(status: HaasSohnStatus, path = '', output: Record<string, unknown> = {}) {
   Object.entries(status).forEach(([key, value]) => {

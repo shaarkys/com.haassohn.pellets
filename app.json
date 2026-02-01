@@ -1447,7 +1447,8 @@
       },
       "getable": true,
       "setable": false,
-      "icon": "/assets/icons/pellets.svg"
+      "icon": "/assets/icons/pellets.svg",
+      "preventInsights": true
     },
     "stove_weekprogram_active": {
       "title": {
