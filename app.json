@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.haassohn.pellets",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": ">=12.4.0",
   "sdk": 3,
   "platforms": [
@@ -23,19 +23,19 @@
     "ar": "Haas+Sohn Pellets"
   },
   "description": {
-    "en": "Control and monitor Haas+Sohn pellet stoves in Homey.",
-    "nl": "Bedien en monitor Haas+Sohn pelletkachels in Homey.",
-    "de": "Steuern und überwachen Sie Haas+Sohn Pelletöfen in Homey.",
-    "fr": "Contrôle et surveille les poêles à granulés Haas+Sohn dans Homey.",
-    "it": "Controlla e monitora stufe a pellet Haas+Sohn in Homey.",
-    "sv": "Styr och övervaka Haas+Sohn pelletskaminer i Homey.",
-    "no": "Kontroller og overvåk Haas+Sohn pelletovner i Homey.",
-    "es": "Controla y supervisa estufas de pellets Haas+Sohn en Homey.",
-    "da": "Styr og overvåg Haas+Sohn pilleovne i Homey.",
-    "ru": "Управляйте и контролируйте пеллетными печами Haas+Sohn в Homey.",
-    "pl": "Kontroluj i monitoruj piece na pellet Haas+Sohn za pomocą Homey.",
-    "ko": "Homey에서 Haas+Sohn 펠릿 스토브를 제어하고 모니터하세요.",
-    "ar": "التحكم في ومراقبة مواقد الحبيبات Haas+Sohn في Homey."
+    "en": "Live status, eco mode, and pellet tracking for Haas+Sohn pellet stoves in Homey.",
+    "nl": "Live-status, eco-modus en pellettracking voor Haas+Sohn pelletkachels in Homey.",
+    "de": "Live-Status, Eco-Modus und Pellet-Tracking für Haas+Sohn Pelletöfen in Homey.",
+    "fr": "Statut en direct, mode éco et suivi des pellets pour les poêles à granulés Haas+Sohn dans Homey.",
+    "it": "Stato in tempo reale, modalità eco e monitoraggio dei pellet per le stufe a pellet Haas+Sohn in Homey.",
+    "sv": "Live-status, ekoläge och pelletspårning för Haas+Sohn pelletskaminer i Homey.",
+    "no": "Sanntidsstatus, økomodus og pelletsporing for Haas+Sohn pelletovner i Homey.",
+    "es": "Estado en vivo, modo eco y seguimiento de pellets para estufas de pellets Haas+Sohn en Homey.",
+    "da": "Live-status, økotilstand og pelletsporing for Haas+Sohn pilleovne i Homey.",
+    "ru": "Статус в реальном времени, эко-режим и учет пеллет для пеллетных печей Haas+Sohn в Homey.",
+    "pl": "Status na żywo, tryb eko i śledzenie pelletu dla pieców na pellet Haas+Sohn w Homey.",
+    "ko": "Homey에서 Haas+Sohn 펠릿 스토브의 실시간 상태, 에코 모드 및 펠릿 추적을 제공합니다.",
+    "ar": "حالة مباشرة ووضع اقتصادي وتتبع الحبيبات لمواقد Haas+Sohn في Homey."
   },
   "category": [
     "appliances"
