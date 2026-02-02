@@ -1,3 +1,3 @@
-Controlla e monitora stufe a pellet Haas+Sohn in Homey.
+Gestisci la tua stufa a pellet Haas+Sohn da Homey tramite la rete locale. L’app mostra lo stato in tempo reale, come temperatura attuale e target, modalità di funzionamento, stato della modalità eco o del programma settimanale, consumo di pellet e indicatori di pulizia o manutenzione, e può avvisarti dei codici di errore.
 
-Ispirato e basato su https://github.com/ioBroker/ioBroker.hass
+Con Homey puoi accendere o spegnere la stufa, impostare la temperatura target, attivare o disattivare la modalità eco o il programma settimanale e tenere traccia del livello dei pellet. Per iniziare, inserisci l’indirizzo IP o il nome host della stufa e il PIN configurato sul controller. Ispirato da https://github.com/ioBroker/ioBroker.hass.

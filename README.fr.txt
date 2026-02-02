@@ -1,3 +1,3 @@
-Contrôle et surveille les poêles à granulés Haas+Sohn dans Homey.
+Gérez votre poêle à granulés Haas+Sohn depuis Homey via votre réseau local. L’app affiche l’état en direct, par exemple la température actuelle et cible, le mode de fonctionnement, l’état du mode éco ou du programme hebdomadaire, la consommation de granulés ainsi que les indicateurs de nettoyage ou d’entretien, et peut vous avertir des codes d’erreur.
 
-Inspiré et basé sur https://github.com/ioBroker/ioBroker.hass
+Dans Homey, vous pouvez allumer/éteindre le poêle, définir la température cible, activer/désactiver le mode éco ou le programme hebdomadaire, et suivre le niveau de granulés. Pour commencer, saisissez l’adresse IP ou le nom d’hôte du poêle et le PIN configuré sur le contrôleur. Inspiré de https://github.com/ioBroker/ioBroker.hass.

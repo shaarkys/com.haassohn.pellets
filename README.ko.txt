@@ -1,3 +1,3 @@
-Homey에서 Haas+Sohn 펠릿 스토브를 제어하고 모니터하세요.
+Homey에서 로컬 네트워크를 통해 Haas+Sohn 펠릿 스토브를 관리하세요. 앱은 현재/목표 온도, 동작 모드, 에코 모드 또는 주간 프로그램 상태, 펠릿 소비, 청소/정비 지표 등 실시간 상태를 보여주며 오류 코드 알림도 제공합니다.
 
-https://github.com/ioBroker/ioBroker.hass에서 영감을 받아 제작되었습니다.
+Homey에서 스토브 전원 on/off, 목표 온도 설정, 에코 모드 또는 주간 프로그램 토글, 펠릿 잔량 추적을 할 수 있습니다. 시작하려면 스토브의 IP 주소 또는 호스트 이름과 컨트롤러에 설정된 PIN을 입력하세요. https://github.com/ioBroker/ioBroker.hass 에서 영감을 받았습니다.

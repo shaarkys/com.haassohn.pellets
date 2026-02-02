@@ -1,3 +1,3 @@
-Controla y supervisa estufas de pellets Haas+Sohn en Homey.
+Gestiona tu estufa de pellets Haas+Sohn desde Homey a través de tu red local. La app muestra el estado en vivo, como temperatura actual y objetivo, modo de funcionamiento, estado del modo eco o del programa semanal, consumo de pellets e indicadores de limpieza o mantenimiento, y puede avisar de códigos de error.
 
-Inspirado y basado en https://github.com/ioBroker/ioBroker.hass
+Con Homey puedes encender o apagar la estufa, ajustar la temperatura objetivo, activar o desactivar el modo eco o el programa semanal y hacer seguimiento del nivel de pellets. Para empezar, introduce la dirección IP o el nombre de host de la estufa y el PIN configurado en el controlador. Inspirado por https://github.com/ioBroker/ioBroker.hass.
