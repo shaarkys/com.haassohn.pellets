@@ -1,0 +1,22 @@
+{
+  "title": {
+    "en": "Stove status",
+    "nl": "Kachelstatus",
+    "da": "Ovnstatus",
+    "de": "Ofenstatus",
+    "es": "Estado de la estufa",
+    "fr": "État du poêle",
+    "it": "Stato della stufa",
+    "no": "Ovnstatus",
+    "sv": "Kaminstatus",
+    "pl": "Stan pieca",
+    "ru": "Состояние печи",
+    "ko": "난로 상태",
+    "ar": "حالة الموقد"
+  },
+  "type": "boolean",
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "icon": "/assets/icons/heat.svg"
+}

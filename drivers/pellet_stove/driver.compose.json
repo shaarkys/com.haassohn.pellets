@@ -18,6 +18,7 @@
   "capabilities": [
     "onoff",
     "stove_mode",
+    "stove_status",
     "measure_temperature",
     "target_temperature",
     "stove_eco_mode",
@@ -114,6 +115,68 @@
         "ru": "Эко выключен",
         "ko": "에코 끄기",
         "ar": "إيقاف الوضع الاقتصادي"
+      }
+    },
+    "stove_status": {
+      "insightsTitleTrue": {
+        "en": "Heating",
+        "nl": "Verwarming",
+        "da": "Opvarmning",
+        "de": "Heizen",
+        "es": "Calentando",
+        "fr": "Chauffage",
+        "it": "Riscaldamento",
+        "no": "Oppvarming",
+        "sv": "Uppvärmning",
+        "pl": "Ogrzewanie",
+        "ru": "Отопление",
+        "ko": "난방",
+        "ar": "تسخين"
+      },
+      "insightsTitleFalse": {
+        "en": "Standby",
+        "nl": "Stand-by",
+        "da": "Standby",
+        "de": "Standby",
+        "es": "En espera",
+        "fr": "Veille",
+        "it": "Standby",
+        "no": "Standby",
+        "sv": "Standby",
+        "pl": "Czuwanie",
+        "ru": "Ожидание",
+        "ko": "대기",
+        "ar": "وضع الاستعداد"
+      },
+      "titleTrue": {
+        "en": "Heating",
+        "nl": "Verwarming",
+        "da": "Opvarmning",
+        "de": "Heizen",
+        "es": "Calentando",
+        "fr": "Chauffage",
+        "it": "Riscaldamento",
+        "no": "Oppvarming",
+        "sv": "Uppvärmning",
+        "pl": "Ogrzewanie",
+        "ru": "Отопление",
+        "ko": "난방",
+        "ar": "تسخين"
+      },
+      "titleFalse": {
+        "en": "Standby",
+        "nl": "Stand-by",
+        "da": "Standby",
+        "de": "Standby",
+        "es": "En espera",
+        "fr": "Veille",
+        "it": "Standby",
+        "no": "Standby",
+        "sv": "Standby",
+        "pl": "Czuwanie",
+        "ru": "Ожидание",
+        "ko": "대기",
+        "ar": "وضع الاستعداد"
       }
     },
     "stove_weekprogram_active": {

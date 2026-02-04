@@ -179,6 +179,7 @@ const CAPABILITY_TYPES: Record<string, CapabilityType> = {
   stove_ignitions: 'number',
   stove_on_time: 'number',
   stove_mode: 'string',
+  stove_status: 'boolean',
   stove_zone: 'number',
   stove_error_state: 'boolean',
   stove_error_code: 'string',
@@ -200,6 +201,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
   private ecoEditable = true;
   private lastErrorCode: string | null = null;
   private lastErrorMessage: string | null = null;
+  private lastErrorSnapshot: string | null = null;
   private pelletsRemainingKg: number | null = null;
   private lastConsumptionKg: number | null = null;
   private pelletsAutoResetMode: PelletsAutoResetMode = 'none';
@@ -303,6 +305,7 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     await this.migrateCapabilityIds();
     await this.ensureCapabilityPresent('stove_error_state');
     await this.ensureCapabilityPresent('stove_error_code');
+    await this.ensureCapabilityPresent('stove_status');
     await this.ensureCapabilityAbsent('meta_raw');
     await this.ensureCapabilityAbsent('meta_hw_version');
     await this.ensureCapabilityAbsent('meta_sw_version');
@@ -651,15 +654,27 @@ module.exports = class PelletStoveDevice extends Homey.Device {
       await this.setCapabilityValueIfChanged(capabilityId, value);
     }
 
+    const modeValue = typeof flat.mode === 'string' ? flat.mode.trim().toLowerCase() : null;
+    if (modeValue && (modeValue === 'shutdown' || modeValue === 'off')) {
+      await this.setCapabilityValueIfChanged('onoff', false);
+    }
+
+    const stoveStatus = deriveStoveStatus(flat.mode);
+    if (typeof stoveStatus === 'boolean') {
+      await this.setCapabilityValueIfChanged('stove_status', stoveStatus);
+    }
+
     return flat;
   }
 
   private async applyErrorState(flat: Record<string, unknown>) {
+    this.logRawErrorFields(flat);
     const errorNumber = getErrorNumber(flat);
     if (errorNumber === undefined) {
       return;
     }
     if (!errorNumber || errorNumber === 0) {
+      this.lastErrorSnapshot = null;
       this.pelletsHoldAutoReset = false;
       await this.setCapabilityValueIfChanged('stove_error_state', false);
       await this.setCapabilityValueIfChanged('stove_error_code', '');
@@ -671,7 +686,13 @@ module.exports = class PelletStoveDevice extends Homey.Device {
       return;
     }
 
-    if (errorNumber === 21 || errorNumber === 26) {
+    if (errorNumber === 2) {
+      this.pelletsHoldAutoReset = false;
+      const resetValue = getPelletsAutoResetValue(this.pelletsAutoResetMode);
+      if (resetValue !== null) {
+        await this.setPelletsRemaining(resetValue, { updateSetting: true });
+      }
+    } else if (errorNumber === 21 || errorNumber === 26) {
       this.pelletsHoldAutoReset = true;
       await this.setPelletsRemaining(0, { updateSetting: true });
     } else {
@@ -839,6 +860,34 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     }
   }
 
+  private logRawErrorFields(flat: Record<string, unknown>) {
+    const raw = {
+      error: flat['error'],
+      error_nr: flat['error.nr'],
+      err: flat['err'],
+      err_nr: flat['err.nr'],
+    };
+
+    if (Object.values(raw).every((value) => value === undefined)) {
+      return;
+    }
+
+    let snapshot: string;
+    try {
+      snapshot = JSON.stringify(raw);
+    } catch (error) {
+      snapshot = String(raw);
+    }
+
+    if (snapshot === this.lastErrorSnapshot) {
+      return;
+    }
+
+    this.lastErrorSnapshot = snapshot;
+    const parsed = getErrorNumber(flat);
+    this.logComms('Error fields', { ...raw, parsed });
+  }
+
   private async handleOnOff(value: unknown) {
     const normalized = coerceBoolean(value);
     if (typeof normalized !== 'boolean') {
@@ -960,6 +1009,25 @@ const STATUS_SUMMARY_KEYS = [
   'err',
 ];
 
+const STOVE_STATUS_HEATING_MODES = new Set([
+  'heating',
+  'start',
+  'startup',
+  'ignite',
+  'ignition',
+  'run',
+  'running',
+]);
+
+const STOVE_STATUS_STANDBY_MODES = new Set([
+  'standby',
+  'shutdown',
+  'cooling',
+  'idle',
+  'off',
+  'stop',
+]);
+
 function shouldLogCapabilityChange(capabilityId: string): boolean {
   return Object.prototype.hasOwnProperty.call(CAPABILITY_TYPES, capabilityId);
 }
@@ -1031,6 +1099,23 @@ function coerceValue(capabilityId: string, value: unknown): boolean | number | s
   }
 }
 
+function deriveStoveStatus(modeValue: unknown): boolean | undefined {
+  if (typeof modeValue !== 'string') {
+    return undefined;
+  }
+  const normalized = modeValue.trim().toLowerCase();
+  if (!normalized) {
+    return undefined;
+  }
+  if (STOVE_STATUS_STANDBY_MODES.has(normalized)) {
+    return false;
+  }
+  if (STOVE_STATUS_HEATING_MODES.has(normalized)) {
+    return true;
+  }
+  return undefined;
+}
+
 function coerceBoolean(value: unknown): boolean | undefined {
   if (typeof value === 'boolean') {
     return value;
@@ -1064,21 +1149,15 @@ function coerceNumber(value: unknown): number | undefined {
 }
 
 function getErrorNumber(flat: Record<string, unknown>): number | undefined {
-  const candidates = [
-    flat['error.nr'],
-    flat['error'],
-    flat['err.nr'],
-    flat['err'],
-  ];
+  const errorNrCandidates = [flat['error.nr'], flat['err.nr']];
+  const errorCandidates = [flat['error'], flat['err']];
 
-  for (const candidate of candidates) {
-    const parsed = parseErrorNumber(candidate);
-    if (parsed !== undefined) {
-      return parsed;
-    }
+  const normalizedErrorNr = selectErrorCandidate(errorNrCandidates);
+  if (normalizedErrorNr !== undefined) {
+    return normalizedErrorNr;
   }
 
-  return undefined;
+  return selectErrorCandidate(errorCandidates);
 }
 
 function parseErrorNumber(value: unknown): number | undefined {
@@ -1087,7 +1166,20 @@ function parseErrorNumber(value: unknown): number | undefined {
     return direct;
   }
   if (typeof value === 'string') {
-    const match = value.match(/(\d{1,4})/);
+    const trimmed = value.trim();
+    if (trimmed.startsWith('[') || trimmed.startsWith('{')) {
+      try {
+        const parsedJson = JSON.parse(trimmed) as unknown;
+        const fromJson = extractErrorNumberFromJson(parsedJson);
+        if (fromJson !== undefined) {
+          return fromJson;
+        }
+      } catch (error) {
+        // fall through to regex parsing
+      }
+    }
+
+    const match = trimmed.match(/(\d{1,4})/);
     if (match) {
       const parsed = Number(match[1]);
       if (Number.isFinite(parsed)) {
@@ -1096,6 +1188,69 @@ function parseErrorNumber(value: unknown): number | undefined {
     }
   }
   return undefined;
+}
+
+function extractErrorNumberFromJson(value: unknown): number | undefined {
+  if (Array.isArray(value)) {
+    if (value.length === 0) {
+      return 0;
+    }
+    for (let i = value.length - 1; i >= 0; i -= 1) {
+      const candidate = extractErrorNumberFromJson(value[i]);
+      if (candidate !== undefined) {
+        return candidate;
+      }
+    }
+    return undefined;
+  }
+  if (value && typeof value === 'object') {
+    const record = value as Record<string, unknown>;
+    const nr = coerceNumber(record.nr);
+    if (nr !== undefined) {
+      return nr;
+    }
+    const error = coerceNumber(record.error);
+    if (error !== undefined) {
+      return error;
+    }
+  }
+  return undefined;
+}
+
+function selectErrorCandidate(candidates: unknown[]): number | undefined {
+  let fallback: number | undefined;
+  let zeroFound = false;
+
+  for (const candidate of candidates) {
+    const parsed = parseErrorNumber(candidate);
+    if (parsed === undefined) {
+      continue;
+    }
+    if (parsed === 0) {
+      zeroFound = true;
+      continue;
+    }
+    if (hasErrorMapping(parsed)) {
+      return parsed;
+    }
+    if (fallback === undefined) {
+      fallback = parsed;
+    }
+  }
+
+  if (fallback !== undefined) {
+    return fallback;
+  }
+
+  if (zeroFound) {
+    return 0;
+  }
+
+  return undefined;
+}
+
+function hasErrorMapping(errorNumber: number): boolean {
+  return Object.prototype.hasOwnProperty.call(ERROR_CODE_MAP, errorNumber);
 }
 
 function formatErrorCode(errorNumber: number): string {
