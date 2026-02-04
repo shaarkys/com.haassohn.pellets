@@ -19,5 +19,8 @@
   },
   "1.0.6": {
     "en": "Fix error handling and improved insights logging"
+  },
+  "1.0.7": {
+    "en": "Unset device error in case of no error"
   }
 }
