@@ -16,5 +16,8 @@
   },
   "1.0.5": {
     "en": "Adjustments as per Athom developers guidelines"
+  },
+  "1.0.6": {
+    "en": "Fix error handling and improved insights logging"
   }
 }
