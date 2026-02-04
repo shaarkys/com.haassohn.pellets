@@ -678,11 +678,9 @@ module.exports = class PelletStoveDevice extends Homey.Device {
       this.pelletsHoldAutoReset = false;
       await this.setCapabilityValueIfChanged('stove_error_state', false);
       await this.setCapabilityValueIfChanged('stove_error_code', '');
-      if (this.lastErrorCode) {
-        await this.unsetWarning();
-        this.lastErrorCode = null;
-        this.lastErrorMessage = null;
-      }
+      await this.unsetWarning();
+      this.lastErrorCode = null;
+      this.lastErrorMessage = null;
       return;
     }
 
