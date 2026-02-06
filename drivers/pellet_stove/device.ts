@@ -671,16 +671,13 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     this.logRawErrorFields(flat);
     const errorNumber = getErrorNumber(flat);
     if (errorNumber === undefined) {
+      if (!hasAnyErrorField(flat)) {
+        await this.clearErrorState();
+      }
       return;
     }
     if (!errorNumber || errorNumber === 0) {
-      this.lastErrorSnapshot = null;
-      this.pelletsHoldAutoReset = false;
-      await this.setCapabilityValueIfChanged('stove_error_state', false);
-      await this.setCapabilityValueIfChanged('stove_error_code', '');
-      await this.unsetWarning();
-      this.lastErrorCode = null;
-      this.lastErrorMessage = null;
+      await this.clearErrorState();
       return;
     }
 
@@ -719,6 +716,16 @@ module.exports = class PelletStoveDevice extends Homey.Device {
       await this.setWarning(errorMessage);
       this.lastErrorMessage = errorMessage;
     }
+  }
+
+  private async clearErrorState() {
+    this.lastErrorSnapshot = null;
+    this.pelletsHoldAutoReset = false;
+    await this.setCapabilityValueIfChanged('stove_error_state', false);
+    await this.setCapabilityValueIfChanged('stove_error_code', '');
+    await this.unsetWarning();
+    this.lastErrorCode = null;
+    this.lastErrorMessage = null;
   }
 
   private async createErrorNotification(message: string) {
@@ -933,9 +940,22 @@ module.exports = class PelletStoveDevice extends Homey.Device {
     this.lastCommandAt = Date.now();
     this.logComms('Sending command', { payload: this.lastCommandPayload });
     this.stopPolling();
-    await this.api.postStatus(payload);
-    this.logComms('Command posted');
-    await this.pollStatus({ reason: 'command' });
+    let polledAfterCommand = false;
+    try {
+      await this.api.postStatus(payload);
+      this.logComms('Command posted');
+      polledAfterCommand = true;
+      await this.pollStatus({ reason: 'command' });
+    } catch (error) {
+      if (this.lastCommandPayload) {
+        this.logComms('Command failed', { payload: this.lastCommandPayload });
+      }
+      throw error;
+    } finally {
+      if (!polledAfterCommand && !this.pollInFlight) {
+        this.scheduleNextPoll(this.pollInterval);
+      }
+    }
   }
 
   private logComms(message: string, details?: Record<string, unknown>) {
@@ -1026,8 +1046,14 @@ const STOVE_STATUS_STANDBY_MODES = new Set([
   'stop',
 ]);
 
+const ERROR_STATE_KEYS = ['error', 'error.nr', 'err', 'err.nr'];
+
 function shouldLogCapabilityChange(capabilityId: string): boolean {
   return Object.prototype.hasOwnProperty.call(CAPABILITY_TYPES, capabilityId);
+}
+
+function hasAnyErrorField(flat: Record<string, unknown>): boolean {
+  return ERROR_STATE_KEYS.some((key) => Object.prototype.hasOwnProperty.call(flat, key));
 }
 
 function stringifyLogDetails(details: Record<string, unknown>): string {
