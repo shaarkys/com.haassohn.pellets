@@ -22,5 +22,8 @@
   },
   "1.0.7": {
     "en": "Unset device error in case of no error"
+  },
+  "1.0.8": {
+    "en": "Fixed command failure recovery and stale error clearing."
   }
 }
