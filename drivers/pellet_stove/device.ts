@@ -1216,16 +1216,7 @@ function parseErrorNumber(value: unknown): number | undefined {
 
 function extractErrorNumberFromJson(value: unknown): number | undefined {
   if (Array.isArray(value)) {
-    if (value.length === 0) {
-      return 0;
-    }
-    for (let i = value.length - 1; i >= 0; i -= 1) {
-      const candidate = extractErrorNumberFromJson(value[i]);
-      if (candidate !== undefined) {
-        return candidate;
-      }
-    }
-    return undefined;
+    return extractErrorNumberFromArray(value);
   }
   if (value && typeof value === 'object') {
     const record = value as Record<string, unknown>;
@@ -1239,6 +1230,83 @@ function extractErrorNumberFromJson(value: unknown): number | undefined {
     }
   }
   return undefined;
+}
+
+function extractErrorNumberFromArray(value: unknown[]): number | undefined {
+  if (value.length === 0) {
+    return 0;
+  }
+
+  const candidates: { nr: number; index: number; timeMs: number | undefined }[] = [];
+
+  for (let i = 0; i < value.length; i += 1) {
+    const entry = value[i];
+    const nr = extractErrorNumberFromJson(entry);
+    if (nr === undefined) {
+      continue;
+    }
+
+    let timeMs: number | undefined;
+    if (entry && typeof entry === 'object' && !Array.isArray(entry)) {
+      const record = entry as Record<string, unknown>;
+      timeMs = parseErrorTimestamp(record.time);
+    }
+
+    candidates.push({ nr, index: i, timeMs });
+  }
+
+  if (candidates.length === 0) {
+    return undefined;
+  }
+
+  const withTimestamp = candidates.filter((candidate) => candidate.timeMs !== undefined);
+  if (withTimestamp.length > 0) {
+    withTimestamp.sort((a, b) => {
+      if (a.timeMs === b.timeMs) {
+        return a.index - b.index;
+      }
+      return (b.timeMs ?? 0) - (a.timeMs ?? 0);
+    });
+    return withTimestamp[0].nr;
+  }
+
+  // Fallback to first entry. The stove reports newest errors first in normal responses.
+  return candidates[0].nr;
+}
+
+function parseErrorTimestamp(value: unknown): number | undefined {
+  if (typeof value === 'number' && Number.isFinite(value)) {
+    return value > 1e12 ? value : value * 1000;
+  }
+  if (typeof value !== 'string') {
+    return undefined;
+  }
+
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return undefined;
+  }
+
+  const isoMs = Date.parse(trimmed);
+  if (Number.isFinite(isoMs)) {
+    return isoMs;
+  }
+
+  const match = trimmed.match(
+    /^(\d{4})[./-](\d{1,2})[./-](\d{1,2})(?:[ T](\d{1,2}):(\d{1,2})(?::(\d{1,2}))?)?$/,
+  );
+  if (!match) {
+    return undefined;
+  }
+
+  const year = Number(match[1]);
+  const month = Number(match[2]) - 1;
+  const day = Number(match[3]);
+  const hour = Number(match[4] ?? '0');
+  const minute = Number(match[5] ?? '0');
+  const second = Number(match[6] ?? '0');
+  const timeMs = Date.UTC(year, month, day, hour, minute, second);
+  return Number.isFinite(timeMs) ? timeMs : undefined;
 }
 
 function selectErrorCandidate(candidates: unknown[]): number | undefined {
