@@ -25,5 +25,8 @@
   },
   "1.0.8": {
     "en": "Fixed command failure recovery and stale error clearing."
+  },
+  "1.0.9": {
+    "en": "Fixed stale stove errors not clearing until restart."
   }
 }
