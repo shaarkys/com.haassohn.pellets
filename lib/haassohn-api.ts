@@ -117,19 +117,56 @@ export class HaasSohnApi {
     const requester = isHttps ? https.request : http.request;
 
     return new Promise((resolve, reject) => {
+      let settled = false;
+      let hardTimeout: NodeJS.Timeout | null = null;
+
+      const finish = (handler: () => void) => {
+        if (settled) {
+          return;
+        }
+        settled = true;
+        if (hardTimeout) {
+          clearTimeout(hardTimeout);
+          hardTimeout = null;
+        }
+        handler();
+      };
+
+      const fail = (error: unknown) => {
+        const normalized = error instanceof Error ? error : new Error(String(error));
+        finish(() => {
+          if (!req.destroyed) {
+            req.destroy(normalized);
+          }
+          reject(normalized);
+        });
+      };
+
       const req = requester(options, (res) => {
         const chunks: Buffer[] = [];
+        let ended = false;
         res.on('data', (chunk) => chunks.push(Buffer.from(chunk)));
         res.on('end', () => {
-          resolve({
-            statusCode: res.statusCode ?? 0,
-            body: Buffer.concat(chunks).toString('utf8'),
+          ended = true;
+          finish(() => {
+            resolve({
+              statusCode: res.statusCode ?? 0,
+              body: Buffer.concat(chunks).toString('utf8'),
+            });
           });
+        });
+        res.on('aborted', () => fail(new Error('Response aborted')));
+        res.on('error', (error) => fail(error));
+        res.on('close', () => {
+          if (!ended) {
+            fail(new Error('Response closed before completion'));
+          }
         });
       });
 
-      req.on('error', (error) => reject(error));
-      req.setTimeout(this.timeoutMs, () => req.destroy(new Error('Request timeout')));
+      req.on('error', (error) => fail(error));
+      req.setTimeout(this.timeoutMs, () => fail(new Error('Request timeout')));
+      hardTimeout = setTimeout(() => fail(new Error('Request timeout')), this.timeoutMs);
 
       if (body) {
         req.write(body);
