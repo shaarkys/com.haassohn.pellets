@@ -28,5 +28,8 @@
   },
   "1.0.9": {
     "en": "Fixed stale stove errors not clearing until restart."
+  },
+  "1.0.10": {
+    "en": "Fixed stalled polling by hardening request timeout and disconnect handling."
   }
 }
